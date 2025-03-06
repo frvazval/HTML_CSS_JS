@@ -21,4 +21,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Lato, Arial, Helvetica, sans-serif;
 }
+
+h1, h2 {
+    font-family: 'Dancing Script';
+}
+
+h1 {
+    position: absolute;
+    top: 8vw;
+    right: 5vw;
+    color:white;
+    font-size: 8vw;
+}
+
+header img {
+    width: 100%;
+}
+
