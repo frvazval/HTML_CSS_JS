@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 2rem;
+    background-color: burlywood;
+    border: 2px solid black;
+    display: flex;
+}
+
+.hijo {
+    background-color: gainsboro;
+    width: 100px;
+    font-size: 2rem;
+    border: 1px solid black;
+
+}
+
+.flex-direction_row {
+    flex-direction: row;
+    flex-wrap: no-wrap; /* No hacer nada en el desbordamiento*/
+    gap: 1rem;
+}
+
+.flex-direction_column {
+    flex-direction: column;
+    gap: 1rem;
+}
+.flex-direction_row-reverse {
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+
+.flex-direction_column-reverse {
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+.flex-wrap_wrap {
+    flex-direction: row;
+    flex-wrap: wrap; /* No hacer nada en el desbordamiento*/
+    gap: 1rem;
+}
+.flex-wrap_wrap-reverse {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse; /* No hacer nada en el desbordamiento*/
+    gap: 1rem;
+}
+
+.justify-content_center {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.justify-content_start {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    /* gap: 1rem; */
+}
+
+.justify-content_end {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    /* gap: 1rem; */
+}
+.justify-content_evenly {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* gap: 1rem; */
+}.justify-content_space-between {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* gap: 1rem; */
+}
+.justify-content_space-around {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* gap: 1rem; */
+}
+
+.padre > div {
+    border : 1px solid black;
+    text-align: center;
+    width: 50px;
+}
+
+.hijo1 {
+    background-color: steelblue;
+    order: 3;
+    flex-grow: 2;
+}
+
+.hijo2 {
+    background-color: orange;
+    order: 1;
+    flex-grow: 1;
+}
+
+.hijo3 {
+    background-color: olive;
+    order: 4;
+    flex-grow: 2;
+}
+
+.hijo4 {
+    background-color: darkorchid;
+    order: 2;
+    flex-grow: 1;
+}
+
+

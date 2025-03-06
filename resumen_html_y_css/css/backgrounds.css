@@ -1,0 +1,34 @@
+.fondo-1 {
+  background-color: coral;
+  background-image: url("../img/undraw_barista_wwfa.svg");
+  /* background-image: url("../img/undraw_barista_wwfa.svg"),
+  url("../img/trabajando-cafeteria_23-2148155410.jpg"); */
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-size: cover;
+  background-position: top;
+  /* background-size: 100px 400px; */
+  /* background-repeat: repeat-x; */
+}
+
+.fondo-2 {
+  background-image: linear-gradient(to top, 
+      rgb(255, 0, 0, 70%),
+      rgb(255, 0, 0, 0)
+      /* rgba(0, 0, 255, 0.6),
+      rgb(0, 128, 0, 0.8) */
+    ),
+    url("../img/trabajando-cafeteria_23-2148155410.jpg");
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+  background-attachment: scroll;
+  color: white;
+}
+
+.relleno {
+    width: 400px;
+    height: 1500px;
+    background-color: #ddd;
+}

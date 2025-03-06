@@ -1,0 +1,15 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ccc;
+    font-size: 3rem;
+}
+
+span {
+    color: red;
+    font-size: 4rem;
+}
+
+th, td {
+    padding: 5px 10px;
+    text-align: left;
+}
