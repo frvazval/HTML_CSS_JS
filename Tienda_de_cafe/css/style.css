@@ -97,10 +97,10 @@ section > div {
 
     div {
         width: 100%;
+        align-content: center;
         
         p {
-            font-size: 1.25rem;
-            align-content: center;
+            font-size: 1.25rem;            
         }
 
     }
