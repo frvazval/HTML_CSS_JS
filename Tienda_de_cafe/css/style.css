@@ -20,7 +20,6 @@
 :root {
     --color_fondo_primario: #053617;
     --color_texto_primario: #aaaa;
-
 }
 
 * {
@@ -42,10 +41,6 @@ h1 {
     font-size: 8vw;
 }
 
-h2 {
-    font-size: 3vw;
-}
-
 header img {
     width: 100%;
     display: block;
@@ -53,7 +48,7 @@ header img {
 
 .fondo_oscuro {
     background-color: var(--color_fondo_primario);
-    color: var(--color_texto_primario);
+    color: var(--color_texto_primario);    
 }
 
 .columna_central {
@@ -98,20 +93,25 @@ section > div {
     div {
         width: 100%;
         align-content: center;
+
+        h2 {
+            font-size: 3vw;
+            padding: .5rem;
+        }
         
         p {
             font-size: 1.25rem;            
         }
 
+        img {
+            width: 100%;
+            display: block;
+        }
+    
+        video {
+            width: 100%;
+            display: block;
+        }
     }
-
-    img {
-        width: 100%;
-        display: block;
-    }
-
-    video {
-        width: 100%;
-        display: block;
-    }
+    
 }
