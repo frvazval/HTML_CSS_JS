@@ -57,8 +57,8 @@ header img {
     margin: 0 auto;
 }
 
-nav {    
-    align-items: center;
+nav {     
+    align-content: center;
     height: 60px;
     
     ul {     
@@ -71,6 +71,14 @@ nav {
     li {
         list-style: none;
         padding: .5rem 1rem;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+
+        &:hover {
+            border-top: 5px solid white;
+            border-bottom: 5px solid white;
+            color: white;
+        }
     }
 
     a {
