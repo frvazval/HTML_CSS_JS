@@ -42,6 +42,10 @@ h1 {
     font-size: 8vw;
 }
 
+h2 {
+    font-size: 3vw;
+}
+
 header img {
     width: 100%;
     display: block;
@@ -53,7 +57,7 @@ header img {
 }
 
 .columna_central {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -85,5 +89,23 @@ nav {
         color: inherit;
         text-decoration: none;
         font-size: 1.5rem;
+    }
+}
+
+section > div {
+    display: flex;
+
+    div {
+        width: 100%;
+        
+        p {
+            font-size: 1.25rem;
+            align-content: center;
+        }
+
+    }
+
+    img {
+        width: 100%;
     }
 }
