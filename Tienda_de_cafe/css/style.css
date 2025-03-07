@@ -19,7 +19,7 @@
 
 :root {
     --color_fondo_primario: #053617;
-    --color_texto_primario: #aaaa;
+    --color_texto_primario: #ccc;
 }
 
 * {
@@ -41,6 +41,10 @@ h1 {
     font-size: 8vw;
 }
 
+h2 {
+    font-size: 2.8vw;
+}
+
 header img {
     width: 100%;
     display: block;
@@ -54,6 +58,25 @@ header img {
 .columna_central {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.opiniones {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+
+    q {
+        font-size: 1.25rem;        
+    }
+
+    cite {
+        color: red;
+        text-align: right;
+        display: block;
+        font-size: 1.3rem;
+        padding-right: 5px;
+    }   
 }
 
 nav {     
@@ -93,6 +116,7 @@ section > div {
     div {
         width: 100%;
         align-content: center;
+        overflow: hidden;
 
         h2 {
             font-size: 3vw;
@@ -106,6 +130,11 @@ section > div {
         img {
             width: 100%;
             display: block;
+            transition: transform 1s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     
         video {
@@ -113,5 +142,16 @@ section > div {
             display: block;
         }
     }
+
     
+}
+
+section > h2 {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+}
+
+footer {
+    margin-top: 2rem;
+    height: 200px;
 }
