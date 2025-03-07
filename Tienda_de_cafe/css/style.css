@@ -54,9 +54,32 @@ header img {
     color: var(--color_texto_primario);
 }
 
+.columna_central {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 nav {
-    ul {
-        max-width: 1200px;
-        margin: 0 auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 60px;
+    
+    ul {     
+
+        display: flex;
+        justify-content: space-around;
+               
+    }
+
+    li {
+        list-style: none;
+        padding: .5rem 1rem;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.5rem;
     }
 }
