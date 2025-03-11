@@ -121,4 +121,8 @@ section.breakpoint {
             color: var(--color-secundari);
         }
     }
+
+    @media (max-width: 1200px) {
+        padding: 3vw;
+    }
 }
