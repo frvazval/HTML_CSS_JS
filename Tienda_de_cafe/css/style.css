@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.8vw;
+    font-size: clamp(1.8rem, 4vw + 1rem , 3rem);
 }
 
 header img {
@@ -77,6 +77,15 @@ header img {
         font-size: 1.3rem;
         padding-right: 5px;
     }   
+
+    @media (max-width: 450px) {
+        display: block;
+        padding:  4vw;
+    }
+}
+
+.invertir  {
+    flex-direction: row-reverse;
 }
 
 nav {     
@@ -119,12 +128,24 @@ section > div {
         overflow: hidden;
 
         h2 {
-            font-size: 2vw;
+            /* font-size: 2vw; */
+            font-size: clamp(2rem, 5vw + 1rem , 3rem);
             padding: .5rem;
+
+            @media (max-width: 550px) {
+                text-align: center;
+            }
+
+            
         }
         
         p {
-            font-size: 1.25rem;            
+            font-size: clamp(.8rem, 4vw + .8rem, 1.25rem, ); 
+            padding: .5rem; 
+            
+            @media (max-width: 550px) {
+                text-align: center;
+            }
         }
 
         img {
@@ -141,6 +162,11 @@ section > div {
             width: 100%;
             display: block;
         }
+        
+    }
+
+    @media (max-width: 450px) {
+        display: block;
     }
 
     
@@ -152,6 +178,11 @@ section > h2 {
 }
 
 footer {
+    display: flex;
     margin-top: 2rem;
     height: 200px;
+
+    @media (max-width: 450px) {
+        display: block;
+    }
 }
