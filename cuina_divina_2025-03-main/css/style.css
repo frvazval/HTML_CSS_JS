@@ -71,5 +71,10 @@ header > div:last-child {
 ul.breakpoint {
     display: flex;
     justify-content: space-between;
-    list-style: none;
+    list-style: none;    
+}
+
+nav {
+    padding: 20px;
+    box-shadow: 5px 5px 5px grey;
 }
