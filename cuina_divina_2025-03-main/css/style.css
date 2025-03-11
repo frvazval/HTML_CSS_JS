@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --breakpoint: 1200px;
+    --color-clar: rgb(245, 245, 245);
+    --color-secundari: #a46d3c;
+    --color-secundari50x100: hsla(28, 46%, 44%, 0.50);
+    --font-titols: "Lexend", Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background-color: var(--color-clar);
+}
+
+.breakpoint {
+    max-width: var(--breakpoint);
+    margin: 0 auto;
+}
