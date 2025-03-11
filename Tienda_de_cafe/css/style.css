@@ -180,9 +180,5 @@ section > h2 {
 footer {
     display: flex;
     margin-top: 2rem;
-    height: 200px;
-
-    @media (max-width: 450px) {
-        display: block;
-    }
+    height: 200px;    
 }
