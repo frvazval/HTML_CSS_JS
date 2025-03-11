@@ -29,6 +29,47 @@ body {
     margin: 0 auto;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-secundari);
+}
+
 h1 {
     font-family: var(--font-titols);
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-shadow: 4px 4px 2px rgb(128, 128, 128, 0.50);
+
+    span {
+        font-size: inherit;
+        font-family: inherit;
+        color: var(--color-secundari);
+        font-weight: 400;
+    }
+}
+
+header > div:first-child {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 200px;
+    }
+}
+
+header > div:last-child {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+
+    img {
+        width: 50px;
+    }
+}
+
+ul.breakpoint {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }
