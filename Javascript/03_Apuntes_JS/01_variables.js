@@ -16,3 +16,18 @@ let [txt1, txt2, txt3] = ["a", "b", "c"]
 console.log(txt1, txt2, txt3);
 console.log(typeof txt1);
 
+let saludo = "hola"
+let num4 = 3
+
+console.log(saludo + num4);
+console.log(saludo * num4);
+console.log(eval("4 + 5 / 6")); // Esto NO
+console.log("5" + num4); // Lo concatena y da el valor 53
+console.log("5" - num4); // Lo convierte a numero y lo resta
+
+console.log("1" == 1); // Compara valor
+console.log("1" != 1); // Compara valor
+console.log("1" === 1); // Compara tipo y valor
+console.log("1" !== 1); // Compara tipo y valor
+
+
