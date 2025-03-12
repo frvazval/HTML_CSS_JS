@@ -28,6 +28,25 @@ console.log(curso);
 switch (curso) {
     case "PHP":
         console.log("PHP Te has vuelto loco/a");
+        break
     default:
         console.log("¿Y que estudias?");
+}
+
+const diaSemana = "miercoles"
+
+switch (diaSemana) {
+    case "lunes":
+    case "martes":
+    case "miercoles":
+    case "jueves":
+    case "viernes":
+        console.log("Es dia laborable");
+        break
+    case "sabado":
+    case "domingo":
+        console.log("Es fin de semana");
+        break
+    default:
+        console.log("No sabes los nombres de los días");
 }
