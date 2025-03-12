@@ -26,3 +26,25 @@ console.log(palabra2.length); // 40 caracteres
 
 palabra2 = palabra2.trim() // Le quita los espacios
 console.log(palabra2.length); // 11 caracteres
+
+// replace("caracter/es a cambiar", "lo que pones")
+console.log(palabra.replace("a", "e")); // cambia la primera a por una e
+
+// replaceAll("caracter/es a cambiar", "lo que pones")
+console.log(palabra.replaceAll("a", "e")); // Cambia todas las a por e
+
+let frase = "Como no estudies Javascript te vas a enterar"
+
+// startsWitch(caracter o caracteres de inicio)
+console.log(frase.startsWith("Como")); // true
+console.log(frase.startsWith("como")); // false
+
+// endsWith(caracter o caracteres de inicio)
+console.log(frase.endsWith("ar")); // true
+console.log(frase.endsWith("er")); // false
+
+// slice
+console.log(palabra.slice(1)); // le quita el primer caracter
+console.log(palabra.slice(1, 4)); // muestra desde el 1 hasta el 3
+
+
