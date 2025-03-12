@@ -22,3 +22,12 @@ if (prueba) {
 }
 
 console.log(curso);
+
+// switch
+
+switch (curso) {
+    case "PHP":
+        console.log("PHP Te has vuelto loco/a");
+    default:
+        console.log("¿Y que estudias?");
+}
