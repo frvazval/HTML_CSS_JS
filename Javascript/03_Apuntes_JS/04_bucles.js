@@ -31,3 +31,10 @@ while (control) {
     if (i == 3) control = false
     i++ // es lo mismo que i += 1
 }
+
+// do while, se ejecuta como minimo una vez, evalua la condición al final
+let condicion = "jueves"
+do {
+    console.log("Estaria bien que hoy fuera viernes");
+
+} while (condicion == "miercoles")
