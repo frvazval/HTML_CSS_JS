@@ -30,4 +30,8 @@ console.log("1" != 1); // Compara valor
 console.log("1" === 1); // Compara tipo y valor
 console.log("1" !== 1); // Compara tipo y valor
 
+console.log(1/0); // No da error, da valor infinity
+
+
+
 

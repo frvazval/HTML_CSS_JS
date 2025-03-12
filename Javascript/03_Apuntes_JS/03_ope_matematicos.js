@@ -7,3 +7,5 @@
 // +
 // -
 // *
+
+console.log(3.1 + 4.85); // da el resultado 7.949999999999999, ojo con la precisión
