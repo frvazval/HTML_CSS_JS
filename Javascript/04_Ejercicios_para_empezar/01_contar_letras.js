@@ -12,7 +12,6 @@ let contador = 0
 for (caracter of palabra) {
     caracter = caracter.toLowerCase() // Pasa el caracter a minusculas
     if (caracter == letra) contador++
-
 }
 
 // Generar el mensaje de salida
