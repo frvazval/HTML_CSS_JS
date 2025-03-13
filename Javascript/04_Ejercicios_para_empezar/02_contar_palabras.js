@@ -14,6 +14,6 @@ for (palabra of palabras) {
     }
 }
 
-if (contador == 0) console.log(`La letra ${letra} no aparece en ninguna palabra de la frase`);
-else if (contador == 1) console.log(`La letra ${letra} aparece en 1 palabra de la frase`);
-else console.log(`La letra ${letra} aparece en ${contador} palabras de la frase`);
+if (contador == 0) console.log(`La letra "${letra}" no aparece en ninguna palabra de la frase "${frase}"`);
+else if (contador == 1) console.log(`La letra "${letra}" aparece en 1 palabra de la frase "${frase}"`);
+else console.log(`La letra "${letra}" aparece en ${contador} palabras de la frase "${frase}"`);
