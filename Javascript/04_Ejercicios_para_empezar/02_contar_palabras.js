@@ -9,7 +9,7 @@ let palabras = frase.split(" ")
 
 for (palabra of palabras) { 
     palabra = palabra.toLowerCase() // Pasa la palabra a minusculas   
-    if (palabra.indexOf(letra) != 0) {
+    if (palabra.indexOf(letra) != -1) {
         contador++     
     }
 }
