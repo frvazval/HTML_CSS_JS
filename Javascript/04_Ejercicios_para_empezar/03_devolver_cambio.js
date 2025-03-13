@@ -3,11 +3,17 @@
 // según estas condicion:
 // --- Sera usando la mínima cantidad de billetes y monedas posible
 
-const billetes = [500, 200, 100, 50, 20, 10, 5]
-const monedas = [2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01]
+const moneda = [500, 200, 100, 50, 20, 10, 5, 2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01]
+
 let cambio = 427.28
 
-let entero = parseInt(cambio) // Parte entera
+let cantidadMonedas = {} // 200: cantidad, solo los que tengan alguna cantidad
 
+
+for (tipo of moneda) {
+    
+} 
+
+console.log(cantidadMonedas);
 
 
