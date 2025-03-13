@@ -15,11 +15,20 @@ let cantidadMonedas = {} // 200: cantidad, solo los que tengan alguna cantidad
 
 for (tipo of moneda) {
     if (parseInt(parteEntera / tipo) != 0) {
-        cantidadMonedas[tipo] = parseInt(parteEntera / tipo)
-        mensaje += parseInt(parteEntera / tipo) + " billetes de " + tipo + ", "
-        parteEntera = parteEntera % tipo        
+        if (tipo >= 5) { // Si son billetes
+            cantidadMonedas[tipo] = parseInt(parteEntera / tipo)
+            mensaje += parseInt(parteEntera / tipo) + " billete/s de " + tipo + ", "
+            parteEntera = parteEntera % tipo  
+        } else { // Si son monedas
+            cantidadMonedas[tipo] = parseInt(parteEntera / tipo)
+            mensaje += parseInt(parteEntera / tipo) + " moneda/s de " + tipo + ", "
+            parteEntera = parteEntera % tipo  
+        }     
     } 
 } 
+
+// Le quito el espacio y la coma del final
+
 
 
 console.log(cantidadMonedas);
