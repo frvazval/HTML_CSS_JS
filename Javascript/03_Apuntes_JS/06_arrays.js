@@ -56,4 +56,14 @@ let arrayAlReves = frutas.toReversed() // Este no modifica el original, lo guard
 let extraccion = frutas.slice(1, 3) // Corta del 1 al 3, pero el 3 no esta incluido, no modifica el original
 console.log(extraccion);
 
+// Ordenar el array original
+frutas.sort() // Ordena el array, altera el original
+console.log(frutas);
 
+// Ordenar el array y guardarlo sin alterar el original
+let frutasOrdenadas = frutas.toSorted()
+console.log(frutasOrdenadas);
+
+// Destructuring
+let [fruta1, fruta2, fruta3, fruta4, fruta5] = frutas // Guarda cada elemento en una variable
+console.log(fruta3);
