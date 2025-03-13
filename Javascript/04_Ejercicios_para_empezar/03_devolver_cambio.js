@@ -3,8 +3,12 @@
 // según estas condicion:
 // --- Sera usando la mínima cantidad de billetes y monedas posible
 
-const tipoMoneda = [0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1, 2, 5, 10, 20, 50, 100, 200, 500]
-const cambio = 427.28
+const tipoMoneda = [500, 200, 100, 50, 20, 10, 5, 3, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01]
+let cambio = 427.28
 
+let entero = parseInt(cambio) // Parte entera
 
+for (moneda of tipoMoneda) {
+    
+}
 
