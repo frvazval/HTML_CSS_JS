@@ -8,11 +8,10 @@ let contador = 0
 let palabras = frase.split(" ")
 
 for (palabra of palabras) { 
-    palabra = palabra.toLowerCase() // Pasa el caracter a minusculas   
+    palabra = palabra.toLowerCase() // Pasa la palabra a minusculas   
     if (palabra.indexOf(letra) != 0) {
         contador++     
     }
-
 }
 
 if (contador == 0) console.log(`La letra ${letra} no aparece en ninguna palabra de la frase`);
