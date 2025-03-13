@@ -23,4 +23,3 @@ if (contador == 0) {
 } else {
     console.log(`La letra "${letra}" aparece ${contador} veces en la palabra "${palabra}"`);
 }
-contador
