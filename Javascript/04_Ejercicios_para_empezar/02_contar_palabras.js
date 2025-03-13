@@ -7,9 +7,10 @@ const letra = "l"
 let contador = 0
 let palabras = frase.split(" ")
 
-for (palabra of palabras) {    
+for (palabra of palabras) { 
+    palabra = palabra.toLowerCase() // Pasa el caracter a minusculas   
     if (palabra.indexOf(letra) != 0) {
-        contador++
+        contador++     
     }
 
 }
