@@ -9,7 +9,5 @@ let cambio = 427.28
 
 let entero = parseInt(cambio) // Parte entera
 
-for (moneda of tipoMoneda) {
-    
-}
+
 
