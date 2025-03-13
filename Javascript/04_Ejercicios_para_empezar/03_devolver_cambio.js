@@ -17,9 +17,23 @@ for (tipo of monedas) {
         if (parseInt(parteEntera / tipo) != 0) {
             if (tipo >= 5) { // Si son billetes
                 cantidadMonedas[tipo] = parseInt(parteEntera / tipo)                
-                parteEntera = parteEntera % tipo  
+                 
+                if (parseInt(parteEntera / tipo) > 1) {
+                    mensaje += parseInt(parteEntera / tipo) + " billetes de " + tipo + " €, "
+                } else {
+                    mensaje += parseInt(parteEntera / tipo) + " billete de " + tipo + " €, "
+                }
+
+                parteEntera = parteEntera % tipo
             } else { // Si son monedas
-                cantidadMonedas[tipo] = parseInt(parteEntera / tipo)                
+                cantidadMonedas[tipo] = parseInt(parteEntera / tipo) 
+                
+                if (parseInt(parteEntera / tipo) > 1) {
+                    mensaje += parseInt(parteEntera / tipo) + " monedas de " + tipo + " €, "
+                } else {
+                    mensaje += parseInt(parteEntera / tipo) + " moneda de " + tipo + " €, "
+                }
+
                 parteEntera = parteEntera % tipo  
             }   
         }        
@@ -27,27 +41,20 @@ for (tipo of monedas) {
             for (i = 9; i < monedas.length; i++ ) { // Desde 0.50 hasta 0.01
                 if (parseInt(parteDecimal / (tipo * 100)) != 0) {
                     cantidadMonedas[tipo] = parseInt(parteDecimal / (tipo * 100))
+
+                    if (parseInt(parteDecimal / (tipo * 100)) > 1) {
+                        mensaje += parseInt(parteDecimal / (tipo * 100)) + " monedas de " + tipo + " €, "
+                    } else {
+                        mensaje += parseInt(parteDecimal / (tipo * 100)) + " moneda de " + tipo + " €, "
+                    }
+
                     parteDecimal = parteDecimal %  (tipo * 100)
                 }                
             }
         }
 } 
-// Creo el mensaje a mostrar
-for (elemento in cantidadMonedas) {
-    if (elemento > 2) { // Si es un billete
-        if (cantidadMonedas[elemento] > 1) {
-            mensaje += cantidadMonedas[elemento] + " billetes de " + elemento + " €, "
-        } else {
-            mensaje += cantidadMonedas[elemento] + " billete de " + elemento + " €, "
-        }        
-    } else { // Si es una moneda
-        if (cantidadMonedas[elemento] > 1) {
-            mensaje += cantidadMonedas[elemento] + " monedas de " + elemento + " €, "
-        } else {
-            mensaje += cantidadMonedas[elemento] + " moneda de " + elemento + " €, "
-        }    
-    }
-}
+
+
 
 
 
