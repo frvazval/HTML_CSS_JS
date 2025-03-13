@@ -7,8 +7,8 @@ const letra = "l"
 let contador = 0
 let palabras = frase.split(" ")
 
-for (palabra of palabras) {
-    if (palabras.indexOf(palabra) != 0) {
+for (palabra of palabras) {    
+    if (palabra.indexOf(letra) != 0) {
         contador++
     }
 
