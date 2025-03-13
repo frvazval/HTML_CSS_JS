@@ -10,14 +10,10 @@ let parteEntera = parseInt(cambio)
 let parteDecimal = (cambio * 100) % 100
 let mensaje = ""
 
-let cantidadMonedas = {} // 200: cantidad, solo los que tengan alguna cantidad
-
-
 for (tipo of monedas) {    
         if (parseInt(parteEntera / tipo) != 0) {
             if (tipo >= 5) { // Si son billetes
-                cantidadMonedas[tipo] = parseInt(parteEntera / tipo)                
-                 
+                
                 if (parseInt(parteEntera / tipo) > 1) {
                     mensaje += parseInt(parteEntera / tipo) + " billetes de " + tipo + " €, "
                 } else {
@@ -26,8 +22,7 @@ for (tipo of monedas) {
 
                 parteEntera = parteEntera % tipo
             } else { // Si son monedas
-                cantidadMonedas[tipo] = parseInt(parteEntera / tipo) 
-                
+                                
                 if (parseInt(parteEntera / tipo) > 1) {
                     mensaje += parseInt(parteEntera / tipo) + " monedas de " + tipo + " €, "
                 } else {
@@ -39,8 +34,7 @@ for (tipo of monedas) {
         }        
         if (parteEntera == 0) { // Si ya hay que contar los decimales
             for (i = 9; i < monedas.length; i++ ) { // Desde 0.50 hasta 0.01
-                if (parseInt(parteDecimal / (tipo * 100)) != 0) {
-                    cantidadMonedas[tipo] = parseInt(parteDecimal / (tipo * 100))
+                if (parseInt(parteDecimal / (tipo * 100)) != 0) {                    
 
                     if (parseInt(parteDecimal / (tipo * 100)) > 1) {
                         mensaje += parseInt(parteDecimal / (tipo * 100)) + " monedas de " + tipo + " €, "
@@ -54,10 +48,5 @@ for (tipo of monedas) {
         }
 } 
 
-
-
-
-
-console.log(cantidadMonedas);
 console.log(mensaje);
 
