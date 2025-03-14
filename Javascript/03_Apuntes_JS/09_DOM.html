@@ -26,6 +26,7 @@
         h1.innerHTML = "He cambiado el título <span style='color:red'>principal</span>"
 
         let ponteAzul = true
+        let colorFondo = "normal"
         function cambiarH1() {            
             // if (h1.style.color == "white" && h1.style.backgroundColor == "darkblue") {
             //     h1.style.backgroundColor = "white"
@@ -35,17 +36,54 @@
             //     h1.style.color = "white"
             // }            
 
-            if (ponteAzul) {
-                h1.style.backgroundColor = "darkblue"
+            // if (ponteAzul) {
+            //     h1.style.backgroundColor = "darkblue"
+            //     h1.style.color = "white"
+            //     ponteAzul = false
+            // } else {
+            //     h1.style.backgroundColor = "white"
+            //     h1.style.color = "black"
+            //     ponteAzul = true
+            // }   
+
+            
+            if (colorFondo == "azul") {    
+                h1.style.backgroundColor = "darkblue"            
                 h1.style.color = "white"
-                ponteAzul = false
-            } else {
-                h1.style.backgroundColor = "white"
+                colorFondo = "azul"               
+            } else if (colorFondo == "azul") {  
+                h1.style.backgroundColor = "white"             
                 h1.style.color = "black"
-                ponteAzul = true
-            }
+                colorFondo = "white"                
+            } else if (colorFondo == "white") {
+                h1.style.backgroundColor = "darkred"             
+                h1.style.color = "black"
+                colorFondo = "normal" 
+            }        
+            
         }
         
+
+        // Sistema 2
+        
+        const h2 = document.querySelector('h2')
+        // const h2_bis = document.getElementsByClassName('h2')
+
+        h2.onclick = () => {
+            h2.style.fontFamily = "Arial"
+            h2.style.fontSize = "40px"
+        }
+
+        // Sistema 3
+
+        const h3 = document.querySelector('h3')
+        
+        h3.addEventListener("click", () => {
+            h2.innerText = "He cambiado el h2 desde el h3"
+            h3.style.color = "darkgreen"
+        }) 
+
+
     </script>
 </body>
 </html>
