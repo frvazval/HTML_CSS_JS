@@ -31,5 +31,22 @@ let sumar2 = function(num1,num2) {
     return num1 + num2
 }
 
+// La llamada a la función debe ser posterior a su definición
 console.log(sumar2(3,4));
+
+// ==================================================================================
+// Sistema 3 de declarar funciones, ARROW FUNCTION
+
+let sumar3 = (num1, num2) => {
+    return num1 + num2
+}
+
+console.log(sumar3(3,4));
+
+// ==================================================================================
+// Sistema 4 de declarar funciones, ARROW FUNCTION
+
+let sumar4 = (num1, num2) => num1 + num2
+
+console.log(sumar4(3,4));
 
