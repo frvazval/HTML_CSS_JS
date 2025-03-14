@@ -57,3 +57,10 @@ let cuadrado = num1 => num1 * num1
 
 console.log(cuadrado(3));
 
+// ==================================================================================
+
+const listaFrutas = ["kiwi", "piña", "pera"]
+listaFrutas.forEach((fruta) => {
+    console.log(fruta);
+})
+

@@ -38,3 +38,9 @@ do {
     console.log("Estaria bien que hoy fuera viernes");
 
 } while (condicion == "miercoles")
+
+// ForEach
+const listaFrutas = ["kiwi", "piña", "pera"]
+listaFrutas.forEach((fruta) => {
+    console.log(fruta);
+})
