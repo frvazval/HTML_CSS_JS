@@ -25,14 +25,25 @@
         // h1.textContent = "He cambiado el título principal"
         h1.innerHTML = "He cambiado el título <span style='color:red'>principal</span>"
 
+        let ponteAzul = true
         function cambiarH1() {            
-            if (h1.style.color == "white" && h1.style.backgroundColor == "darkblue") {
-                h1.style.backgroundColor = "white"
-                h1.style.color = "black"
-            } else {
+            // if (h1.style.color == "white" && h1.style.backgroundColor == "darkblue") {
+            //     h1.style.backgroundColor = "white"
+            //     h1.style.color = "black"
+            // } else {
+            //     h1.style.backgroundColor = "darkblue"
+            //     h1.style.color = "white"
+            // }            
+
+            if (ponteAzul) {
                 h1.style.backgroundColor = "darkblue"
                 h1.style.color = "white"
-            }            
+                ponteAzul = false
+            } else {
+                h1.style.backgroundColor = "white"
+                h1.style.color = "black"
+                ponteAzul = true
+            }
         }
         
     </script>
