@@ -21,7 +21,10 @@
 
     <script>
         let h1 = document.querySelector('h1')
-        console.log(h1);
+        console.log(h1.textContent);
+        // h1.textContent = "He cambiado el título <span style='color:red'>principal</span>"
+        h1.innerHTML = "He cambiado el título <span style='color:red'>principal</span>"
+
         
     </script>
 </body>
