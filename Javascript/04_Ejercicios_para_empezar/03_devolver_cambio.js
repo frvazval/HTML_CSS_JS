@@ -49,4 +49,3 @@ for (tipo of monedas) {
 } 
 
 console.log(mensaje);
-
