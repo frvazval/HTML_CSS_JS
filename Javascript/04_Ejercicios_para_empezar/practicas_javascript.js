@@ -10,8 +10,22 @@ let arrayNumeros2 = [4, 2, 7, 1, 6]
 // o cualquier otro array solo con nÃºmeros
 
 // 1) Mostrar por consola la suma de todos los valores
+let resultado = 0
+let total = 0
+for (numero of arrayNumeros1) {
+    resultado += numero
+}
 
+console.log(resultado);
+total = resultado
+resultado = 0
+for (numero of arrayNumeros2) {
+    resultado += numero
+}
 
+console.log(resultado);
+total += resultado
+console.log(total);
 // 2) Mostrar por consola el promedio
 
 
