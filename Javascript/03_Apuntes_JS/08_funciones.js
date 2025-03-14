@@ -50,3 +50,10 @@ let sumar4 = (num1, num2) => num1 + num2
 
 console.log(sumar4(3,4));
 
+// ==================================================================================
+// Sistema 5 de declarar funciones, ARROW FUNCTION
+
+let cuadrado = num1 => num1 * num1
+
+console.log(cuadrado(3));
+
