@@ -6,7 +6,7 @@
     <title>DOM</title>
 </head>
 <body>
-    <h1>Soy el titulo principal</h1>
+    <h1 onclick="cambiarH1()">Soy el titulo principal</h1>
     <h2>Soy el titulo secundario</h2>
     <h3>Soy el H3</h3>
 
@@ -22,9 +22,18 @@
     <script>
         let h1 = document.querySelector('h1')
         console.log(h1.textContent);
-        // h1.textContent = "He cambiado el título <span style='color:red'>principal</span>"
+        // h1.textContent = "He cambiado el título principal"
         h1.innerHTML = "He cambiado el título <span style='color:red'>principal</span>"
 
+        function cambiarH1() {            
+            if (h1.style.color == "white" && h1.style.backgroundColor == "darkblue") {
+                h1.style.backgroundColor = "white"
+                h1.style.color = "black"
+            } else {
+                h1.style.backgroundColor = "darkblue"
+                h1.style.color = "white"
+            }            
+        }
         
     </script>
 </body>
