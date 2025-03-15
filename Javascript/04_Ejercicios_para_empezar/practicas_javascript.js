@@ -110,11 +110,20 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // 5) Programa el código para encontrar el elemento con el texto más largo
 // y guardarlo en la variable varTextoMasLargo
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
-let varTextoMasLargo = ""
+let varTextoMasLargo = arrayNombres2[0]
 let arrayTextosMasLargos = []
 
+for (nombre of arrayNombres2) {
+    if (nombre.length > varTextoMasLargo.length) {
+        varTextoMasLargo = nombre
+        arrayTextosMasLargos.push(varTextoMasLargo)
+    } else {
+        if (nombre.length == varTextoMasLargo)  arrayTextosMasLargos.push(varTextoMasLargo)
+    }
+}
 
-
+console.log(varTextoMasLargo);
+console.log(arrayTextosMasLargos);
 // 6) Lo mismo para el texto más corto.
 
 
