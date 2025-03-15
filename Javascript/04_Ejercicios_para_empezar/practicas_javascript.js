@@ -110,19 +110,15 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // 5) Programa el código para encontrar el elemento con el texto más largo
 // y guardarlo en la variable varTextoMasLargo
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
-let varTextoMasLargo = arrayNombres2[0]
+let varTextoMasLargo = ""
 let arrayTextosMasLargos = []
 
-for (nombre of arrayNombres2) {
-    if (nombre.length >= varTextoMasLargo.length) {
-        varTextoMasLargo = nombre
-        arrayTextosMasLargos.push(nombre)
-    } 
+for (i = 0; i < arrayNombres2.length; i++) {
     
+    if (varTextoMasLargo.length < arrayNombres2[i].length) {
+        varTextoMasLargo = arrayNombres2[i]        
+    }
 }
-
-
-
 
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
@@ -132,8 +128,13 @@ console.log(arrayTextosMasLargos);
 
 // 7) Obtén un array llamado longitudNombres que tenga como elementos las longitudes de los textos
 // incluidos en cualquiera de los arrays anteriores. Por tanto debes mostrar : [ 5, 6, 5, etc.
+let longitudNombres = []
 
+for (nombre of arrayNombres2) {
+    longitudNombres.push(nombre.length)
+}
 
+console.log(longitudNombres);
 // 8) Crea un array llamado arrayNombresConI que incluya solo los nombres que contengan la letra i
 
 // ====================================================================================================
