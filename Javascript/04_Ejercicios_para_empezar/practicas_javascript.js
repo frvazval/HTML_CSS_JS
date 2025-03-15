@@ -135,7 +135,15 @@ for (nombre of arrayNombres2) {
 }
 
 console.log(longitudNombres);
+
 // 8) Crea un array llamado arrayNombresConI que incluya solo los nombres que contengan la letra i
+let arrayNombresConI = []
+
+for (nombre of arrayNombres2) {
+    if (nombre.indexOf('i') != -1) arrayNombresConI.push(nombre)
+}
+
+console.log(arrayNombresConI);
 
 // ====================================================================================================
 
