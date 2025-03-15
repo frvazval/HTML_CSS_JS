@@ -73,7 +73,32 @@ console.log(`El valor minimo es ${valorMinimo}`);
 
 // 4) Sumar los valores con í­ndice par y restar los impares
 let sumaDePares = 0
+let restaDeImpares = arrayNumeros1[0]
 
+for (i = 0; i < arrayNumeros1.length; i++) {
+    if (i % 2 == 0 && i != 0) {
+        sumaDePares += arrayNumeros1[i]        
+    } else {
+        restaDeImpares -= arrayNumeros1[i]
+    }
+}
+
+console.log(`La suma de los números con indice par es ${sumaDePares}`);
+console.log(`La resta de los números con indice impar es ${restaDeImpares}`);
+
+sumaDePares = 0
+restaDeImpares = arrayNumeros2[0]
+
+for (i = 0; i < arrayNumeros2.length; i++) {
+    if (i % 2 == 0 && i != 0) {
+        sumaDePares += arrayNumeros2[i]        
+    } else {
+        restaDeImpares -= arrayNumeros2[i]
+    }
+}
+
+console.log(`La suma de los números con indice par es ${sumaDePares}`);
+console.log(`La resta de los números con indice impar es ${restaDeImpares}`);
 
 // Hay que mostrar por consola cada resultado
 
