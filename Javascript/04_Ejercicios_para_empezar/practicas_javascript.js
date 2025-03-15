@@ -118,7 +118,11 @@ for (nombre of arrayNombres2) {
         varTextoMasLargo = nombre
         arrayTextosMasLargos.push(nombre)
     } 
+    
 }
+
+
+
 
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
