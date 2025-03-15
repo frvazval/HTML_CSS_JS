@@ -14,6 +14,8 @@ let clase = {
     alumnos : [alumno, alumno2]
 }
 
+console.log(alumno);
+
 // Iterar por un objeto
 
 for (claves in alumno) {    
