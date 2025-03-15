@@ -72,6 +72,7 @@ console.log(`El valor maximo es ${valorMaximo}`);
 console.log(`El valor minimo es ${valorMinimo}`);
 
 // 4) Sumar los valores con í­ndice par y restar los impares
+let sumaDePares = 0
 
 
 // Hay que mostrar por consola cada resultado
