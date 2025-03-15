@@ -118,7 +118,7 @@ for (i = 0; i < arrayNombres2.length; i++) {
     if (varTextoMasLargo.length <= arrayNombres2[i].length) {        
         varTextoMasLargo = arrayNombres2[i]
         arrayTextosMasLargos.push(arrayNombres2[i])        
-    }
+    } 
 }
 
 console.log(varTextoMasLargo);
@@ -197,3 +197,5 @@ for (i = 0; i < compra.length; i++) {
 
 mensaje = `Has comprado ${cantidadTotal} articulos y el importe total es de ${precioTotal} euros`
 console.log(mensaje);
+
+
