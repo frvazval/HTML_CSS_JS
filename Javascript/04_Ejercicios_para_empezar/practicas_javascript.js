@@ -48,6 +48,8 @@ promedio = suma / cantidadNumeros
 console.log(promedio);
 
 // 3) Encontrar los valores máximo y mí­nimo
+let valorMaximo
+let valorMinimo
 
 
 // 4) Sumar los valores con í­ndice par y restar los impares
