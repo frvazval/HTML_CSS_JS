@@ -26,6 +26,7 @@ for (numero of arrayNumeros2) {
 console.log(resultado);
 total += resultado
 console.log(total);
+
 // 2) Mostrar por consola el promedio
 let cantidadNumeros = arrayNumeros1.length
 let suma = 0
@@ -48,9 +49,27 @@ promedio = suma / cantidadNumeros
 console.log(promedio);
 
 // 3) Encontrar los valores máximo y mí­nimo
-let valorMaximo
-let valorMinimo
+let valorMaximo = arrayNumeros1[0]
+let valorMinimo = arrayNumeros1[0]
 
+for (numero of arrayNumeros1) {
+    if (valorMaximo < numero) valorMaximo = numero
+    if (valorMinimo > numero) valorMinimo = numero
+}
+
+console.log(`El valor maximo es ${valorMaximo}`);
+console.log(`El valor minimo es ${valorMinimo}`);
+
+valorMaximo = arrayNumeros2[0]
+valorMinimo = arrayNumeros2[0]
+
+for (numero of arrayNumeros2) {
+    if (valorMaximo < numero) valorMaximo = numero
+    if (valorMinimo > numero) valorMinimo = numero
+}
+
+console.log(`El valor maximo es ${valorMaximo}`);
+console.log(`El valor minimo es ${valorMinimo}`);
 
 // 4) Sumar los valores con í­ndice par y restar los impares
 
