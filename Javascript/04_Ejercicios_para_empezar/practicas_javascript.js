@@ -173,3 +173,5 @@ const compra = [
 // Por ejemplo: "Has comprado 4 artí­culos y el importe total es de 12.7 euros"
 
 // Después añade otro articulo al array anterior y muestra de nuevo el mensaje informativo con los nuevos datos.
+let cantidadTotal = 0
+let precioTotal = 0
