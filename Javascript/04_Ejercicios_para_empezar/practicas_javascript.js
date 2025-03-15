@@ -116,7 +116,7 @@ let arrayTextosMasLargos = []
 for (nombre of arrayNombres2) {
     if (nombre.length >= varTextoMasLargo.length) {
         varTextoMasLargo = nombre
-        arrayTextosMasLargos.push(varTextoMasLargo)
+        arrayTextosMasLargos.push(nombre)
     } 
 }
 
