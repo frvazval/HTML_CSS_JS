@@ -114,16 +114,15 @@ let varTextoMasLargo = arrayNombres2[0]
 let arrayTextosMasLargos = []
 
 for (nombre of arrayNombres2) {
-    if (nombre.length > varTextoMasLargo.length) {
+    if (nombre.length >= varTextoMasLargo.length) {
         varTextoMasLargo = nombre
         arrayTextosMasLargos.push(varTextoMasLargo)
-    } else {
-        if (nombre.length == varTextoMasLargo)  arrayTextosMasLargos.push(varTextoMasLargo)
-    }
+    } 
 }
 
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
+
 // 6) Lo mismo para el texto más corto.
 
 
