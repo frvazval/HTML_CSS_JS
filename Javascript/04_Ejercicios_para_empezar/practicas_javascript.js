@@ -152,10 +152,11 @@ let arrayMixto = [ "Marie", 24, "Pol", 18, "Judith", 22, "Eva", 28 ]
 
 // 9) Debes obtener otro array llamado arrayBidimensional que sea así­:
 // [ ["Marie", 24 ], ["Pol", 18], ["Judith", 22 ], [ "Eva", 28] ]
-let arrayBidimensional
+let arrayBidimensional = []
 
-for (i = 0; i < arrayMixto.length; i++) {
+for (i = 0; i < arrayMixto.length; i += 2) {
     console.log(arrayMixto[i]);
+    arrayBidimensional.push([arrayMixto[i], arrayMixto[i + 1]])
 }
     console.log(arrayBidimensional);
 // ====================================================================================================
