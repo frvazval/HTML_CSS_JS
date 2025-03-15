@@ -27,7 +27,25 @@ console.log(resultado);
 total += resultado
 console.log(total);
 // 2) Mostrar por consola el promedio
+let cantidadNumeros = arrayNumeros1.length
+let suma = 0
 
+for (numero of arrayNumeros1) {
+    suma += numero
+}
+
+let promedio = suma / cantidadNumeros
+console.log(promedio);
+
+suma = 0
+cantidadNumeros = arrayNumeros2.length
+
+for (numero of arrayNumeros2) {
+    suma += numero
+}
+
+promedio = suma / cantidadNumeros
+console.log(promedio);
 
 // 3) Encontrar los valores máximo y mí­nimo
 
