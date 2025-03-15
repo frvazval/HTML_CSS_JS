@@ -166,7 +166,7 @@ const compra = [
     ["Leche", 1.2, 2],
     ["Pan", 0.8, 3],
     ["Huevos", 2.5, 1],
-    ["CafÃ©", 5.2, 0.5]
+    ["Café", 5.2, 0.5]
 ]
 // Se muestra el nombre del artí­culo, su precio y la cantidad comprada.
 // Debes obtener la cantidad de artí­culos comprados (no de cada tipo) y el importe total.
@@ -175,3 +175,24 @@ const compra = [
 // Después añade otro articulo al array anterior y muestra de nuevo el mensaje informativo con los nuevos datos.
 let cantidadTotal = 0
 let precioTotal = 0
+
+for (i = 0; i < compra.length; i++) {
+    cantidadTotal += compra[i][2]
+    precioTotal += compra[i][1]
+}
+
+let mensaje = `Has comprado ${cantidadTotal} articulos y el importe total es de ${precioTotal} euros`
+console.log(mensaje);
+
+compra.push(["carne", 5.3, 3.5])
+
+cantidadTotal = 0
+precioTotal = 0
+
+for (i = 0; i < compra.length; i++) {
+    cantidadTotal += compra[i][2]
+    precioTotal += compra[i][1]
+}
+
+mensaje = `Has comprado ${cantidadTotal} articulos y el importe total es de ${precioTotal} euros`
+console.log(mensaje);
