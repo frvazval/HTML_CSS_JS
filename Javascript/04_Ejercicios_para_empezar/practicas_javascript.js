@@ -116,11 +116,11 @@ let arrayTextosMasLargos = []
 for (i = 0; i < arrayNombres2.length; i++) {
     
     if (varTextoMasLargo.length <= arrayNombres2[i].length) {        
-        varTextoMasLargo = arrayNombres2[i]
-        arrayTextosMasLargos.push(arrayNombres2[i])        
+        varTextoMasLargo = arrayNombres2[i]                
     } 
 }
 
+arrayTextosMasLargos.push(varTextoMasLargo)
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
 
