@@ -120,7 +120,9 @@ for (i = 0; i < arrayNombres2.length; i++) {
     } 
 }
 
-arrayTextosMasLargos.push(varTextoMasLargo)
+for (nombre of arrayNombres2) {
+    if (nombre.length == varTextoMasLargo.length) arrayTextosMasLargos.push(nombre)
+}
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
 
