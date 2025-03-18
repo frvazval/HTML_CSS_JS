@@ -4,7 +4,7 @@ const cabriolet = document.getElementById('cabriolet')
 
 const alquiler = document.querySelector('#alquiler')
 const importe = document.querySelector('main section:nth-child(2)')
-var importeTotal = 0
+let importeTotal = 0
 
 cabriolet.addEventListener("click", () => {
     let dias = prompt("¿Días de alquiler?")
