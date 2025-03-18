@@ -14,6 +14,20 @@ main {
     gap: 5%;
 }
 
+main section:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin-bottom: 2rem;
+}
+
+main section:nth-child(2) {
+    background-color: darksalmon;
+    display: none;
+    
+
+}
+
 h2 {
     font-size: 1.25rem;
 }
@@ -27,6 +41,6 @@ div {
         width: 100%;
     }
     li {
-list-style: none;
+        list-style: none;
     }
 }
