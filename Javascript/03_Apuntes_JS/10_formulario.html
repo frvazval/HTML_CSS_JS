@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etiquetas de formulario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            max-width: 80%;
+            margin: 5% auto;
+        }
+
+        div {
+            margin: 2rem 1rem;
+        }
+
+        button, input[type="button"] {
+            padding: 5px 10px;
+        }
+       
+
+    </style>
 </head>
 <body>
     <main>
         <h1>Etiquetas de formulario</h1>
         <form action="#">
             <fieldset>
-
+                <legend>Etiquetas más habituales</legend>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div>
+                    <input type="button" value="Enviar" id="Enviar_1">
+                    <button type="button">Enviar</button>
+                </div>
             </fieldset>
         </form>
     </main>
+    <script>
+        const enviar1 = document.getElementById("Enviar_1")
+    </script>
 </body>
 </html>
