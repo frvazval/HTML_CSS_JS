@@ -4,7 +4,7 @@ const cabriolet = document.getElementById('cabriolet')
 
 const alquiler = document.querySelector('#alquiler')
 const importe = document.querySelector('main section:nth-child(2)')
-
+var importeTotal = 0
 
 cabriolet.addEventListener("click", () => {
     let dias = prompt("¿Días de alquiler?")
@@ -14,8 +14,10 @@ cabriolet.addEventListener("click", () => {
     let alquilerTotal = parseFloat(precio) * parseInt(dias)
     // let mensajeUsuario = `${dias} días de alquiler x ${precio}€/día = ${alquilerTotal.toFixed(2)}€`
     // alquiler.innerHTML = mensajeUsuario
-    let mensajeUsuario = `${dias} días de alquiler x ${precio}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span>`
-    alquiler.innerHTML = mensajeUsuario
+    let mensajeUsuario = `<p>${dias} días de alquiler x ${precio}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span></p>`
+    alquileres.innerHTML += mensajeUsuario
+    importeTotal += alquilerTotal
+    total.innerHTML = `Total: ${importeTotal}`
     
 })
 
@@ -25,6 +27,9 @@ function alquilarVehiculo(precioDia) {
     let alquilerTotal = parseFloat(precioDia) * parseInt(dias)
     // let mensajeUsuario = `${dias} días de alquiler x ${precioDia}€/día = ${alquilerTotal.toFixed(2)}€`
     // alquiler.innerHTML = mensajeUsuario
-    let mensajeUsuario = `${dias} días de alquiler x ${precioDia}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span>`
-    alquiler.innerHTML = mensajeUsuario
+    let mensajeUsuario = `<p>${dias} días de alquiler x ${precioDia}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span></p>`
+    alquileres.innerHTML += mensajeUsuario
+    importeTotal += alquilerTotal
+    total.innerHTML = `Total: ${importeTotal}`
 }
+
