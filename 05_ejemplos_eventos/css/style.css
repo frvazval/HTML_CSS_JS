@@ -44,3 +44,12 @@ div {
         list-style: none;
     }
 }
+
+#alquiler {
+    margin: 1rem 0;
+
+}
+
+.bold {
+    font-weight: 600;
+}
