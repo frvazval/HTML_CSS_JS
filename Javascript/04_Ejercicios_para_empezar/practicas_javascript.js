@@ -123,11 +123,26 @@ for (i = 0; i < arrayNombres2.length; i++) {
 for (nombre of arrayNombres2) {
     if (nombre.length == varTextoMasLargo.length) arrayTextosMasLargos.push(nombre)
 }
+
 console.log(varTextoMasLargo);
 console.log(arrayTextosMasLargos);
 
 // 6) Lo mismo para el texto más corto.
+let varTextoMasCorto = arrayNombres2[0]
+let arrayTextosMasCortos = []
 
+for (i = 0; i < arrayNombres2.length; i++) {
+    if (varTextoMasCorto.length >= arrayNombres2[i].length){
+        varTextoMasCorto = arrayNombres2[i]
+    }
+}
+
+for (nombre of arrayNombres2) {
+    if (nombre.length == varTextoMasCorto.length) arrayTextosMasCortos.push(nombre)
+}
+
+console.log(varTextoMasCorto);
+console.log(arrayTextosMasCortos);
 
 // 7) Obtén un array llamado longitudNombres que tenga como elementos las longitudes de los textos
 // incluidos en cualquiera de los arrays anteriores. Por tanto debes mostrar : [ 5, 6, 5, etc.
