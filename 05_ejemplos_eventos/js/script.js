@@ -13,6 +13,7 @@ cabriolet.addEventListener("click", () => {
     alert(precio)
     importe.style.display = "block"
     let alquilerTotal = parseFloat(precio) * parseInt(dias)
-    let mensajeUsuario = `${dias} días de alquiler x ${precio}€/día = ${alquilerTotal}€`
+    let mensajeUsuario = `${dias} días de alquiler x ${precio}€/día = ${alquilerTotal.toFixed(2)}€`
     alquiler.textContent = mensajeUsuario
+    
 })
