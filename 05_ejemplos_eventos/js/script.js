@@ -17,7 +17,7 @@ cabriolet.addEventListener("click", () => {
     let mensajeUsuario = `<p>${dias} días de alquiler x ${precio}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span></p>`
     alquileres.innerHTML += mensajeUsuario
     importeTotal += alquilerTotal
-    total.innerHTML = `Total: ${importeTotal}`
+    total.innerHTML = `Total: <span class="bold">${importeTotal}€</span>`
     
 })
 
@@ -30,6 +30,6 @@ function alquilarVehiculo(precioDia) {
     let mensajeUsuario = `<p>${dias} días de alquiler x ${precioDia}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span></p>`
     alquileres.innerHTML += mensajeUsuario
     importeTotal += alquilerTotal
-    total.innerHTML = `Total: ${importeTotal}`
+    total.innerHTML = `Total: <span class="bold">${importeTotal}€</span>`
 }
 
