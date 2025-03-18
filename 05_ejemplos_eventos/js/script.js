@@ -27,7 +27,9 @@ function alquilarVehiculo(precioDia) {
     let alquilerTotal = parseFloat(precioDia) * parseInt(dias)
     
     let mensajeUsuario = `<p>${dias} días de alquiler x ${precioDia}€/día = <span class="bold">${alquilerTotal.toFixed(2)}€</span></p>`
+    // Vamos añadiendo los parrafos de cada alquiler
     alquileres.innerHTML += mensajeUsuario
+    // Vamos actualizando el total de todos los alquileres y lo ponemos en el parrafo llamado total
     importeTotal += alquilerTotal
     total.innerHTML = `Total: <span class="bold">${importeTotal}€</span>`
 }
