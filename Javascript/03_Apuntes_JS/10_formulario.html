@@ -34,9 +34,17 @@
 
         }
 
+        input[type="radio"] {
+
+        }
+
         input[type="radio"] + label {
             display: inline;
             margin-left: 3px;
+        }
+
+        textarea {
+            width: 80%;
         }
 
     </style>
@@ -90,10 +98,68 @@
 
             <fieldset>
                 <legend>Radio Buttons</legend>
-                <input type="radio" name="colores" id="rojo" checked><label for="rojo">rojo</label>
-                <input type="radio" name="colores" id="azul"><label for="azul">azul</label>
-                <input type="radio" name="colores" id="verde"><label for="verde">verde</label>
+                <input type="radio" name="colores" id="rojo" checked value="Rojo"><label for="rojo">rojo</label>
+                <input type="radio" name="colores" id="azul" value="Azul"><label for="azul">azul</label>
+                <input type="radio" name="colores" id="verde" value="Verde"><label for="verde">verde</label>
             </fieldset>
+
+            <fieldset>
+                <legend>Checkbox</legend>
+                <div>
+                    <input type="checkbox" name="condiciones" id="condiciones">
+                    <label for="condiciones">Acepto las condiciones</label>
+
+                    <input type="checkbox" name="lectura" id="lectura">
+                    <label for="lectura">He leido las condiciones</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Fechas</legend>
+                <div>
+                    <label for="date">date (año-mes-dia)</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label for="datetime-local">datetime-local (año-mes-dia horas:minutos</label>
+                    <input type="datetime-local" name="datetime-local" id="datetime-local">
+                </div>
+                <div>
+                    <label for="time">time (Horas)</label>
+                    <input type="time" name="time" id="time">
+                </div>
+                <div>
+                    <label for="week">week</label>
+                    <input type="week" name="week" id="week">
+                </div>
+                <div>
+                    <label for="month">month</label>
+                    <input type="month" name="month" id="month">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Varios</legend>
+                <label for="color">color</label>
+                <input type="color" name="color" id="color">
+
+                <label for="file">file</label>
+                <input type="file" name="file" id="file" multiple>
+
+                <label for="search">search</label>
+                <input type="search" name="search" id="search">
+
+                <label for="range">range</label>
+                <input type="range" name="range" id="range" min="1" max="5">
+            </fieldset>
+
+            <fieldset>
+                <legend>Textarea</legend>
+                <label for="textarea">Escribe tu mensaje</label>
+                <textarea name="textarea" id="textarea"></textarea>
+            </fieldset>
+
+            
         </form>
     </main>
         <div id="resultadoFormulario"></div>
@@ -122,7 +188,9 @@
             resultadoFormulario.textContent += miForm['nombre'].value + " "
             resultadoFormulario.textContent += miForm['password'].value + " "
             resultadoFormulario.textContent += miForm['number'].value + " "
+            alert(miForm['colores'].value)
         })
     </script>
+
 </body>
 </html>
