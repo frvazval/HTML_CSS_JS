@@ -10,7 +10,33 @@
     <main>
         <h1>Reserva de habitación en hotel</h1>
         <form action="#" id="formHotel">
-            
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div>
+                    <label for="nombre">* Nombre:</label>
+                    <input
+                     type="text"
+                     name="nombre" 
+                     id="nombre" 
+                     autofocus 
+                     required 
+                     ninlength="5" 
+                     maxlength="10" 
+                     pattern="[A-Za-z]{5,10}" 
+                     title="Escribe tu nombre (5 caracteres mínimo y 10 máximo)">
+
+                     <label for="apellidos">Apellidos</label>
+                     <input
+                     type="text"
+                     name="apellidos" 
+                     id="apellidos"                                       
+                     ninlength="5" 
+                     maxlength="10" 
+                     pattern="[A-Za-z]{5,10}" 
+                     title="Escribe tu nombre (5 caracteres mínimo y 10 máximo)">
+                </div>
+
+            </fieldset>
 
         </form>
     </main>
