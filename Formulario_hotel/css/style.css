@@ -94,3 +94,50 @@ input:focus {
 .reservar:hover, .cancelar:hover {
     cursor: pointer;
 }
+
+dialog {
+    width: 80%;
+    margin: auto;
+    background-color: ivory;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        border-bottom: 2px solid black;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: gray;
+        text-align: left;
+
+    }
+
+    .textoPrincipal {
+        color: black;
+    }
+
+    form {
+        border-top: 2px solid black;
+        margin-top: 3rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 1rem;
+        background-color: sandybrown;
+        border-color: sandybrown;
+
+        &:hover {
+            background-color: #f2c564;
+            border-color: #f2c564;
+            cursor: pointer;
+        }
+    }
+}

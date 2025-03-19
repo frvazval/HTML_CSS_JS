@@ -29,7 +29,12 @@ apellidoForm.addEventListener("change", () => {
 
 
 // Ventana emergente
+const dialog = document.querySelector('#resumen')
+const cierraVentana = document.querySelector('#cierraVentana')
 
+cierraVentana.addEventListener("click", () => {
+    dialog.close()
+})
 
 
 // Obtener los datos del formulario
@@ -39,9 +44,12 @@ formReserva.addEventListener('submit', (e) => {
     console.log(formReserva['nombre'].value);
     console.log(formReserva['apellido'].value);
 
+    let resumenReserva = `<p>Reserva realizada a nombre de <span class="textoPrincipal">${formReserva['nombre'].value} ${formReserva['apellido'].value}</span></p>`
 
-
-
+    const textoResumen = document.querySelector('#textoResumen')
+    textoResumen.innerHTML = resumenReserva
+    dialog.showModal()
+    formReserva.reset()
 
 })
 
