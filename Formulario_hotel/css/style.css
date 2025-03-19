@@ -29,6 +29,7 @@ input {
 }
 
 .personales {
+
     input {
         width: 100%;
     }
@@ -47,4 +48,49 @@ input {
 
 .reserva {
     display: flex;
+    gap: .8rem;
+
+    div {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+input[type="radio"] {
+    accent-color: darkgreen;
+}
+
+input[type="radio"]:checked + label {
+    color: darkgreen;
+}
+
+input:focus {
+    background-color: #f2c564b4;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+}
+
+.reservar {
+    background-color: darkgreen;
+    color: white;
+}
+
+.cancelar {
+    background-color: pink;
+
+}
+
+.reservar:hover, .cancelar:hover {
+    cursor: pointer;
 }
