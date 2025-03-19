@@ -6,3 +6,20 @@
     text-align: center;
 }
 
+main {
+    max-width: 80%;
+    margin: 5% auto;
+}
+
+div {
+    margin: 2rem 1rem;
+}
+
+label {
+    display: block;
+
+}
+
+legend {
+    text-align: left;
+}
