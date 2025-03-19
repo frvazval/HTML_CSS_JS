@@ -12,14 +12,18 @@ main {
 }
 
 div {
+    max-width: 80%;
     margin: 2rem 1rem;
 }
 
 label {
     display: block;
-
 }
 
 legend {
-    text-align: left;
+    text-align: left;    
+}
+
+input[type="text"] {
+    display:flex;
 }
