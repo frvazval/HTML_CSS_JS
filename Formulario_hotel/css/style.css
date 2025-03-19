@@ -28,17 +28,23 @@ input {
     text-align: left;
 }
 
-.personales input {
-    width: 100%;
+.personales {
+    input {
+        width: 100%;
+    }
+
+    div {
+        margin-top: 1rem;
+    
+    }
+
+    p {
+        font-size: .8rem;
+        color: red;
+        height: 1.5rem;
+    }
 }
 
-.personales div {
-    margin-top: 1rem;
-
-}
-
-.personales p {
-    font-size: .8rem;
-    color: red;
-    height: 1.5rem;
+.reserva {
+    display: flex;
 }
