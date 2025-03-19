@@ -25,7 +25,31 @@ apellidoForm.addEventListener("change", () => {
     }
 })
 // Control de la fecha
+let today = new Date()
+let tomorrow = new Date(today)
+tomorrow.setDate(tomorrow.getDate() + 1)
 
+// Nos quedamos con lo que hay antes de la T
+today = today.toISOString().split("T")[0]
+tomorrow = tomorrow.toISOString().split("T")[0]
+
+const entrada = document.querySelector('#entrada')
+entrada.setAttribute("min", today)
+entrada.setAttribute("value", today)
+
+const salida = document.querySelector('#salida')
+salida.setAttribute("min", tomorrow)
+salida.setAttribute("value", tomorrow)
+
+entrada.addEventListener('change', () => {
+    salida =new Date(entrada.value)
+    salida.setDate(salida.getDate() + 1)
+    salida = salida.toISOString().split("T")[0]
+
+    let fechaSalida = document.querySelector('#salida')
+    fechaSalida.setAttribute("min", salida)
+    fechaSalida.setAttribute("value", salida)
+})
 
 
 // Ventana emergente
