@@ -33,10 +33,7 @@
             display: block;
 
         }
-
-        input[type="radio"] {
-
-        }
+       
 
         input[type="radio"] + label {
             display: inline;
@@ -82,6 +79,7 @@
                     <button type="reset">RESET</button>
                 </div>
             </fieldset>
+
 
 
             <fieldset>
@@ -159,7 +157,30 @@
                 <textarea name="textarea" id="textarea"></textarea>
             </fieldset>
 
-            
+            <fieldset>
+                <legend>Listas de elementos</legend>
+                <div>
+                    <label for="modelos">Elige el modelo</label>
+                    <select name="modelos" id="modelos">
+                        <option value="Audi">Audi</option>
+                        <option value="SEAT">SEAT</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Nissan">Nissan</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="usuarios">Busca usuarios</label>
+                    <input type="text" id="buscaUsuarios" list="usuarios">
+                    <datalist id="usuarios">
+                        <option value="Pol"></option>
+                        <option value="Pere"></option>
+                        <option value="Ana"></option>
+                    </datalist>
+
+                </div>
+            </fieldset>
+
         </form>
     </main>
         <div id="resultadoFormulario"></div>
