@@ -48,7 +48,7 @@ Recuerda la importancia comentar con detalle el código.
 
     // creo el codigo del parrafo carrito en HTML y limito los decimales del precio parcial a 2
     let linea = `<p id="carrito">
-                     <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
+                     <img onclick="quitarDelCarrito(${precioParcial}, ${nombreFruta})" id ="papelera" src="img/papelera.svg" alt="papelera">
                      ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
                  </p>`
 
@@ -69,10 +69,13 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(precioParcial) {
+ function quitarDelCarrito(precioParcial, nombreFruta) {
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
+
+    // Elimino la linea de la lista
+    
      
     
     
