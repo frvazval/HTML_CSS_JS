@@ -43,7 +43,6 @@ Recuerda la importancia comentar con detalle el código.
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
-
     let precioParcial = cantidad * precioKilo
 
     // Guardo el detalle de la compra en el objeto detalleCompra
@@ -53,11 +52,8 @@ Recuerda la importancia comentar con detalle el código.
     detalleCompra['precioParcial'] = precioParcial
 
     // Añado el objeto a la lista
-    lineasDetalle.push(detalleCompra)        
-
-    // Actualizo el precio total y lo muestro con 2 decimales
-    precioTotal += precioParcial
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
+    lineasDetalle.push(detalleCompra) 
+        
     
     // LLamo a la función que lo muestra por pantalla
     mostrarLineas()
@@ -83,10 +79,19 @@ Recuerda la importancia comentar con detalle el código.
         mensajeCarrito += `<p id="carrito"><img onclick="quitarDelCarrito(${detalle.precioParcial})"`
         mensajeCarrito += ` id ="papelera" src="img/papelera.svg" alt="papelera">${detalle.nombre} ${detalle.cantidad} Kg`
         mensajeCarrito += ` x ${detalle.precioKilo}€/Kilo = ${detalle.precioParcial.toFixed(2)}</p>`
-    }
 
-    // Muestro los parrafos por pantalla
-    carrito.innerHTML = mensajeCarrito
+        // Actualizo el precio total
+        precioTotal += detalle.precioParcial
+
+        // Muestro los parrafos por pantalla
+        carrito.innerHTML = mensajeCarrito
+    }
+  
+
+    // Actualizo el precio total y lo muestro con 2 decimales    
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€` 
+
+    
  }
 
  
