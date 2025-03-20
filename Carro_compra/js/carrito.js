@@ -26,6 +26,23 @@ Recuerda la importancia comentar con detalle el código.
  Lo importante es el cálculo, no los estilos css
  */
 
+ // Se ira actualizando al añadir o quitar frutas al carrito
+ let precioTotal = 0 
+ let mensajeCarrito = ""
+
+
+ const carrito = document.getElementById('carrito')
+
+ // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
+    let precioParcial = cantidad * precioKilo
+
+    // Actualizo el precio total
+    precioTotal += precioParcial
+
+    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
+    mensajeCarrito += `<p id="carrito">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    carrito.innerHTML = mensajeCarrito
  }
+
