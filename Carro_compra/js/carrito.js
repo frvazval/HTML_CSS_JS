@@ -43,6 +43,7 @@ Recuerda la importancia comentar con detalle el código.
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
+    
     let precioParcial = cantidad * precioKilo
 
     // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
