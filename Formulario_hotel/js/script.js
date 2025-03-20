@@ -33,11 +33,11 @@ tomorrow.setDate(tomorrow.getDate() + 1)
 today = today.toISOString().split("T")[0]
 tomorrow = tomorrow.toISOString().split("T")[0]
 
-const entrada = document.querySelector('#entrada')
+let entrada = document.querySelector('#entrada')
 entrada.setAttribute("min", today)
 entrada.setAttribute("value", today)
 
-const salida = document.querySelector('#salida')
+let salida = document.querySelector('#salida')
 salida.setAttribute("min", tomorrow)
 salida.setAttribute("value", tomorrow)
 
