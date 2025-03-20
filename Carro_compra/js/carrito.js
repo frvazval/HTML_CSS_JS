@@ -27,9 +27,7 @@ Recuerda la importancia comentar con detalle el código.
  */
 
  // Se ira actualizando al añadir o quitar frutas al carrito
- let precioTotal = 0 
- // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
- let mensajeCarrito = ""
+ let precioTotal = 0  
  // Este objeto contendra el nombre de la fruta comprada, la cantidad y el precio
  let detalleCompra = {}
  // Esta lista contendra objetos detalleCompra
@@ -72,6 +70,7 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  function mostrarLineas() {
+   // Mensaje para construir los parrafor que se añadiran a la pagina
     let mensajeCarrito = ""
 
     // Creo un mensaje con todos los parrafos que tienen que aparecer, limito los decimales de precioParcial a 2
