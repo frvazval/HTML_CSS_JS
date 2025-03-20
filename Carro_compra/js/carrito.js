@@ -28,11 +28,12 @@ Recuerda la importancia comentar con detalle el código.
 
  // Se ira actualizando al añadir o quitar frutas al carrito
  let precioTotal = 0 
+ // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let mensajeCarrito = ""
+ // Esta lista contendra todas las lineas que se tienen que mostrar
  let lineasDetalle = []
 
-
-
+ // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
 
