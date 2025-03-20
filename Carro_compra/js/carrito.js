@@ -29,6 +29,8 @@ Recuerda la importancia comentar con detalle el código.
  // Se ira actualizando al añadir o quitar frutas al carrito
  let precioTotal = 0 
  let mensajeCarrito = ""
+ let lineasDetalle = []
+
 
 
  const carrito = document.getElementById('carrito')
@@ -44,8 +46,16 @@ Recuerda la importancia comentar con detalle el código.
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
     // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    mensajeCarrito += `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    mensajeCarrito += linea
     carrito.innerHTML = mensajeCarrito
+
+    // Añado la linea a la lista
+    lineasDetalle.push(linea)
+
+    for (detalle of lineasDetalle) {
+        
+    }
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
