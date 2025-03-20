@@ -53,5 +53,7 @@ Recuerda la importancia comentar con detalle el código.
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
+    // Elimino la linea seleccionada
+    
  }
 
