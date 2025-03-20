@@ -66,11 +66,7 @@ Recuerda la importancia comentar con detalle el código.
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
      
     
-    lineaParrafo.addEventListener("click", () => {
-        lineaParaBorrar = this.outerHTML
-        console.log(lineaParaBorrar);
-        
-    })
+    
 
 
     // LLamo a la función que lo muestra por pantalla
@@ -89,6 +85,7 @@ Recuerda la importancia comentar con detalle el código.
     carrito.innerHTML = mensajeCarrito
  }
 
+ 
 
 
 
