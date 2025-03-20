@@ -25,3 +25,7 @@ Recuerda la importancia comentar con detalle el código.
 
  Lo importante es el cálculo, no los estilos css
  */
+
+ function agregarAlCarrito(precioKilo, nombreFruta) {
+    let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
+ }
