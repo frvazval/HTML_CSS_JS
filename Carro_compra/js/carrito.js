@@ -27,15 +27,18 @@ Recuerda la importancia comentar con detalle el código.
  */
 
  // Se ira actualizando al añadir o quitar frutas al carrito
- let precioTotal = 0  
- // Este objeto contendra el nombre de la fruta comprada, la cantidad y el precio
- let detalleCompra = {}
- // Esta lista contendra objetos detalleCompra
- let lineasDetalle = [] 
+ let precioTotal = 0 
+ // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
+ let mensajeCarrito = ""
+ // Esta lista contendra todas las lineas que se tienen que mostrar
+ let lineasDetalle = []
+ // Linea que hay que boorar de la lista
+ let lineaParaBorrar = ""
 
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
+ const lineaParrafo = document.querySelectorAll('#carrito')
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
@@ -43,15 +46,14 @@ Recuerda la importancia comentar con detalle el código.
 
     let precioParcial = cantidad * precioKilo
 
-    // Guardo el detalle de la compra en el objeto detalleCompra
-    detalleCompra['nombre'] = nombreFruta
-    detalleCompra['cantidad'] = cantidad 
-    detalleCompra['precioKilo'] = precioKilo  
-    detalleCompra['precioParcial'] = precioParcial
+    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
+    let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    // Añado la nueva linea a la lista
+    lineasDetalle.push(linea)
 
-    // Añado el objeto a la lista
-    lineasDetalle.push(detalleCompra) 
-        
+    // Actualizo el precio total y lo muestro con 2 decimales
+    precioTotal += precioParcial
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
     // LLamo a la función que lo muestra por pantalla
     mostrarLineas()
@@ -62,34 +64,26 @@ Recuerda la importancia comentar con detalle el código.
  function quitarDelCarrito(precioParcial) {
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€`  
-       
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
+     
+    console.log(this.value);
+    
+
 
     // LLamo a la función que lo muestra por pantalla
     mostrarLineas()  
  }
 
  function mostrarLineas() {
-   // Mensaje para construir los parrafor que se añadiran a la pagina
     let mensajeCarrito = ""
 
-    // Creo un mensaje con todos los parrafos que tienen que aparecer, limito los decimales de precioParcial a 2
+    // Creo un mensaje con todos los parrafos que tienen que aparecer
     for (detalle of lineasDetalle) {
-        mensajeCarrito += `<p id="carrito"><img onclick="quitarDelCarrito(${detalle.precioParcial})"`
-        mensajeCarrito += ` id ="papelera" src="img/papelera.svg" alt="papelera">${detalle.nombre} ${detalle.cantidad} Kg`
-        mensajeCarrito += ` x ${detalle.precioKilo}€/Kilo = ${detalle.precioParcial.toFixed(2)}</p>`
+        mensajeCarrito += detalle
+    }
 
-        // Actualizo el precio total
-        precioTotal += detalle.precioParcial
-
-        // Muestro los parrafos por pantalla
-        carrito.innerHTML = mensajeCarrito        
-    }  
-
-    // Actualizo el precio total y lo muestro con 2 decimales    
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€` 
-
-    
+    // Muestro los parrafos por pantalla
+    carrito.innerHTML = mensajeCarrito
  }
 
  
