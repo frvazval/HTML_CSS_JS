@@ -52,9 +52,12 @@ Recuerda la importancia comentar con detalle el código.
                      ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
                  </p>`
 
+   // En un objeto guardo el nombre de la fruta y la linea de codigo
+   let lineaDetalle = {'nombreFruta' : nombreFruta, 'lineaHTML' : linea}
 
-    // Añado la nueva linea a la lista
-    lineasDetalle.push(linea)
+
+    // Añado el objeto a la lista
+    lineasDetalle.push(lineaDetalle)
 
     // Actualizo el precio total y lo muestro con 2 decimales
     precioTotal += precioParcial
@@ -84,7 +87,7 @@ Recuerda la importancia comentar con detalle el código.
 
     // Creo un mensaje con todos los parrafos que tienen que aparecer
     for (detalle of lineasDetalle) {
-        mensajeCarrito += detalle
+        mensajeCarrito += detalle.lineaHTML
     }
 
     // Muestro los parrafos por pantalla
