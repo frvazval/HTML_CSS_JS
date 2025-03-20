@@ -32,6 +32,8 @@ Recuerda la importancia comentar con detalle el código.
  let mensajeCarrito = ""
  // Esta lista contendra todas las lineas que se tienen que mostrar
  let lineasDetalle = []
+ // Linea que hay que boorar de la lista
+ let lineaParaBorrar = ""
 
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
@@ -62,7 +64,14 @@ Recuerda la importancia comentar con detalle el código.
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
-       
+     
+    
+    lineaParrafo.addEventListener("click", () => {
+        lineaParaBorrar = this.outerHTML
+        console.log(lineaParaBorrar);
+        
+    })
+
 
     // LLamo a la función que lo muestra por pantalla
     mostrarLineas()  
@@ -79,6 +88,7 @@ Recuerda la importancia comentar con detalle el código.
     // Muestro los parrafos por pantalla
     carrito.innerHTML = mensajeCarrito
  }
+
 
 
 
