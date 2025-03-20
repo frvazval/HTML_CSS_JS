@@ -61,7 +61,7 @@ Recuerda la importancia comentar con detalle el código.
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
-    
+
     // Elimino la linea seleccionada
     
 
@@ -72,7 +72,7 @@ Recuerda la importancia comentar con detalle el código.
  function mostrarLineas() {
     let mensajeCarrito = ""
 
-    // Creo todos los parrafos que tienen que aparecer
+    // Creo un mensaje con todos los parrafos que tienen que aparecer
     for (detalle of lineasDetalle) {
         mensajeCarrito += detalle
     }
