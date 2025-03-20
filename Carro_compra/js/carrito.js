@@ -42,7 +42,7 @@ Recuerda la importancia comentar con detalle el código.
     precioTotal += precioParcial
 
     // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    mensajeCarrito += `<p id="carrito">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    mensajeCarrito += `<p id="carrito"><img id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
     carrito.innerHTML = mensajeCarrito
  }
 
