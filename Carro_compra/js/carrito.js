@@ -33,8 +33,7 @@ Recuerda la importancia comentar con detalle el código.
  // Este objeto contendra el nombre de la fruta comprada, la cantidad y el precio
  let detalleCompra = {}
  // Esta lista contendra objetos detalleCompra
- let lineasDetalle = []
- 
+ let lineasDetalle = [] 
 
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
@@ -44,10 +43,19 @@ Recuerda la importancia comentar con detalle el código.
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
+
     let precioParcial = cantidad * precioKilo
 
-    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    // Guardo el detalle de la compra en el objeto detalleCompra
+    detalleCompra['nombre'] = nombreFruta
+    detalleCompra['cantidad'] = cantidad 
+    detalleCompra['precioKilo'] = precioKilo  
+    detalleCompra['precioParcial'] = precioParcial
+
+    // Añado el objeto a la lista
+    lineasDetalle.push(detalleCompra)
+
+    
     // Añado la nueva linea a la lista
     lineasDetalle.push(linea)
 
@@ -77,9 +85,14 @@ Recuerda la importancia comentar con detalle el código.
  function mostrarLineas() {
     let mensajeCarrito = ""
 
+    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
+   //  let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+
     // Creo un mensaje con todos los parrafos que tienen que aparecer
     for (detalle of lineasDetalle) {
-        mensajeCarrito += detalle
+        mensajeCarrito += `<p id="carrito"><img onclick="quitarDelCarrito(${detalle.precioParcial})"`
+        mensajeCarrito += ` id ="papelera" src="img/papelera.svg" alt="papelera">${detalle.nombre} ${detalle.cantidad} Kg`
+        mensajeCarrito += ` x ${detalle.precioKilo}€/Kilo = ${detalle.precioParcial.toFixed(2)}</p>`
     }
 
     // Muestro los parrafos por pantalla
