@@ -39,11 +39,19 @@ Recuerda la importancia comentar con detalle el código.
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
     let precioParcial = cantidad * precioKilo
 
-    // Actualizo el precio total
+    // Actualizo el precio total y lo muestro con 2 decimales
     precioTotal += precioParcial
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
     // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    mensajeCarrito += `<p id="carrito"><img id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    mensajeCarrito += `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
     carrito.innerHTML = mensajeCarrito
+ }
+
+ // Función a la que llamara el evento click de la papelera de cada linea
+ function quitarDelCarrito(precioParcial) {
+    // Actualizo el precio total y lo muestro en pantalla
+    precioTotal -= precioParcial
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
  }
 
