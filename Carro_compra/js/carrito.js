@@ -84,9 +84,8 @@ Recuerda la importancia comentar con detalle el código.
         precioTotal += detalle.precioParcial
 
         // Muestro los parrafos por pantalla
-        carrito.innerHTML = mensajeCarrito
-    }
-  
+        carrito.innerHTML = mensajeCarrito        
+    }  
 
     // Actualizo el precio total y lo muestro con 2 decimales    
     precioFinal.textContent = `${precioTotal.toFixed(2)}€` 
