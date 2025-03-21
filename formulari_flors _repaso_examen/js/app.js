@@ -114,37 +114,29 @@ function mostrarFlores() {
 // Hacer un formulario para obtener una flor del array por su nombre.
 // Se mostrará el resultado en #ejercicio4
 
-const ejercicio4 = document.getElementById("ejercicio4")
-const formEj4 = document.forms['formEj4']
+const formEj4 = document.forms["formEj4"];
+const ejercicio4 = document.getElementById("ejercicio4");
 
 formEj4.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
+  const nombre = formEj4["nombre"].value.trim().toLocaleLowerCase();
 
-  const nombre = formEj4['nombreFlor'].value.trim().toLocaleLowerCase();
-  let existe = false
-  let lista4 = "<ul>"
-
+  let html = "<ul>";
   flores.forEach((flor) => {
+    console.log(flor.nombre == nombre);
     if (flor.nombre == nombre) {
-      lista4 += `<li>Flor: ${flor.nombre}, de color ${flor.color}, florece en ${flor.floracion} y `
-      if (flor.stock == true) lista4 += "tenemos stock"
-      else lista4 += "no tenemos stock"
-      lista4 += "</li>"
+      let textoStock = "";
+      if (!flor.stock) {
+        textoStock = "no";
+      }
 
-      existe = true
-    } 
-  })
+      html += `<li>Flor : ${flor.nombre}, de color ${flor.color}, florece en ${flor.floracion} y ${textoStock} tenemos stock.`;
+    }
+  });
+  html += "</ul>";
 
-  
-})
-
-lista4 += "</ul>"
-
-if (existe) {
-  ejercicio3.innerHTML = lista4
-} else {
-  ejercicio3.innerHTML = "<p>No hay ninguna flor con ese nombre</p>"
-}
+  ejercicio4.innerHTML= html
+});
 
 
 
