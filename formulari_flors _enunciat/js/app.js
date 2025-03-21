@@ -9,6 +9,7 @@ const flores = [
   { nombre: "clavel", color: "rojo", floracion: "verano", stock: true },
 ];
 
+// Ordenar array por nombres
 flores.sort((a, b) => {
   return a.nombre.localeCompare(b.nombre, "es-ES", { numeric: true });
 });
