@@ -28,6 +28,19 @@ flores.sort((a, b) => {
 //     console.log(flores[i]);
 // }
 
+const ejercicio1 = document.getElementById("ejercicio1")
+let lista = "<ul>"
+
+for (let i; i < flores.length; i++) {
+  lista += `<li>Flor: ${flores.nombre}, de color ${flores.color}, florece en ${flores.floracion} y `
+  if (flores.stock == true) lista += "tenemos stock"
+  else lista += "no tenemos stock"
+  lista += "</li>"  
+}
+lista += "</ul>"
+
+ejercicio1.innerHTML = lista
+
 
 
 
