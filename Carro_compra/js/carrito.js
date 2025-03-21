@@ -47,7 +47,10 @@ Recuerda la importancia comentar con detalle el código.
     let precioParcial = cantidad * precioKilo
 
     // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    let linea = `<p id="carrito">
+                     <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
+                     ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
+                  </p>`
     // Añado la nueva linea a la lista
     lineasDetalle.push(linea)
 
