@@ -38,7 +38,7 @@ Recuerda la importancia comentar con detalle el código.
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
- const lineaParrafo = document.querySelectorAll('#carrito')
+ const Parrafo = document.querySelectorAll('#carrito')
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
