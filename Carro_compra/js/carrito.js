@@ -30,11 +30,11 @@ Recuerda la importancia comentar con detalle el código.
  let precioTotal = 0 
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let mensajeCarrito = ""
+
+
  // Esta lista contendra todas las lineas que se tienen que mostrar
  let lineasDetalle = []
- // Linea que hay que boorar de la lista
- let lineaParaBorrar = ""
-
+  
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
