@@ -48,6 +48,21 @@ ejercicio1.innerHTML = lista
 // Flor: rosa, de color blanco, florece en verano y tenemos stock
 // Se mostrará el resultado en #ejercicio2
 
+const ejercicio2 = document.getElementById("ejercicio2")
+let lista2 = "<ul>"
+
+flores.forEach((flor) => {
+  if (flor.color == "blanco" && flor.floracion == "verano") {
+    lista2 += `<li>Flor: ${flor.nombre}, de color ${flor.color}, florece en ${flor.floracion} y `
+    if (flor.stock == true) lista2 += "tenemos stock"
+    else lista2 += "no tenemos stock"
+    lista2 += "</li>"
+  }
+})
+
+lista2 += "</ul>"
+ejercicio2.innerHTML = lista2
+
 
 
 // ==============================================================================
