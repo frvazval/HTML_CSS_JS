@@ -43,26 +43,28 @@ Recuerda la importancia comentar con detalle el código.
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
-    if (cantidad == 0 || cantidad == NaN) {
-      alert("Has de introducir un número mayor de 0")
-    }
+    if (cantidad <= 0) {
+      alert("Hay que introducir un número mayor de 0")
+    } else {
+      let precioParcial = cantidad * precioKilo
 
-    let precioParcial = cantidad * precioKilo
-
-    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-    let linea = `<p id="carrito">
+      // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
+      let linea = `<p id="carrito">
                      <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
                      ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
                   </p>`
-    // Añado la nueva linea a la lista
-    lineasDetalle.push(linea)
+      // Añado la nueva linea a la lista
+      lineasDetalle.push(linea)
 
-    // Actualizo el precio total y lo muestro con 2 decimales
-    precioTotal += precioParcial
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
+      // Actualizo el precio total y lo muestro con 2 decimales
+      precioTotal += precioParcial
+      precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
-    // LLamo a la función que lo muestra por pantalla
-    mostrarLineas()
+      // LLamo a la función que lo muestra por pantalla
+      mostrarLineas()
+    }
+
+    
     
  }
 
