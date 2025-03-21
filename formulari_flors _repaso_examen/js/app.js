@@ -81,9 +81,9 @@ function mostrarFlores() {
   let floracion = formulario["floracion"].value
   let stock = formulario["stock"].value
 
-  console.log(color);
-  console.log(floracion);
-  console.log(typeof stock);
+  // console.log(color);
+  // console.log(floracion);
+  // console.log(typeof stock);
 
   let existen = false 
   let lista3 = "<ul>"
