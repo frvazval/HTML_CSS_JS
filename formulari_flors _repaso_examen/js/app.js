@@ -74,6 +74,7 @@ ejercicio2.innerHTML = lista2
 // Se mostrará el resultado en #ejercicio3
 
 
+
 // ==============================================================================
 // EJERCICIO 4
 
