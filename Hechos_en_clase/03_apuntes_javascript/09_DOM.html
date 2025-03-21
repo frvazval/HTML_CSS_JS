@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 onclick="cambiarH1()">Soy el título principal</h1>
+    <h2>Soy el título secundario</h2>
+    <h3>Soy un h3</h3>
+    <p>1</p>
+    <p>2</p>
+    <p id="parrafo_3">3</p>
+    <p class="newBackground">4</p>
+    <p class="newBackground">5</p>
+    <div>
+        <h2>Estoy dentro del div</h2>
+        <p>Soy un párrafo dentro del div</p>
+    </div>
+
+    <script>
+
+        // Sistema 1
+        let h1 = document.querySelector('h1')
+        console.log(h1.textContent);
+        // h1.textContent = "He cambiado el título <span style='color:red'>principal</span>"
+        h1.innerHTML = "He cambiado el título <span style='color:red'>principal</span>"
+
+        // let ponteAzul = true
+        let color = "azul"
+        function cambiarH1() {
+            alert('ok')
+            if (color == "azul") {
+                h1.style.backgroundColor = "darkblue"
+                h1.style.color = "white"
+                color = "rojo"
+            } else if (color == "rojo") {
+                h1.style.backgroundColor = "darkred"
+                h1.style.color = "white"
+                color = "normal"
+            } else {
+                h1.style.backgroundColor = "white"
+                h1.style.color = "black"
+                color = "azul"
+            }
+        }
+
+        // Sistema 2
+        // const h2_bis = document.getElementsByTagName('h2')
+        const h2 = document.querySelector('h2')
+        h2.onclick = () => {
+            h2.style.fontFamily = "Arial"
+            h2.style.fontSize = "48px"
+        }
+
+        // Sistema 3
+        const h3 = document.querySelector('h3')
+        h3.addEventListener("click", () => {
+            h2.innerText = "He cambiado el h2 desde el h3"
+            h3.style.color = "darkgreen"
+        })
+
+        // Selección múltiple
+        const parrafos = document.querySelectorAll('p')
+        console.log(parrafos);
+        for (let i = 0; i < parrafos.length; i++ ) {
+            parrafos[i].addEventListener("click", () => {
+                parrafos[i].style.display = "inline"
+                parrafos[i].style.border = "2px solid orange"
+            })
+        }
+
+        const nb = document.querySelectorAll(".newBackground")
+        for  (let i = 0; i < nb.length; i++ ) {
+            nb[i].addEventListener("mouseover", () => {
+                nb[i].style.display = "hidden"
+                nb[i].style.color = "transparent"
+            })
+        }
+
+        const div = document.querySelector('div')
+        div.addEventListener("mouseover", () => {
+            let codigo = "<p onclick='cambiarDiv()'>Hemos machacado el div</p>"
+            codigo += "<p>Hasta pronto</p>"
+            div.innerHTML = codigo
+        })
+
+        function canviarDiv () {
+            div.style.backgroundColor = "gray"
+        }
+ 
+    </script>
+</body>
+
+</html>
