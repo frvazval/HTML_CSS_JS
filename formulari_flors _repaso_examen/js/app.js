@@ -73,6 +73,8 @@ ejercicio2.innerHTML = lista2
 // "No hay flor que cumpla las condiciones"
 // Se mostrará el resultado en #ejercicio3
 
+const ejercicio3 = document.getElementById("ejercicio3")
+
 
 
 // ==============================================================================
@@ -81,6 +83,7 @@ ejercicio2.innerHTML = lista2
 // Hacer un formulario para obtener una flor por su nombre.
 // Se mostrará el resultado en #ejercicio4
 
+const ejercicio4 = document.getElementById("ejercicio4")
 
 // ==============================================================================
 // EJERCICIO 5
@@ -90,6 +93,7 @@ ejercicio2.innerHTML = lista2
 // flor: cyclamen, color:rosa, floracion: invierno, stock:true
 // Tiene que actualizarse automáticamente la lista del ejercicio 1
 
+const ejercicio5 = document.getElementById("ejercicio5")
 
 // ============================================================================== 
 /* E X T R A S */
