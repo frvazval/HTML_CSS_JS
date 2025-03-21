@@ -148,7 +148,25 @@ formEj4.addEventListener("submit", (e) => {
 // flor: cyclamen, color:rosa, floracion: invierno, stock:true
 // Tiene que actualizarse automáticamente la lista del ejercicio 1
 
-const ejercicio5 = document.getElementById("ejercicio5")
+const formEj5 = document.forms["formEj5"];
+
+formEj5.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const nombre = formEj5['nombre'].value
+  const color = formEj5['color'].value
+  const floracion = formEj5['floracion'].value
+  const stock = formEj5['stock'].value
+
+  // nombre: nombre
+  flores.push({nombre, color, floracion, stock})
+
+
+  mostrarFlores(ejercicio1);
+
+  localStorage.setItem("flores", JSON.stringify(flores))
+
+})
 
 // ============================================================================== 
 /* E X T R A S */
