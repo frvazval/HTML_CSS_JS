@@ -107,6 +107,7 @@ function mostrarFlores() {
     ejercicio3.innerHTML = "<p>No hay flor que cumpla las condiciones</p>"
   }
 }
+
 // ==============================================================================
 // EJERCICIO 4
 
