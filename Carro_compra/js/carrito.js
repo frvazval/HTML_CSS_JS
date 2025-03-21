@@ -31,7 +31,6 @@ Recuerda la importancia comentar con detalle el código.
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let mensajeCarrito = ""
 
-
  // Esta lista contendra todas las lineas que se tienen que mostrar
  let lineasDetalle = []
   
@@ -43,6 +42,10 @@ Recuerda la importancia comentar con detalle el código.
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
+
+    if (cantidad == 0 || cantidad == NaN) {
+      alert("Has de introducir un número mayor de 0")
+    }
 
     let precioParcial = cantidad * precioKilo
 
@@ -67,12 +70,9 @@ Recuerda la importancia comentar con detalle el código.
  function quitarDelCarrito(precioParcial) {
     // Actualizo el precio total y lo muestro en pantalla
     precioTotal -= precioParcial
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
-     
-    console.log(this.value);
+    precioFinal.textContent = `${precioTotal.toFixed(2)}€`  
+   
     
-
-
     // LLamo a la función que lo muestra por pantalla
     mostrarLineas()  
  }
