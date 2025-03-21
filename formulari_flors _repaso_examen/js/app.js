@@ -74,9 +74,39 @@ ejercicio2.innerHTML = lista2
 // Se mostrará el resultado en #ejercicio3
 
 const ejercicio3 = document.getElementById("ejercicio3")
+const formulario = document.querySelector('#form-seleccion')
 
+function mostrarFlores() {
+  let color = formulario["color"].value
+  let floracion = formulario["floracion"].value
+  let stock = formulario["stock"].value
 
+  console.log(color);
+  console.log(floracion);
+  console.log(typeof stock);
 
+  let existen = false 
+  let lista3 = "<ul>"
+
+  flores.forEach((flor) => {
+    if (flor.color == color && flor.floracion == floracion && String(flor.stock) == stock) {
+      lista3 += `<li>Flor: ${flor.nombre}, de color ${flor.color}, florece en ${flor.floracion} y `
+      if (flor.stock == true) lista3 += "tenemos stock"
+      else lista3 += "no tenemos stock"
+      lista3 += "</li>"
+
+      existen = true
+    } 
+  })
+
+  lista3 += "</ul>"
+
+  if (existen) {
+    ejercicio3.innerHTML = lista3
+  } else {
+    ejercicio3.innerHTML = "<p>No hay flor que cumpla las condiciones</p>"
+  }
+}
 // ==============================================================================
 // EJERCICIO 4
 
