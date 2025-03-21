@@ -67,13 +67,13 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(precioParcial) {
+ function quitarDelCarrito(precio) {
     // Actualizo el precio total y lo muestro en pantalla
-    precioTotal -= precioParcial
+    precioTotal -= precio
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
     // Elimino la linea de la lista
-
+   
      
     
     
