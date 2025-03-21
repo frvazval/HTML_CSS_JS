@@ -53,13 +53,44 @@
 <section>
     <h2>Ejercicio 4</h2>
     <p>Seleccionar flor por nombre</p>
-    
+    <form id="formEj4" name="formEj4">
+        <div>
+            <label for="nombreFlor">Nombre de la flor a buscar</label>
+            <input type="text"
+                name="nombreFlor"
+                id="nombreFlor">
+        </div> 
+        <input type="submit" value="buscar">          
+        
+    </form>
     <div id="ejercicio4"></div>
 </section>
 
 <section>
     <h2>Ejercicio 5</h2>
     <p>Añadir flor a la lista</p>
+
+    <form name="formEj5">
+        <div>
+            <label> Nombre: <input type="text" name="nombre"></label>            
+        </div>
+        <div>
+            <label> Color: <input type="text" name="color"></label>            
+        </div>
+        <div>
+            <label> Floración:</label>
+            <select name="floracion">
+                <option value="primavera">Primavera</option>
+                <option value="verano">Verano</option>
+                <option value="otoño">Otoño</option>
+                <option value="invierno">Invierno</option>
+            </select>            
+        </div>
+        <div>
+            <label><input type="radio" name="stock" value="true" checked>Con stock</label>
+            <label><input type="radio" name="stock" value="false">Sin stock</label>
+        </div>
+    </form>
    
     <div id="ejercicio5"></div>
 </section>
