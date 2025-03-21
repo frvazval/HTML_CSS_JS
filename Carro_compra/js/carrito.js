@@ -31,7 +31,9 @@ Recuerda la importancia comentar con detalle el código.
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let mensajeCarrito = ""
  // Esta lista contendra todas las lineas que se tienen que mostrar
- let lineasDetalle = [] 
+ let lineasDetalle = []
+ // Linea que hay que boorar de la lista
+ let lineaParaBorrar = ""
 
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
@@ -44,18 +46,10 @@ Recuerda la importancia comentar con detalle el código.
 
     let precioParcial = cantidad * precioKilo
 
-    // creo el codigo del parrafo carrito en HTML y limito los decimales del precio parcial a 2
-    let linea = `<p id="carrito">
-                     <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
-                     ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
-                 </p>`
-
-   // En un objeto guardo el nombre de la fruta y la linea de codigo
-   let lineaDetalle = {'nombreFruta' : nombreFruta, 'lineaHTML' : linea}
-
-
-    // Añado el objeto a la lista
-    lineasDetalle.push(lineaDetalle)
+    // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
+    let linea = `<p id="carrito"><img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}</p>`
+    // Añado la nueva linea a la lista
+    lineasDetalle.push(linea)
 
     // Actualizo el precio total y lo muestro con 2 decimales
     precioTotal += precioParcial
@@ -67,15 +61,12 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(precio) {
+ function quitarDelCarrito(precioParcial) {
     // Actualizo el precio total y lo muestro en pantalla
-    precioTotal -= precio
+    precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
-
-    // Elimino la linea de la lista
-   
      
-    
+    console.log(this.value);
     
 
 
@@ -88,7 +79,7 @@ Recuerda la importancia comentar con detalle el código.
 
     // Creo un mensaje con todos los parrafos que tienen que aparecer
     for (detalle of lineasDetalle) {
-        mensajeCarrito += detalle.lineaHTML
+        mensajeCarrito += detalle
     }
 
     // Muestro los parrafos por pantalla
