@@ -63,8 +63,6 @@ flores.forEach((flor) => {
 lista2 += "</ul>"
 ejercicio2.innerHTML = lista2
 
-
-
 // ==============================================================================
 // EJERCICIO 3
 
