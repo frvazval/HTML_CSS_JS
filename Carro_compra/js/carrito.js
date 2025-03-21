@@ -66,7 +66,7 @@ Recuerda la importancia comentar con detalle el código.
     precioTotal -= precioParcial
     precioFinal.textContent = `${precioTotal.toFixed(2)}€`
      
-    this.remove()
+    console.log(this.value);
     
 
 
