@@ -77,9 +77,9 @@ const ejercicio3 = document.getElementById("ejercicio3")
 const formulario = document.querySelector('#form-seleccion')
 
 function mostrarFlores() {
-  let color = formulario["color"].value
-  let floracion = formulario["floracion"].value
-  let stock = formulario["stock"].value
+  const color = formulario["color"].value
+  const floracion = formulario["floracion"].value
+  const stock = formulario["stock"].value
 
   // console.log(color);
   // console.log(floracion);
