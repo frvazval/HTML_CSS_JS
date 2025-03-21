@@ -1,6 +1,17 @@
 // Datos de trabajo
 
-const flores = [
+// const flores = [
+//   { nombre: "rosa", color: "rojo", floracion: "primavera", stock: true },
+//   { nombre: "rosa", color: "blanco", floracion: "verano", stock: true },
+//   { nombre: "jazmín", color: "blanco", floracion: "verano", stock: false },
+//   { nombre: "crisantemo", color: "blanco", floracion: "otoño", stock: false },
+//   { nombre: "cerezo", color: "blanco", floracion: "primavera", stock: false },
+//   { nombre: "clavel", color: "rojo", floracion: "verano", stock: true },
+// ];
+
+// Lo mismo que el anterior pero utilizando JSON, si no existe el fichero JSON carga el array, pero en el caso de que exista
+// el fichero en el almacenamiento del navegador, cargara dicho fichero y mantendra los cambios realizados en el array
+const flores = JSON.parse(localStorage.getItem("flores")) || [
   { nombre: "rosa", color: "rojo", floracion: "primavera", stock: true },
   { nombre: "rosa", color: "blanco", floracion: "verano", stock: true },
   { nombre: "jazmín", color: "blanco", floracion: "verano", stock: false },
