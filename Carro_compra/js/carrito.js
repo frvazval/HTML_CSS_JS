@@ -43,10 +43,7 @@ Recuerda la importancia comentar con detalle el código.
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
-    if (cantidad <= 0) {
-      alert("Hay que introducir un número mayor de 0")
-    } else {
-      let precioParcial = cantidad * precioKilo
+    let precioParcial = cantidad * precioKilo
 
       // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
       let linea = `<p id="carrito">
@@ -61,11 +58,9 @@ Recuerda la importancia comentar con detalle el código.
       precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
       // LLamo a la función que lo muestra por pantalla
-      mostrarLineas()
-    }
+      mostrarLineas()  
 
-    
-    
+        
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
