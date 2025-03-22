@@ -26,8 +26,8 @@ Recuerda la importancia comentar con detalle el código.
  Lo importante es el cálculo, no los estilos css
  */
 
- // Se ira actualizando al añadir o quitar frutas al carrito
- let precioTotal = 0 
+//  // Se ira actualizando al añadir o quitar frutas al carrito
+//  let precioTotal = 0 
 
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let lineaCarrito = ""
@@ -89,24 +89,32 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  function mostrarLineas() {
-   //  let mensajeCarrito = ""
+
+   let parrafoHTML = ""
+   let precioTotal = 0
 
    // Recorro la lista y creo el codigo HTML para mostrar por pantalla, tambien calculo el precio total
    lineasDetalle.forEach((linea) => {
-      // Actualizo el precio total
+
+      // Actualizo el precio total       
       precioTotal += linea.precioParcial
+
+      // Creo el codigo HTML de los parrafos con el detalle de la compra
+      parrafoHTML += `<p id="carrito">
+         <img id ="papelera" src="img/papelera.svg" alt="papelera">
+         ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
+         </p>`
+
    })
 
    // Muestro el precio total por pantalla, con 2 decimales
    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
-    // Creo un mensaje con todos los parrafos que tienen que aparecer
-   //  for (detalle of lineasDetalle) {
-   //      mensajeCarrito += detalle
-   //  }
-
-    // Muestro los parrafos por pantalla
-//     carrito.innerHTML = mensajeCarrito
+   // Muestro los parrafos por pantalla
+   carrito.innerHTML = parrafoHTML
+    
+    
+   
  }
 
  
