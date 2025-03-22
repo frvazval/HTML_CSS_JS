@@ -44,7 +44,7 @@ Recuerda la importancia comentar con detalle el código.
       let precioParcial = cantidad * precioKilo // Calculo el precio parcial
 
       // Guardo los valores en un objeto
-      let lineaDetalle = {'nombreFruta' : nombreFruta, 'precioKilo' : precioKilo, 'precioParcial' : precioParcial}
+      let lineaDetalle = {'nombreFruta' : nombreFruta, 'cantidad' : cantidad, 'precioKilo' : precioKilo, 'precioParcial' : precioParcial}
 
       // Guardo el objeto en la lista lineasDetalle[]
       lineasDetalle.push(lineaDetalle)
