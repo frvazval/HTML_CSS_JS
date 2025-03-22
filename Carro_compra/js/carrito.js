@@ -30,7 +30,7 @@ Recuerda la importancia comentar con detalle el código.
  let precioTotal = 0 
 
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
- let mensajeCarrito = ""
+ let lineaCarrito = ""
 
  // Esta lista contendra todas las lineas que se tienen que mostrar
  let lineasDetalle = []
@@ -38,16 +38,22 @@ Recuerda la importancia comentar con detalle el código.
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
- const Parrafo = document.querySelectorAll('#carrito')
+ 
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
-    if (isNaN(cantidad) || cantidad === "" || cantidad <= 0) {
+    if (isNaN(cantidad) || cantidad === "" || cantidad <= 0) { // Si se pone 0, vacio o una letra
       alert("Por favor ingrese un número válido mayor a 0.");
-    } else {
-      let precioParcial = cantidad * precioKilo
+    } else { // Si se pone un valor valido      
+      let precioParcial = cantidad * precioKilo // Calculo el precio parcial
+
+      // Guardo los valores en un objeto
+      let lineaDetalle = {'nombreFruta' : nombreFruta, 'precioKilo' : precioKilo, 'precioParcial' : precioParcial}
+
+      // Guardo el objeto en la lista lineasDetalle[]
+      lineasDetalle.push(lineaDetalle)
     }
 
     
