@@ -28,6 +28,7 @@ Recuerda la importancia comentar con detalle el código.
 
  // Se ira actualizando al añadir o quitar frutas al carrito
  let precioTotal = 0 
+
  // Contendra todos los parrafos que se mostraran en pantalla con los detalles de la compra
  let mensajeCarrito = ""
 
@@ -46,16 +47,16 @@ Recuerda la importancia comentar con detalle el código.
     let precioParcial = cantidad * precioKilo
 
       // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-      let linea = `<p id="carrito">
-                     <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
-                     ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
-                  </p>`
+      // let linea = `<p id="carrito">
+      //                <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
+      //                ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
+      //             </p>`
       // Añado la nueva linea a la lista
-      lineasDetalle.push(linea)
+      // lineasDetalle.push(linea)
 
       // Actualizo el precio total y lo muestro con 2 decimales
-      precioTotal += precioParcial
-      precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
+      // precioTotal += precioParcial
+      // precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
       // LLamo a la función que lo muestra por pantalla
       mostrarLineas()  
@@ -66,24 +67,24 @@ Recuerda la importancia comentar con detalle el código.
  // Función a la que llamara el evento click de la papelera de cada linea
  function quitarDelCarrito(precioParcial) {
     // Actualizo el precio total y lo muestro en pantalla
-    precioTotal -= precioParcial
-    precioFinal.textContent = `${precioTotal.toFixed(2)}€`  
+   //  precioTotal -= precioParcial
+   //  precioFinal.textContent = `${precioTotal.toFixed(2)}€`  
    
     
     // LLamo a la función que lo muestra por pantalla
-    mostrarLineas()  
+   //  mostrarLineas()  
  }
 
  function mostrarLineas() {
-    let mensajeCarrito = ""
+   //  let mensajeCarrito = ""
 
     // Creo un mensaje con todos los parrafos que tienen que aparecer
-    for (detalle of lineasDetalle) {
-        mensajeCarrito += detalle
-    }
+   //  for (detalle of lineasDetalle) {
+   //      mensajeCarrito += detalle
+   //  }
 
     // Muestro los parrafos por pantalla
-    carrito.innerHTML = mensajeCarrito
+//     carrito.innerHTML = mensajeCarrito
  }
 
  
