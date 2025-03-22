@@ -62,18 +62,11 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(valor) {
-   console.log(valor);
-   // Elimino el objeto lineaDetalle de la lista lineasDetalle[]
-  //  let arrayAuxiliar = []
+ function quitarDelCarrito(indice) {
+   console.log(indice);
 
-  //  lineasDetalle.forEach((linea) => {
-  //     if (linea != lineaABorrar) {
-  //        arrayAuxiliar.push(linea)
-  //     }
-  //  })
-
-  //  lineasDetalle = arrayAuxiliar
+  // lineasDetalle.splice(index, indice);
+   
 
    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
   //  mostrarLineas()  
