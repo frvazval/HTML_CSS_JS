@@ -38,7 +38,7 @@ Recuerda la importancia comentar con detalle el código.
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
- 
+ const papelera = document.querySelectorAll('#papelera')
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
@@ -62,39 +62,40 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(lineaABorrar) {
-   
+ function quitarDelCarrito(valor) {
+   console.log(valor);
    // Elimino el objeto lineaDetalle de la lista lineasDetalle[]
-   let arrayAuxiliar = []
+  //  let arrayAuxiliar = []
 
-   lineasDetalle.forEach((linea) => {
-      if (linea != lineaABorrar) {
-         arrayAuxiliar.push(linea)
-      }
-   })
+  //  lineasDetalle.forEach((linea) => {
+  //     if (linea != lineaABorrar) {
+  //        arrayAuxiliar.push(linea)
+  //     }
+  //  })
 
-   lineasDetalle = arrayAuxiliar
+  //  lineasDetalle = arrayAuxiliar
 
    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
-   mostrarLineas()  
+  //  mostrarLineas()  
  }
 
  function mostrarLineas() {
 
-   let parrafoHTML = ""
-   let precioTotal = 0
+  let parrafoHTML = ""
+  let precioTotal = 0
+  let valoresLinea = {}
+  // Recorro la lista y creo el codigo HTML para mostrar por pantalla, tambien calculo el precio total
+  lineasDetalle.forEach((linea) => {
+    valoresLinea = {'nombreFruta' : linea.nombreFruta, 'precioKilo' : linea.precioKilo, 'precioParcial' : linea.precioParcial}
+    console.log(valoresLinea);
+    // Actualizo el precio total       
+    precioTotal += linea.precioParcial
 
-   // Recorro la lista y creo el codigo HTML para mostrar por pantalla, tambien calculo el precio total
-   lineasDetalle.forEach((linea) => {
-
-      // Actualizo el precio total       
-      precioTotal += linea.precioParcial
-
-      // Creo el codigo HTML de los parrafos con el detalle de la compra
-      parrafoHTML += `<p id="carrito">
-         <img onclick="quitarDelCarrito(${linea})" id ="papelera" src="img/papelera.svg" alt="papelera">
-         ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
-         </p>`
+    // Creo el codigo HTML de los parrafos con el detalle de la compra
+    parrafoHTML += `<p id="carrito">
+      <img id ="papelera" src="img/papelera.svg" alt="papelera" onclick="quitarDelCarrito(${linea.nombreFruta})">
+      ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
+      </p>`
 
    })
 
@@ -106,7 +107,7 @@ Recuerda la importancia comentar con detalle el código.
    
  }
 
- 
+
 
 
 
