@@ -63,13 +63,15 @@ Recuerda la importancia comentar con detalle el código.
 
  // Función a la que llamara el evento click de la papelera de cada linea
  function quitarDelCarrito(indice) {
-   console.log(indice);
+  
 
-  // lineasDetalle.splice(index, indice);
+  // Para eliminar un elemento del array utilizo lineasDetalle.splice(indice, 1);
+  // Le pongo el indice desde el que quiero eliminar y la cantidad de elementos que quiero eliminar, en este caso 1
+  lineasDetalle.splice(indice, 1);
    
 
    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
-  //  mostrarLineas()  
+  mostrarLineas()  
  }
 
  function mostrarLineas() {
