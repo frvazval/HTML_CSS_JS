@@ -63,7 +63,7 @@ Recuerda la importancia comentar con detalle el código.
 
  // Función a la que llamara el evento click de la papelera de cada linea
  function quitarDelCarrito(lineaDetalle) {
-
+   
    // Elimino el objeto lineaDetalle de la lista lineasDetalle[]
    
 
