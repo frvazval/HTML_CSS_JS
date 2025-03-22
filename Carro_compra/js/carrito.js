@@ -54,7 +54,7 @@ Recuerda la importancia comentar con detalle el código.
     mostrarLineas()          
  }
 
- // Función a la que llamara el evento click de la papelera de cada linea
+ // Función a la que llamara el evento click de la papelera de cada linea, recibe el indice para poder eliminarla
  function quitarDelCarrito(indice) {  
 
   // Para eliminar un elemento del array utilizo lineasDetalle.splice(indice, 1);
@@ -75,7 +75,9 @@ Recuerda la importancia comentar con detalle el código.
     // Actualizo el precio total       
     precioTotal += linea.precioParcial
 
-    // Creo el codigo HTML de los parrafos con el detalle de la compra
+    // Creo el codigo HTML de los parrafos con el detalle de la compra, en el onclick de la papelera
+    // llamo a la función quitarDelCarrito() y le paso el indice de la linea, para poder eliminarla después
+    // de la lista
     parrafoHTML += `<p id="carrito">
       <img id ="papelera" src="img/papelera.svg" alt="papelera" onclick="quitarDelCarrito(${index})">
       ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
