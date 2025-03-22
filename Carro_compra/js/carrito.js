@@ -44,7 +44,13 @@ Recuerda la importancia comentar con detalle el código.
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
-    let precioParcial = cantidad * precioKilo
+    if (isNaN(cantidad) || cantidad === "" || cantidad <= 0) {
+      alert("Por favor ingrese un número válido mayor a 0.");
+    } else {
+      let precioParcial = cantidad * precioKilo
+    }
+
+    
 
       // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
       // let linea = `<p id="carrito">
