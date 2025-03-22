@@ -62,14 +62,10 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(precioParcial) {
-    // Actualizo el precio total y lo muestro en pantalla
-   //  precioTotal -= precioParcial
-   //  precioFinal.textContent = `${precioTotal.toFixed(2)}€`  
-   
-    
-    // LLamo a la función que lo muestra por pantalla
-   //  mostrarLineas()  
+ function quitarDelCarrito(objeto) {
+
+   // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
+   mostrarLineas()  
  }
 
  function mostrarLineas() {
@@ -85,7 +81,7 @@ Recuerda la importancia comentar con detalle el código.
 
       // Creo el codigo HTML de los parrafos con el detalle de la compra
       parrafoHTML += `<p id="carrito">
-         <img id ="papelera" src="img/papelera.svg" alt="papelera">
+         <img onclick="quitarDelCarrito(${linea})" id ="papelera" src="img/papelera.svg" alt="papelera">
          ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
          </p>`
 
@@ -95,9 +91,7 @@ Recuerda la importancia comentar con detalle el código.
    precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
    // Muestro los parrafos por pantalla
-   carrito.innerHTML = parrafoHTML
-    
-    
+   carrito.innerHTML = parrafoHTML      
    
  }
 
