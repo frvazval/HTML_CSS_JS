@@ -83,17 +83,15 @@ Recuerda la importancia comentar con detalle el código.
 
   let parrafoHTML = ""
   let precioTotal = 0
-  let valoresLinea = {}
+  
   // Recorro la lista y creo el codigo HTML para mostrar por pantalla, tambien calculo el precio total
-  lineasDetalle.forEach((linea) => {
-    valoresLinea = {'nombreFruta' : linea.nombreFruta, 'precioKilo' : linea.precioKilo, 'precioParcial' : linea.precioParcial}
-    console.log(valoresLinea);
+  lineasDetalle.forEach((linea, index) => {    
     // Actualizo el precio total       
     precioTotal += linea.precioParcial
 
     // Creo el codigo HTML de los parrafos con el detalle de la compra
     parrafoHTML += `<p id="carrito">
-      <img id ="papelera" src="img/papelera.svg" alt="papelera" onclick="quitarDelCarrito(${linea.nombreFruta})">
+      <img id ="papelera" src="img/papelera.svg" alt="papelera" onclick="quitarDelCarrito(${index})">
       ${linea.nombreFruta} ${linea.cantidad} Kg x ${linea.precioKilo}€/Kilo = ${linea.precioParcial.toFixed(2)}
       </p>`
 
@@ -106,8 +104,7 @@ Recuerda la importancia comentar con detalle el código.
    carrito.innerHTML = parrafoHTML      
    
  }
-
-
+ 
 
 
 
