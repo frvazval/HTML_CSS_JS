@@ -56,7 +56,8 @@ Recuerda la importancia comentar con detalle el código.
       lineasDetalle.push(lineaDetalle)
     }
 
-    
+    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
+    mostrarLineas()
 
       // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
       // let linea = `<p id="carrito">
@@ -71,7 +72,7 @@ Recuerda la importancia comentar con detalle el código.
       // precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
       // LLamo a la función que lo muestra por pantalla
-      // mostrarLineas()  
+        
 
         
  }
