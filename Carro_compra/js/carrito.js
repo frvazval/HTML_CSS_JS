@@ -59,7 +59,7 @@ Recuerda la importancia comentar con detalle el código.
       // precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
     
       // LLamo a la función que lo muestra por pantalla
-      mostrarLineas()  
+      // mostrarLineas()  
 
         
  }
