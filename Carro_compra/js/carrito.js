@@ -69,7 +69,7 @@ Recuerda la importancia comentar con detalle el código.
 
       // Actualizo el precio total y lo muestro con 2 decimales
       // precioTotal += precioParcial
-      // precioFinal.textContent = `${precioTotal.toFixed(2)}€`      
+            
     
       // LLamo a la función que lo muestra por pantalla
         
@@ -90,6 +90,15 @@ Recuerda la importancia comentar con detalle el código.
 
  function mostrarLineas() {
    //  let mensajeCarrito = ""
+
+   // Recorro la lista y creo el codigo HTML para mostrar por pantalla, tambien calculo el precio total
+   lineasDetalle.forEach((linea) => {
+      // Actualizo el precio total
+      precioTotal += linea.precioParcial
+   })
+
+   // Muestro el precio total por pantalla, con 2 decimales
+   precioFinal.textContent = `${precioTotal.toFixed(2)}€`
 
     // Creo un mensaje con todos los parrafos que tienen que aparecer
    //  for (detalle of lineasDetalle) {
