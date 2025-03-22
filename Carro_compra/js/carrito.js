@@ -62,7 +62,10 @@ Recuerda la importancia comentar con detalle el código.
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(objeto) {
+ function quitarDelCarrito(lineaDetalle) {
+
+   // Elimino el objeto lineaDetalle de la lista lineasDetalle[]
+   
 
    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
    mostrarLineas()  
