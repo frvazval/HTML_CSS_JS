@@ -32,7 +32,7 @@ Recuerda la importancia comentar con detalle el código.
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
- const papelera = document.querySelectorAll('#papelera')
+//  const papelera = document.querySelectorAll('#papelera')
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
@@ -51,18 +51,15 @@ Recuerda la importancia comentar con detalle el código.
     }
 
     // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
-    mostrarLineas()  
-        
+    mostrarLineas()          
  }
 
  // Función a la que llamara el evento click de la papelera de cada linea
- function quitarDelCarrito(indice) {
-  
+ function quitarDelCarrito(indice) {  
 
   // Para eliminar un elemento del array utilizo lineasDetalle.splice(indice, 1);
   // Le pongo el indice desde el que quiero eliminar y la cantidad de elementos que quiero eliminar, en este caso 1
-  lineasDetalle.splice(indice, 1);
-   
+  lineasDetalle.splice(indice, 1);   
 
    // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
   mostrarLineas()  
