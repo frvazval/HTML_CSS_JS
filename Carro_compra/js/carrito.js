@@ -57,23 +57,7 @@ Recuerda la importancia comentar con detalle el código.
     }
 
     // LLamo a la función que muestra las lineas por pantalla, calcula el total y lo muestra por pantalla
-    mostrarLineas()
-
-      // Añado la linea al parrafo carrito y limito los decimales del precio parcial a 2
-      // let linea = `<p id="carrito">
-      //                <img onclick="quitarDelCarrito(${precioParcial})" id ="papelera" src="img/papelera.svg" alt="papelera">
-      //                ${nombreFruta} ${cantidad} Kg x ${precioKilo}€/Kilo = ${precioParcial.toFixed(2)}
-      //             </p>`
-      // Añado la nueva linea a la lista
-      // lineasDetalle.push(linea)
-
-      // Actualizo el precio total y lo muestro con 2 decimales
-      // precioTotal += precioParcial
-            
-    
-      // LLamo a la función que lo muestra por pantalla
-        
-
+    mostrarLineas()  
         
  }
 
