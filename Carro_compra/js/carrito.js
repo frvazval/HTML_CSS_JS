@@ -32,12 +32,12 @@ Recuerda la importancia comentar con detalle el código.
  // Obtengo los elementos de HTML sobre los que quiero actuar
  const carrito = document.getElementById('carrito')
  const precioFinal = document.getElementById('preuFinal')
-//  const papelera = document.querySelectorAll('#papelera')
 
  // Función a la que llamara el evento click de cada fruta, pasandole el precio por kilo y el nombre de la fruta
  function agregarAlCarrito(precioKilo, nombreFruta) {
     let cantidad = prompt(`¿Que cantidad de ${nombreFruta} desea?`)
 
+    // Compruebo que el valor introducido sea valido
     if (isNaN(cantidad) || cantidad === "" || cantidad <= 0) { // Si se pone 0, vacio o una letra
       alert("Por favor ingrese un número válido mayor a 0.");
     } else { // Si se pone un valor valido      
