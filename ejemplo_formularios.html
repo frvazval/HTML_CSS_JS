@@ -1,0 +1,98 @@
+ómo puedes obtener los valores de cada uno utilizando JavaScript:
+
+html
+
+Copiar
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ejemplo</title>
+</head>
+<body>
+    <h1>Formulario de Ejemplo</h1>
+    <form id="miFormulario">
+        <!-- Input de texto -->
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" name="texto" placeholder="Escribe algo"><br><br>
+
+        <!-- Input de número -->
+        <label for="numero">Número:</label>
+        <input type="number" id="numero" name="numero" min="1" max="10"><br><br>
+
+        <!-- Input de correo -->
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="example@correo.com"><br><br>
+
+        <!-- Input de contraseña -->
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña segura"><br><br>
+
+        <!-- Input de fecha -->
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha"><br><br>
+
+        <!-- Input de color -->
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <!-- Input de archivo -->
+        <label for="archivo">Subir archivo:</label>
+        <input type="file" id="archivo" name="archivo"><br><br>
+
+        <!-- Input de radio -->
+        <label>Género:</label><br>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="femenino" name="genero" value="femenino">
+        <label for="femenino">Femenino</label><br><br>
+
+        <!-- Input de casillas de verificación -->
+        <label>Intereses:</label><br>
+        <input type="checkbox" id="musica" name="intereses" value="musica">
+        <label for="musica">Música</label><br>
+        <input type="checkbox" id="deportes" name="intereses" value="deportes">
+        <label for="deportes">Deportes</label><br><br>
+
+        <!-- Input de selección -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="argentina">Argentina</option>
+            <option value="mexico">México</option>
+            <option value="españa">España</option>
+        </select><br><br>
+
+        <button type="button" onclick="obtenerValores()">Enviar</button>
+    </form>
+
+    <script>
+        function obtenerValores() {
+            // Obtener los valores de cada campo del formulario
+            const texto = document.getElementById("texto").value;
+            const numero = document.getElementById("numero").value;
+            const correo = document.getElementById("correo").value;
+            const password = document.getElementById("password").value;
+            const fecha = document.getElementById("fecha").value;
+            const color = document.getElementById("color").value;
+            const archivo = document.getElementById("archivo").files[0];
+            const genero = document.querySelector('input[name="genero"]:checked')?.value;
+            const intereses = Array.from(document.querySelectorAll('input[name="intereses"]:checked'))
+                                    .map(checkbox => checkbox.value);
+            const pais = document.getElementById("pais").value;
+
+            // Mostrar los valores en consola (puedes hacer lo que desees con ellos)
+            console.log("Texto:", texto);
+            console.log("Número:", numero);
+            console.log("Correo:", correo);
+            console.log("Contraseña:", password);
+            console.log("Fecha:", fecha);
+            console.log("Color:", color);
+            console.log("Archivo:", archivo ? archivo.name : "Ningún archivo seleccionado");
+            console.log("Género:", genero);
+            console.log("Intereses:", intereses.join(", "));
+            console.log("País:", pais);
+        }
+    </script>
+</body>
+</html>
