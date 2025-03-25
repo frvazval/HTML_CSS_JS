@@ -132,14 +132,14 @@ const formEj3 = document.forms["form-autor"];
 const ejercicio3 = document.getElementById("ejer3");
 
 formEj3.addEventListener("submit", (e) => {
-  e.preventDefault();
-  //  const autor = formEj3.autor.value.trim().toLocaleLowerCase(); 
-   const autor = formEj3.autor.value
+  e.preventDefault();  
+   const autor = formEj3.autor.value.trim().toLocaleLowerCase()
    let contador = 0
 
+   // Creo la lista con los resultados
   let html = "<ul>";
   biblioteca.forEach((libro) => {  
-    if (libro.autor == autor) {    
+    if (libro.autor.trim().toLocaleLowerCase() == autor) {    
       html += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
       contador++
     } 
@@ -148,6 +148,7 @@ formEj3.addEventListener("submit", (e) => {
 
   if (contador == 0) html = "<p>No hay ningun libro de este autor</p>"
 
+  // Muestro el resultado
   ejercicio3.innerHTML = html 
 });
 
@@ -166,18 +167,20 @@ const formEj4 = document.forms["incluirObra"];
 formEj4.addEventListener('submit', (event) => {
   event.preventDefault()
 
+  // obtengo el valor de los diferentes campos
   const titulo = formEj4['titulo'].value
   const autor = formEj4['autor'].value
   const categoria = formEj4['categoria'].value
   const idioma = formEj4['idioma'].value
   const epoca = formEj4['epoca'].value
 
-  
+  // Añado el libro al array
   biblioteca.push({titulo, autor, categoria, idioma, epoca})
 
-
+  // Lo muestro en la lista del ejercicio 1
   mostrarListaEj1(ejercicio1)
 
+  // Lo añado a JSON
   localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
 
 })
