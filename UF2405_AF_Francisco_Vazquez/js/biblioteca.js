@@ -219,9 +219,7 @@ formEj5.addEventListener('submit', (event) => {
   })
   
   // Muestro la lista del ejercicio 1
-    mostrarListaEj1(ejercicio1)
-  
-    
+    mostrarListaEj1(ejercicio1)     
   
   })
 
