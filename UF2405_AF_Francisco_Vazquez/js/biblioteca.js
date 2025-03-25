@@ -90,8 +90,7 @@ formEj2.addEventListener("change", () => {
   let categoria = formEj2.categoria.value;
   let idioma = formEj2.idioma.value;
   let epoca = formEj2.epoca.value;
-
-  console.log(categoria, idioma, epoca);
+  
   listaEj2(ejercicio2, categoria, idioma, epoca);
 });
 
@@ -128,6 +127,7 @@ function listaEj2(id, categoria, idioma, epoca) {
 // Isaac Asimov : Yo, robot (ciencia-ficción, idioma : español, época : s.XX) 
 
 const formEj3 = document.forms["form-autor"];
+
 // creo una constante para poder interactuar con el div, que tiene la id ejer3
 const ejercicio3 = document.getElementById("ejer3");
 
@@ -201,8 +201,7 @@ const ejercicio5 = document.getElementById("obra");
 let listaEjer5 = ""
 
 // Recorro el array con un bucle y voy creando el select
-biblioteca.forEach((libro) => {
-    console.log(libro.titulo);
+biblioteca.forEach((libro) => {    
     listaEjer5 += `<option value="${libro.titulo}">${libro.titulo}, Autor: ${libro.autor}</option>`
 });
 
@@ -210,14 +209,19 @@ ejercicio5.innerHTML = listaEjer5
 
 formEj5.addEventListener('submit', (event) => {
     event.preventDefault()
-         let libroBorrar = ejercicio5.titulo
-         console.log(libroBorrar);
-    
+         let libroBorrar = ejercicio5.titulo  
+
+  biblioteca.forEach ((libro, index) => {
+    if (libro.titulo == libroBorrar) {        
+        let indice = index
+        biblioteca.splice(indice, 1);
+    }
+  })
   
-  
+  // Muestro la lista del ejercicio 1
     mostrarListaEj1(ejercicio1)
   
-    localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
+    
   
   })
 
