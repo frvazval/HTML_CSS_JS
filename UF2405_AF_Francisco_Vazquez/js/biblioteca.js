@@ -47,10 +47,21 @@ const biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [
 const ejercicio1 = document.getElementById("ejer1");
 
 // Ordeno el array alfabeticamente por titulo
-flores.sort((a, b) => {
+biblioteca.sort((a, b) => {
     return a.titulo.localeCompare(b.titulo, "es-ES", { numeric: true });
   });
 
+// Recorro el array con un bucle y voy creando la lista ordenada
+let lista = "<ol>"
+
+biblioteca.forEach((libro) => {
+    lista += `<li>Titulo: ${libro.titulo}, Autor: ${libro.autor}</li>`
+});
+
+lista += "</ol>"
+
+// Muestro la lista en el div ejer1
+ejercicio1.innerHTML = lista
 
 // ==========================================================================================================
 // EJERCICIO 2
