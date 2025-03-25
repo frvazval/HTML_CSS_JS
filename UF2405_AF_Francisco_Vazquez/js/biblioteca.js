@@ -43,13 +43,16 @@ const biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [
 // Llista del llibres
 // const listaLibros = document.getElementById("listaLibros");
 
+
+// creo una constante para poder interactuar con el div, que tiene la id ejer1
+const ejercicio1 = document.getElementById("ejer1");
+
 // Muestro el resultado del ejercicio 1
-mostrarListaEj1()
+mostrarListaEj1(ejercicio1)
 
 // Función que muestra el resultado del ejercicio 1
-function mostrarListaEj1() {
-    // creo una constante para poder interactuar con el div, que tiene la id ejer1
-    const ejercicio1 = document.getElementById("ejer1");
+function mostrarListaEj1(id) {
+    
 
     // Ordeno el array alfabeticamente por titulo
     biblioteca.sort((a, b) => {
@@ -66,7 +69,7 @@ function mostrarListaEj1() {
     lista += "</ol>"
 
     // Muestro la lista en el div ejer1
-    ejercicio1.innerHTML = lista
+    id.innerHTML = lista
 }
 
 
@@ -90,9 +93,9 @@ function mostrarListaEj1() {
 const formEj3 = document.forms["form-autor"];
 const ejercicio3 = document.getElementById("ejer3");
 
-formEj4.addEventListener("submit", (e) => {
+formEj3.addEventListener("submit", (e) => {
   e.preventDefault();
-  const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
+  const autor = formEj3["autor"].value.trim().toLocaleLowerCase();
 
   let lineahtml = "<ul>";
   biblioteca.forEach((libro) => {
@@ -108,26 +111,6 @@ formEj4.addEventListener("submit", (e) => {
   ejercicio3.innerHTML= lineahtml
 });
 
-// function listaEj3() {
-//     // creo una constante para poder interactuar con el div, que tiene la id ejer1
-//     const ejercicio3 = document.getElementById("ejer3");
-
-//     // creo una constante para poder interactuar con el formulario correspondiente
-//     const formEj3 = document.forms["form-autor"];
-
-//     const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
-
-//     let lineahtml = "<ul>";
-//     biblioteca.forEach((libro) => {      
-//       if (libro.autor == autor) {       
-//         lineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
-//       }
-//     });
-//     lineahtml += "</ul>";
-  
-//     ejercicio3.innerHTML= lineahtml;
-// };
-
 // ==========================================================================================================
 // EJERCICIO 4
 // Añadir obra a la biblioteca
@@ -135,7 +118,26 @@ formEj4.addEventListener("submit", (e) => {
 // Conseguir permanencia con LocalStorage
 // Actualizar automáticamente el listado de obras del ejercicio 1
 
+const formEj4 = document.forms["incluirObra"];
 
+formEj4.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const titulo = formEj4['titulo'].value
+  const autor = formEj4['autor'].value
+  const categoria = formEj4['categoria'].value
+  const idioma = formEj4['idioma'].value
+  const epoca = formEj4['epoca'].value
+
+  
+  biblioteca.push({titulo, autor, categoria, idioma, epoca})
+
+
+  mostrarListaEj1(ejercicio1)
+
+  localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
+
+})
 
 
 
