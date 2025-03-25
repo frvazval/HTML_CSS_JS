@@ -133,22 +133,25 @@ const ejercicio3 = document.getElementById("ejer3");
 
 formEj3.addEventListener("submit", (e) => {
   e.preventDefault();
-  const autor = formEj3.autor.value.trim().toLocaleLowerCase(); 
+  //  const autor = formEj3.autor.value.trim().toLocaleLowerCase(); 
+   const autor = formEj3.autor.value
+   let contador = 0
 
   let html = "<ul>";
   biblioteca.forEach((libro) => {  
-    if (libro.autor.trim().toLocaleLowerCase() == autor) {    
+    if (libro.autor == autor) {    
       html += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
-    } else {
-      html += "<p>No hay ningun libro de este autor</p>"
-    }   
+      contador++
+    } 
   });  
-
   html += "</ul>";  
-  
+
+  if (contador == 0) html = "<p>No hay ningun libro de este autor</p>"
+
+  ejercicio3.innerHTML = html 
 });
 
-ejercicio3.innerHTML = html 
+
 
 
 // ==========================================================================================================
