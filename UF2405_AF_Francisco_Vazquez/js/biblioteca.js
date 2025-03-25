@@ -133,14 +133,14 @@ const ejercicio3 = document.getElementById("ejer3");
 
 formEj3.addEventListener("submit", (e) => {
   e.preventDefault();
-  const autor = formEj3.autor.value.trim().toLocaleLowerCase();    
+  const autor = formEj3.autor.value.trim().toLocaleLowerCase(); 
+
   let html = "<ul>";
   biblioteca.forEach((libro) => {  
-
-    if (libro.autor == autor) {    
+    if (libro.autor.trim().toLocaleLowerCase() == autor) {    
       html += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
     } else {
-        html += "<p>No hay ningun libro de este autor</p>"
+      html += "<p>No hay ningun libro de este autor</p>"
     }   
   });  
 
@@ -201,5 +201,19 @@ biblioteca.forEach((libro) => {
 });
 
 ejercicio5.innerHTML = listaEjer5
+
+formEj5.addEventListener('submit', (event) => {
+    event.preventDefault()
+         let libroBorrar = ejercicio5.titulo
+         console.log(libroBorrar);
+    
+  
+  
+    mostrarListaEj1(ejercicio1)
+  
+    localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
+  
+  })
+
 
 
