@@ -31,10 +31,6 @@ const biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [
     { titulo: "Cròniques Marcianes", autor: "Ray Bradbury", categoria: "ciencia-ficción", idioma: "català", epoca: "s.XX" },
 ]
 
-
-
-
-
 // ==========================================================================================================
 // EJERCICIO 1
 // Libros disponibleS
@@ -80,6 +76,50 @@ function mostrarListaEj1(id) {
 // Las obras se mostrarán según aparece en la imagen modelo1.png
 // Hay que aplicar algunos estilos que ya están definidos en el css
 
+const ejercicio2 = document.getElementById("ejer2");
+
+const formEj2 = document.forms["form-filtrado"];
+const categoria = formEj2.idioma.value;
+const idioma = formEj2.floracion.value;
+const epoca = formEj2.epoca.value;
+// console.log(color, floracion, stock);
+
+mensajeEj3(ejercicio2, categoria, idioma, epoca);
+
+formEj3.addEventListener("change", () => {
+  const categoria = formEj3.categoria.value;
+  const idioma = formEj3.idioma.value;
+  const epoca = formEj3.epoca.value;
+
+  // console.log(typeof stock);
+  mensajeEj3(ejercicio2, categoria, idioma, epoca);
+});
+
+function mensajeEj3(id, categoria, idioma, epoca) {
+  let lineahtml = "<ul>";
+  let contarLibros = 0;
+
+  biblioteca.forEach((libro) => {
+    
+    if (
+      libro.categoria == categoria &&
+      libro.idioma == idioma &&
+      libro.epoca == epoca
+    ) {
+      lineahtml += `<li><span class="textoRojo">${libro.autor} : </span>${libro.titulo} (${libro.categoria}), ${libro.idioma}</li>`;
+      contarLibros++;
+    }
+  });
+
+  lineahtml += "</ul>";
+
+  // solución 1
+  // if (html.length == 9) html = '<p>No hay flor que cumpla las condiciones</p>'
+  if (contarLibros == 0)
+    html = "<p>No hay ninguna obra que cumpla las condiciones</p>";
+
+  id.innerHTML = lineahtml;
+}
 
 
 // ==========================================================================================================
