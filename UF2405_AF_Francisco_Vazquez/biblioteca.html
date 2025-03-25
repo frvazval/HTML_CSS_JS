@@ -25,7 +25,7 @@
         <details>
           <summary>2. Sugerencias de obras por tema e idioma</summary>
 
-          <form id="form-filtrado">
+          <form action="#" id="form-filtrado">
             <fieldset>
               <div>
                 <h2>Categorías:</h2>
@@ -139,7 +139,7 @@
             Al hacer clic sobre el botón buscar se mostrarán las obras cuyos
             autores cumplen los requisitos.
           </p>
-          <form id="form-autor">
+          <form action="#" id="form-autor">
             <label class="input-autor"
               >Indica el nombre del autor que buscas :
               <input type="text" name="autor" id="autor" />
@@ -194,7 +194,12 @@
         <details id="quitarObra">
           <summary >5. Quitar obra de la biblioteca</summary>
                   <form action="#" id="formQuitarObra">
-          <div id="selectQuitarObra"></div>
+          <div id="selectQuitarObra">
+            <label for="obra">Selecciona la obra que hay que eliminar</label>
+            <select id='obra' name='obra'>
+              
+            </select>
+          </div>
           <div><button>Quitar obra de la lista</button></div>
         </form>
         </details>

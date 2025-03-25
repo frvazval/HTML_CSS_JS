@@ -162,3 +162,7 @@ select {
         color: white;
     }
 }
+
+.textoRojo {
+    color: red;
+}

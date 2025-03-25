@@ -79,10 +79,10 @@ function mostrarListaEj1(id) {
 const ejercicio2 = document.getElementById("ejer2");
 
 const formEj2 = document.forms["form-filtrado"];
-const categoria = formEj2.idioma.value;
-const idioma = formEj2.floracion.value;
+const categoria = formEj2.categoria.value;
+const idioma = formEj2.idioma.value;
 const epoca = formEj2.epoca.value;
-// console.log(color, floracion, stock);
+
 
 listaEj2(ejercicio2, categoria, idioma, epoca);
 
@@ -91,7 +91,7 @@ formEj2.addEventListener("change", () => {
   const idioma = formEj2.idioma.value;
   const epoca = formEj2.epoca.value;
 
-  // console.log(typeof stock);
+  console.log(categoria, idioma, epoca);
   listaEj2(ejercicio2, categoria, idioma, epoca);
 });
 
@@ -105,7 +105,7 @@ function listaEj2(id, categoria, idioma, epoca) {
       lineahtml += `<li><span class="textoRojo">${libro.autor} : </span>${libro.titulo} (${libro.categoria}), ${libro.idioma}</li>`;
       contarLibros++;
     }
-    
+
   });
 
   lineahtml += "</ul>";
@@ -128,11 +128,12 @@ function listaEj2(id, categoria, idioma, epoca) {
 // Isaac Asimov : Yo, robot (ciencia-ficción, idioma : español, época : s.XX) 
 
 const formEj3 = document.forms["form-autor"];
+// creo una constante para poder interactuar con el div, que tiene la id ejer3
 const ejercicio3 = document.getElementById("ejer3");
 
 formEj3.addEventListener("submit", (e) => {
   e.preventDefault();
-  const autor = formEj3["autor"].value.trim().toLocaleLowerCase();
+  const autor = formEj3.autor.value.trim().toLocaleLowerCase();
 
   let lineahtml = "<ul>";
   biblioteca.forEach((libro) => {
@@ -147,7 +148,7 @@ formEj3.addEventListener("submit", (e) => {
 
   ejercicio3.innerHTML= lineahtml
 });
-
+ejercicio3.innerHTML= lineahtml
 // ==========================================================================================================
 // EJERCICIO 4
 // Añadir obra a la biblioteca
@@ -185,3 +186,17 @@ formEj4.addEventListener('submit', (event) => {
 // Actualizar automáticamente el listado de obras del ejercicio 1
 // Actualizar el LocalStorage
 
+const formEj5 = document.forms["formQuitarObra"];
+// creo una constante para poder interactuar con el elemento que tiene la id obra
+const ejercicio5 = document.getElementById("obra");
+
+let listaEjer5 = ""
+
+// Recorro el array con un bucle y voy creando el select
+biblioteca.forEach((libro) => {
+    console.log(libro.titulo);
+    listaEjer5 += `<option value="${libro.titulo}">${libro.titulo}, Autor: ${libro.autor}</option>`
+});
+
+
+ejercicio5.innerHTML = listaEjer5
