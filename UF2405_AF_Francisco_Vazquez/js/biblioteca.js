@@ -84,31 +84,28 @@ const idioma = formEj2.floracion.value;
 const epoca = formEj2.epoca.value;
 // console.log(color, floracion, stock);
 
-mensajeEj3(ejercicio2, categoria, idioma, epoca);
+listaEj2(ejercicio2, categoria, idioma, epoca);
 
-formEj3.addEventListener("change", () => {
-  const categoria = formEj3.categoria.value;
-  const idioma = formEj3.idioma.value;
-  const epoca = formEj3.epoca.value;
+formEj2.addEventListener("change", () => {
+  const categoria = formEj2.categoria.value;
+  const idioma = formEj2.idioma.value;
+  const epoca = formEj2.epoca.value;
 
   // console.log(typeof stock);
-  mensajeEj3(ejercicio2, categoria, idioma, epoca);
+  listaEj2(ejercicio2, categoria, idioma, epoca);
 });
 
-function mensajeEj3(id, categoria, idioma, epoca) {
+function listaEj2(id, categoria, idioma, epoca) {
   let lineahtml = "<ul>";
   let contarLibros = 0;
 
-  biblioteca.forEach((libro) => {
+  biblioteca.forEach((libro) => {   
     
-    if (
-      libro.categoria == categoria &&
-      libro.idioma == idioma &&
-      libro.epoca == epoca
-    ) {
+    if (libro.categoria == categoria && libro.idioma == idioma && libro.epoca == epoca) {
       lineahtml += `<li><span class="textoRojo">${libro.autor} : </span>${libro.titulo} (${libro.categoria}), ${libro.idioma}</li>`;
       contarLibros++;
     }
+    
   });
 
   lineahtml += "</ul>";
