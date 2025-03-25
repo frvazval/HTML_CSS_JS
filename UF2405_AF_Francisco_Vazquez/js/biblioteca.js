@@ -80,7 +80,26 @@ ejercicio1.innerHTML = lista
 // La salida por pantalla será en este formato:
 // Isaac Asimov : Yo, robot (ciencia-ficción, idioma : español, época : s.XX) 
 
+// creo una constante para poder interactuar con el div, que tiene la id ejer1
+const ejercicio3 = document.getElementById("ejer3");
 
+// creo una constante para poder interactuar con el formulario correspondiente
+const formEj3 = document.forms["form-autor"];
+
+formEj3.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
+  
+    let lineahtml = "<ul>";
+    biblioteca.forEach((libro) => {      
+      if (libro.autor == autor) {       
+        lineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
+      }
+    });
+    lineahtml += "</ul>";
+  
+    ejercicio3.innerHTML= lineahtml
+  });
 
 // ==========================================================================================================
 // EJERCICIO 4
