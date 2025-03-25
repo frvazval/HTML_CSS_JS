@@ -43,25 +43,32 @@ const biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [
 // Llista del llibres
 // const listaLibros = document.getElementById("listaLibros");
 
-// creo una constante para poder interactuar con el div, que tiene la id ejer1
-const ejercicio1 = document.getElementById("ejer1");
+// Muestro el resultado del ejercicio 1
+mostrarListaEj1()
 
-// Ordeno el array alfabeticamente por titulo
-biblioteca.sort((a, b) => {
-    return a.titulo.localeCompare(b.titulo, "es-ES", { numeric: true });
-  });
+// Función que muestra el resultado del ejercicio 1
+function mostrarListaEj1() {
+    // creo una constante para poder interactuar con el div, que tiene la id ejer1
+    const ejercicio1 = document.getElementById("ejer1");
 
-// Recorro el array con un bucle y voy creando la lista ordenada
-let lista = "<ol>"
+    // Ordeno el array alfabeticamente por titulo
+    biblioteca.sort((a, b) => {
+        return a.titulo.localeCompare(b.titulo, "es-ES", { numeric: true });
+    });
 
-biblioteca.forEach((libro) => {
-    lista += `<li>Titulo: ${libro.titulo}, Autor: ${libro.autor}</li>`
-});
+    // Recorro el array con un bucle y voy creando la lista ordenada
+    let lista = "<ol>"
 
-lista += "</ol>"
+    biblioteca.forEach((libro) => {
+        lista += `<li>Titulo: ${libro.titulo}, Autor: ${libro.autor}</li>`
+    });
 
-// Muestro la lista en el div ejer1
-ejercicio1.innerHTML = lista
+    lista += "</ol>"
+
+    // Muestro la lista en el div ejer1
+    ejercicio1.innerHTML = lista
+}
+
 
 // ==========================================================================================================
 // EJERCICIO 2
@@ -80,16 +87,16 @@ ejercicio1.innerHTML = lista
 // La salida por pantalla será en este formato:
 // Isaac Asimov : Yo, robot (ciencia-ficción, idioma : español, época : s.XX) 
 
-// creo una constante para poder interactuar con el div, que tiene la id ejer1
-const ejercicio3 = document.getElementById("ejer3");
 
-// creo una constante para poder interactuar con el formulario correspondiente
-const formEj3 = document.forms["form-autor"];
+function listaEj3() {
+    // creo una constante para poder interactuar con el div, que tiene la id ejer1
+    const ejercicio3 = document.getElementById("ejer3");
 
-formEj3.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // creo una constante para poder interactuar con el formulario correspondiente
+    const formEj3 = document.forms["form-autor"];
+
     const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
-  
+
     let lineahtml = "<ul>";
     biblioteca.forEach((libro) => {      
       if (libro.autor == autor) {       
@@ -98,8 +105,8 @@ formEj3.addEventListener("submit", (e) => {
     });
     lineahtml += "</ul>";
   
-    ejercicio3.innerHTML= lineahtml
-  });
+    ejercicio3.innerHTML= lineahtml;
+};
 
 // ==========================================================================================================
 // EJERCICIO 4
