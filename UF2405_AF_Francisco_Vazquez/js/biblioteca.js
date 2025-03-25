@@ -79,17 +79,17 @@ function mostrarListaEj1(id) {
 const ejercicio2 = document.getElementById("ejer2");
 
 const formEj2 = document.forms["form-filtrado"];
-const categoria = formEj2.categoria.value;
-const idioma = formEj2.idioma.value;
-const epoca = formEj2.epoca.value;
+let categoria = formEj2.categoria.value;
+let idioma = formEj2.idioma.value;
+let epoca = formEj2.epoca.value;
 
 
 listaEj2(ejercicio2, categoria, idioma, epoca);
 
 formEj2.addEventListener("change", () => {
-  const categoria = formEj2.categoria.value;
-  const idioma = formEj2.idioma.value;
-  const epoca = formEj2.epoca.value;
+  let categoria = formEj2.categoria.value;
+  let idioma = formEj2.idioma.value;
+  let epoca = formEj2.epoca.value;
 
   console.log(categoria, idioma, epoca);
   listaEj2(ejercicio2, categoria, idioma, epoca);
@@ -99,7 +99,7 @@ function listaEj2(id, categoria, idioma, epoca) {
   let lineahtml = "<ul>";
   let contarLibros = 0;
 
-  biblioteca.forEach((libro) => {   
+  biblioteca.forEach((libro) => { 
     
     if (libro.categoria == categoria && libro.idioma == idioma && libro.epoca == epoca) {
       lineahtml += `<li><span class="textoRojo">${libro.autor} : </span>${libro.titulo} (${libro.categoria}), ${libro.idioma}</li>`;
@@ -133,22 +133,24 @@ const ejercicio3 = document.getElementById("ejer3");
 
 formEj3.addEventListener("submit", (e) => {
   e.preventDefault();
-  const autor = formEj3.autor.value.trim().toLocaleLowerCase();
+  const autor = formEj3.autor.value.trim().toLocaleLowerCase();    
+  let html = "<ul>";
+  biblioteca.forEach((libro) => {  
 
-  let lineahtml = "<ul>";
-  biblioteca.forEach((libro) => {
-    console.log(biblioteca.autor == autor);
-    if (biblioteca.autor == autor) {      
+    if (libro.autor == autor) {    
+      html += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
+    } else {
+        html += "<p>No hay ningun libro de este autor</p>"
+    }   
+  });  
 
-      llineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
-    }
-    
-  });
-  lineahtml += "</ul>";
-
-  ejercicio3.innerHTML= lineahtml
+  html += "</ul>";  
+  
 });
-ejercicio3.innerHTML= lineahtml
+
+ejercicio3.innerHTML = html 
+
+
 // ==========================================================================================================
 // EJERCICIO 4
 // Añadir obra a la biblioteca
@@ -198,5 +200,6 @@ biblioteca.forEach((libro) => {
     listaEjer5 += `<option value="${libro.titulo}">${libro.titulo}, Autor: ${libro.autor}</option>`
 });
 
-
 ejercicio5.innerHTML = listaEjer5
+
+
