@@ -87,26 +87,46 @@ function mostrarListaEj1() {
 // La salida por pantalla será en este formato:
 // Isaac Asimov : Yo, robot (ciencia-ficción, idioma : español, época : s.XX) 
 
+const formEj3 = document.forms["form-autor"];
+const ejercicio3 = document.getElementById("ejer3");
 
-function listaEj3() {
-    // creo una constante para poder interactuar con el div, que tiene la id ejer1
-    const ejercicio3 = document.getElementById("ejer3");
+formEj4.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
 
-    // creo una constante para poder interactuar con el formulario correspondiente
-    const formEj3 = document.forms["form-autor"];
+  let lineahtml = "<ul>";
+  biblioteca.forEach((libro) => {
+    console.log(biblioteca.autor == autor);
+    if (biblioteca.autor == autor) {      
 
-    const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
+      llineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
+    }
+    
+  });
+  lineahtml += "</ul>";
 
-    let lineahtml = "<ul>";
-    biblioteca.forEach((libro) => {      
-      if (libro.autor == autor) {       
-        lineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
-      }
-    });
-    lineahtml += "</ul>";
+  ejercicio3.innerHTML= lineahtml
+});
+
+// function listaEj3() {
+//     // creo una constante para poder interactuar con el div, que tiene la id ejer1
+//     const ejercicio3 = document.getElementById("ejer3");
+
+//     // creo una constante para poder interactuar con el formulario correspondiente
+//     const formEj3 = document.forms["form-autor"];
+
+//     const autor = formEj4["autor"].value.trim().toLocaleLowerCase();
+
+//     let lineahtml = "<ul>";
+//     biblioteca.forEach((libro) => {      
+//       if (libro.autor == autor) {       
+//         lineahtml += `<li>${libro.autor} : ${libro.titulo} (${libro.categoria}, idioma : ${libro.idioma}, época : ${libro.epoca})</li>`;
+//       }
+//     });
+//     lineahtml += "</ul>";
   
-    ejercicio3.innerHTML= lineahtml;
-};
+//     ejercicio3.innerHTML= lineahtml;
+// };
 
 // ==========================================================================================================
 // EJERCICIO 4
