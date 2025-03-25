@@ -43,7 +43,13 @@ const biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [
 // Llista del llibres
 // const listaLibros = document.getElementById("listaLibros");
 
+// creo una constante para poder interactuar con el div, que tiene la id ejer1
+const ejercicio1 = document.getElementById("ejer1");
 
+// Ordeno el array alfabeticamente por titulo
+flores.sort((a, b) => {
+    return a.titulo.localeCompare(b.titulo, "es-ES", { numeric: true });
+  });
 
 
 // ==========================================================================================================
