@@ -7,30 +7,28 @@
     <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-    <body>
-        <div class="container">
-            <h1>My TO-DO APP ☰</h1>
-            <p>Introducir tarea y definir estado</p>
-            <input type="text" id="taskInput" placeholder="Nueva tarea">
-            <select id="status">
-                <option value="pendiente">pendiente</option>
-                <option value="ejecucion">ejecucion</option>
-                <option value="realizada">realizada</option>
-            </select>
-            <button onclick="addTask()">Añadir tarea</button>
-    
-            <div class="tasks">
-                <h3>Pendientes</h3>
-                <div id="pendientes"></div>
-    
-                <h3>En ejecución</h3>
-                <div id="ejecucion"></div>
-    
-                <h3>Finalizadas</h3>
-                <div id="realizadas"></div>
-            </div>
+    <div class="container">
+        <h1>My TO-DO APP ☰</h1>
+        <p>Introducir tarea y definir estado</p>
+        <input type="text" id="taskInput" placeholder="Nueva tarea">
+        <select id="status">
+            <option value="pendiente">pendiente</option>
+            <option value="ejecucion">ejecucion</option>
+            <option value="realizada">realizada</option>
+        </select>
+        <button onclick="addTask()">Añadir tarea</button>
+
+        <div class="tasks">
+            <h3>Pendientes</h3>
+            <div id="pendientes"></div>
+
+            <h3>En ejecución</h3>
+            <div id="ejecucion"></div>
+
+            <h3>Finalizadas</h3>
+            <div id="realizadas"></div>
         </div>
-        <script src="js/TO_DO.js"></script>
-        
+    </div>
+    <script src="js/TO_DO.js"></script>
 </body>
 </html>
