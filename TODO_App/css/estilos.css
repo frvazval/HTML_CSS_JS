@@ -44,7 +44,11 @@ select {
     padding: 8px;
     border-radius: 10px;
     font-size: 14px;
-    background: white;
+    background: white;    
+}
+
+input, select {
+    background-color: #f0f0f0; /* Gris claro */
 }
 
 button {
