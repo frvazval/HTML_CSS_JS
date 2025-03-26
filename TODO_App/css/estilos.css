@@ -56,7 +56,7 @@ button:hover {
 }
 
 #pendiente {
-    background-color: red; /* Rojo */
+    background-color: #ffcccc; /* Rojo claro*/
 }
 
 #ejecucion {
