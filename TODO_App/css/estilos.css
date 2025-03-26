@@ -56,7 +56,7 @@ button:hover {
 }
 
 #pendiente {
-    background-color: #ffcccc; /* Rojo claro*/
+    background-color: #ffcccc; /* Rojo claro */
 }
 
 #ejecucion {
@@ -69,6 +69,7 @@ button:hover {
 
 .task {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #000;
@@ -84,6 +85,7 @@ button:hover {
     padding: 5px;
     border-radius: 5px;
     background-color: #f0f0f0; /* Gris claro */
+    order: 3;
 }
 
 .actions {
@@ -127,26 +129,17 @@ label {
 
 .task-inputs {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row; /* Alinear en la misma línea */
+    align-items: center;
+    justify-content: center; /* Centrar los elementos */
     gap: 20px;
     max-width: 800px;
     margin: auto;
 }
 
-.task-inputs input {
-    flex: 1;
-    min-width: 150px;
-}
-
-.task-actions {
+.input-group {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.task-actions select, .task-actions button {
-    flex: 1;
-    max-width: 200px;
+    width: 50%;
 }
