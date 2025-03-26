@@ -12,21 +12,21 @@
         <p>Introducir tarea y definir estado</p>
         <input type="text" id="taskInput" placeholder="Nueva tarea">
         <select id="status">
-            <option value="pendiente">pendiente</option>
-            <option value="ejecucion">ejecucion</option>
-            <option value="realizada">realizada</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="ejecucion">En ejecución</option>
+            <option value="realizada">Realizada</option>
         </select>
         <button onclick="addTask()">Añadir tarea</button>
 
         <div class="tasks">
             <h3>Pendientes</h3>
-            <div id="pendientes"></div>
+            <div id="pendiente" class="task-container"></div>
 
             <h3>En ejecución</h3>
-            <div id="ejecucion"></div>
+            <div id="ejecucion" class="task-container"></div>
 
             <h3>Finalizadas</h3>
-            <div id="realizadas"></div>
+            <div id="realizada" class="task-container"></div>
         </div>
     </div>
     <script src="js/TO_DO.js"></script>
