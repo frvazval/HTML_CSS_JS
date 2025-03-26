@@ -33,6 +33,11 @@ input, select, button {
 
 input {
     width: 60%;
+    background-color: #f0f0f0; /* Gris claro */
+}
+
+input, select, textarea {
+    background-color: #f0f0f0; /* Gris claro */
 }
 
 select {
