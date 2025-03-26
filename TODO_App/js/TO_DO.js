@@ -12,11 +12,15 @@ function addTask() {
     taskDiv.innerHTML = `
         <span>${taskText}</span>
         <select onchange="moveTask(this)">
-            <option value="pendiente" ${status === "pendiente" ? "selected" : ""}>Pendiente</option>
-            <option value="ejecucion" ${status === "ejecucion" ? "selected" : ""}>En ejecución</option>
-            <option value="realizada" ${status === "realizada" ? "selected" : ""}>Realizada</option>
+            <option value="pendiente" ${status === "pendiente" ? "selected" : ""}>pendiente</option>
+            <option value="ejecucion" ${status === "ejecucion" ? "selected" : ""}>ejecucion</option>
+            <option value="realizada" ${status === "realizada" ? "selected" : ""}>realizada</option>
         </select>
-        <button class="delete-btn" onclick="deleteTask(this)">🗑️</button>
+        <div class="actions">
+            <button class="move-btn" onclick="moveTaskToExecution(this)">🏃</button>
+            <button class="complete-btn" onclick="completeTask(this)">👍</button>
+            <button class="delete-btn" onclick="deleteTask(this)">🗑️</button>
+        </div>
     `;
 
     document.getElementById(status).appendChild(taskDiv);
@@ -25,11 +29,20 @@ function addTask() {
 
 function moveTask(selectElement) {
     let newStatus = selectElement.value;
-    let taskDiv = selectElement.parentElement;
-
+    let taskDiv = selectElement.closest(".task");
     document.getElementById(newStatus).appendChild(taskDiv);
 }
 
+function moveTaskToExecution(button) {
+    let taskDiv = button.closest(".task");
+    document.getElementById("ejecucion").appendChild(taskDiv);
+}
+
+function completeTask(button) {
+    let taskDiv = button.closest(".task");
+    document.getElementById("realizada").appendChild(taskDiv);
+}
+
 function deleteTask(button) {
-    button.parentElement.remove();
+    button.closest(".task").remove();
 }
