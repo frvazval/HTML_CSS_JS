@@ -13,6 +13,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #bbdefb; /* Azul claro */
 }
 
 h1 {
@@ -152,6 +153,16 @@ label {
     display: flex;
     flex-direction: column; /* Colocar el label arriba del input */
     flex: 1; /* Para que ambos grupos ocupen el mismo espacio */
+}
+
+.task-actions button {
+    background: green;
+    color: white;
+    border: 1px solid darkgreen;
+}
+
+.task-actions button:hover {
+    background: darkgreen;
 }
 
 #pendiente {
