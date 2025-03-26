@@ -119,15 +119,14 @@ button:hover {
 
 label {
     font-weight: bold;
-    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .task-inputs {
     display: flex;
-    align-items: center; /* Alinear verticalmente */
-    gap: 10px; /* Espacio entre los elementos */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    max-width: 800px; /* Ancho máximo del contenedor */
+    align-items: flex-start; /* Alinear elementos al inicio */
+    gap: 20px; /* Espacio entre los grupos de inputs */
+    max-width: 800px; 
     margin: auto;
 }
 
@@ -147,4 +146,10 @@ label {
 .task-actions select, .task-actions button {
     flex: 1; /* Hacer que ambos ocupen el mismo espacio */
     max-width: 200px; /* Evitar que sean demasiado grandes */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Colocar el label arriba del input */
+    flex: 1; /* Para que ambos grupos ocupen el mismo espacio */
 }
