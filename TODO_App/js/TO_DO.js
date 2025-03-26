@@ -1,5 +1,6 @@
 function addTask() {
     let taskText = document.getElementById("taskInput").value.trim();
+    let dueDate = document.getElementById("dueDate").value;
     let status = document.getElementById("status").value;
 
     if (!taskText) {
@@ -7,10 +8,17 @@ function addTask() {
         return;
     }
 
+    // Obtener la fecha de hoy como fecha de creación
+    let today = new Date().toISOString().split("T")[0];
+
+    // Crear el div de la tarea
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
     taskDiv.innerHTML = `
-        <span>${taskText}</span>
+        <div>
+            <span><strong>${taskText}</strong></span>
+            <p>📅 Creado: ${today} | ⏳ Vence: ${dueDate ? dueDate : "No definida"}</p>
+        </div>
         <select onchange="moveTask(this)">
             <option value="pendiente" ${status === "pendiente" ? "selected" : ""}>pendiente</option>
             <option value="ejecucion" ${status === "ejecucion" ? "selected" : ""}>ejecucion</option>
@@ -24,7 +32,10 @@ function addTask() {
     `;
 
     document.getElementById(status).appendChild(taskDiv);
+
+    // Limpiar campos
     document.getElementById("taskInput").value = "";
+    document.getElementById("dueDate").value = "";
 }
 
 function moveTask(selectElement) {

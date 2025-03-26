@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: auto;
     background: white;
     padding: 20px;
@@ -21,11 +21,13 @@ h1 {
 }
 
 input, select, button {
-    margin: 5px;
+    width: 100%; /* Hacer que los elementos ocupen todo el ancho disponible */
+    max-width: 600px; /* Definir un ancho máximo para que no sean demasiado grandes */
+    margin: 5px auto;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: 1px solid #000;
-    font-size: 14px;
+    display: block; /* Asegura que cada elemento esté en una nueva línea */
 }
 
 input {
@@ -107,4 +109,42 @@ button:hover {
 
 .move-btn {
     color: orange;
+}
+
+.task div p {
+    font-size: 12px;
+    color: gray;
+    margin: 5px 0 0 0;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.task-inputs {
+    display: flex;
+    align-items: center; /* Alinear verticalmente */
+    gap: 10px; /* Espacio entre los elementos */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: auto;
+}
+
+.task-inputs input {
+    flex: 1; /* Permite que los elementos crezcan proporcionalmente */
+    min-width: 150px; /* Evita que sean demasiado pequeños */
+}
+
+.task-actions {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    gap: 10px; /* Espacio entre el select y el botón */
+    max-width: 800px; /* Ajustar el ancho */
+    margin: auto;
+}
+
+.task-actions select, .task-actions button {
+    flex: 1; /* Hacer que ambos ocupen el mismo espacio */
+    max-width: 200px; /* Evitar que sean demasiado grandes */
 }

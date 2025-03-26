@@ -10,13 +10,19 @@
     <div class="container">
         <h1>My TO-DO APP ☰</h1>
         <p>Introducir tarea y definir estado</p>
-        <input type="text" id="taskInput" placeholder="Nueva tarea">
-        <select id="status">
-            <option value="pendiente">Pendiente</option>
-            <option value="ejecucion">En ejecución</option>
-            <option value="realizada">Realizada</option>
-        </select>
-        <button onclick="addTask()">Añadir tarea</button>
+        <div class="task-inputs">
+            <input type="text" id="taskInput" placeholder="Nueva tarea">
+            <label for="dueDate">Fecha de vencimiento:</label>
+            <input type="date" id="dueDate">
+        </div>  
+        <div class="task-actions">
+            <select id="status">
+                <option value="pendiente">pendiente</option>
+                <option value="ejecucion">ejecucion</option>
+                <option value="realizada">realizada</option>
+            </select>
+            <button onclick="addTask()">Añadir tarea</button>
+        </div>             
 
         <div class="tasks">
             <h3>Pendientes</h3>
