@@ -9,6 +9,8 @@ body {
 input, select, button {
     margin: 5px;
     padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #000;
 }
 .tasks {
     text-align: left;
@@ -21,12 +23,14 @@ input, select, button {
     border: 1px solid #000;
     padding: 5px;
     margin: 5px 0;
+    border-radius: 5px;
 }
 .task select {
-    background: black;
-    color: white;
-    border: none;
+    background: white;
+    color: black;
+    border: 1px solid #000;
     padding: 5px;
+    border-radius: 5px;
 }
 .task select option {
     background: white;

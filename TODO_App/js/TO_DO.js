@@ -24,17 +24,26 @@ function addTask() {
 function moveTask(selectElement) {
     let newStatus = selectElement.value;
     let taskDiv = selectElement.parentElement;
-    document.getElementById(newStatus).appendChild(taskDiv);
+    let targetContainer = document.getElementById(newStatus);
+    if (targetContainer) {
+        targetContainer.appendChild(taskDiv);
+    }
 }
 
 function moveTaskToExecution(button) {
     let taskDiv = button.parentElement.parentElement;
-    document.getElementById("ejecucion").appendChild(taskDiv);
+    let targetContainer = document.getElementById("ejecucion");
+    if (targetContainer) {
+        targetContainer.appendChild(taskDiv);
+    }
 }
 
 function completeTask(button) {
     let taskDiv = button.parentElement.parentElement;
-    document.getElementById("realizadas").appendChild(taskDiv);
+    let targetContainer = document.getElementById("realizadas");
+    if (targetContainer) {
+        targetContainer.appendChild(taskDiv);
+    }
 }
 
 function deleteTask(button) {
