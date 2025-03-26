@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO_App</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
     <div class="container">
         <h1>My TO-DO APP ☰</h1>
         <p>Introducir tarea y definir estado</p>
-
         <div class="task-inputs">
             <div class="input-group">
                 <label for="taskInput">Nueva tarea:</label>
                 <input type="text" id="taskInput" placeholder="Nueva tarea">
             </div>
+            
             <div class="input-group">
                 <label for="dueDate">Fecha de vencimiento:</label>
                 <input type="date" id="dueDate">
             </div>
         </div>
-
+        
         <div class="task-actions">
             <select id="status">
                 <option value="pendiente">pendiente</option>
@@ -33,16 +33,15 @@
 
         <div class="tasks">
             <h3>Pendientes</h3>
-            <div id="pendientes"></div>
+            <div id="pendiente" class="task-container"></div>
 
             <h3>En ejecución</h3>
-            <div id="ejecucion"></div>
+            <div id="ejecucion" class="task-container"></div>
 
             <h3>Finalizadas</h3>
-            <div id="realizadas"></div>
+            <div id="realizada" class="task-container"></div>
         </div>
     </div>
-
     <script src="js/TO_DO.js"></script>
 </body>
 </html>

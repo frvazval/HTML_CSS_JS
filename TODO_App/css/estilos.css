@@ -1,49 +1,68 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
     max-width: 800px;
     margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.task-inputs, .task-actions {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 800px; /* Mantiene el ancho alineado */
-    margin: auto;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1; /* Ambos inputs ocupan el mismo ancho */
-}
-
-label {
+h1 {
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
 input, select, button {
+    width: 100%; /* Hacer que los elementos ocupen todo el ancho disponible */
+    max-width: 600px; /* Definir un ancho máximo para que no sean demasiado grandes */
+    margin: 5px auto;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #000;
-    width: 100%;
+    display: block; /* Asegura que cada elemento esté en una nueva línea */
 }
 
-.task-actions select,
-.task-actions button {
-    flex: 1; /* Ajusta el ancho de ambos elementos */
-    height: 40px; /* Altura uniforme */
-    max-width: 100%;
+input {
+    width: 60%;
+}
+
+select {
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 14px;
+    background: white;
+}
+
+button {
+    background: #e0e0e0;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #d0d0d0;
 }
 
 .tasks {
     text-align: left;
     margin-top: 20px;
+}
+
+.task-container {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    min-height: 50px;
 }
 
 .task {
@@ -54,19 +73,14 @@ input, select, button {
     padding: 5px;
     margin: 5px 0;
     border-radius: 5px;
+    background: white;
+    font-size: 16px;
 }
 
 .task select {
-    background: white;
-    color: black;
     border: 1px solid #000;
     padding: 5px;
     border-radius: 5px;
-}
-
-.task select option {
-    background: white;
-    color: black;
 }
 
 .actions {
@@ -78,4 +92,64 @@ input, select, button {
     background: none;
     border: none;
     cursor: pointer;
+    font-size: 18px;
+}
+
+.actions button:hover {
+    opacity: 0.7;
+}
+
+.delete-btn {
+    color: red;
+}
+
+.complete-btn {
+    color: green;
+}
+
+.move-btn {
+    color: orange;
+}
+
+.task div p {
+    font-size: 12px;
+    color: gray;
+    margin: 5px 0 0 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-inputs {
+    display: flex;
+    align-items: flex-start; /* Alinear elementos al inicio */
+    gap: 20px; /* Espacio entre los grupos de inputs */
+    max-width: 800px; 
+    margin: auto;
+}
+
+.task-inputs input {
+    flex: 1; /* Permite que los elementos crezcan proporcionalmente */
+    min-width: 150px; /* Evita que sean demasiado pequeños */
+}
+
+.task-actions {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    gap: 10px; /* Espacio entre el select y el botón */
+    max-width: 800px; /* Ajustar el ancho */
+    margin: auto;
+}
+
+.task-actions select, .task-actions button {
+    flex: 1; /* Hacer que ambos ocupen el mismo espacio */
+    max-width: 200px; /* Evitar que sean demasiado grandes */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Colocar el label arriba del input */
+    flex: 1; /* Para que ambos grupos ocupen el mismo espacio */
 }
