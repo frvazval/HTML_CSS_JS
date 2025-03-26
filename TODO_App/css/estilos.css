@@ -9,11 +9,10 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
-    background: white;
+    background: #bbdefb; /* Azul claro */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: #bbdefb; /* Azul claro */
 }
 
 h1 {
@@ -22,44 +21,26 @@ h1 {
 }
 
 input, select, button {
-    width: 100%; /* Hacer que los elementos ocupen todo el ancho disponible */
-    max-width: 600px; /* Definir un ancho máximo para que no sean demasiado grandes */
+    width: 100%;
+    max-width: 600px;
     margin: 5px auto;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #000;
-    display: block; /* Asegura que cada elemento esté en una nueva línea */
-}
-
-input {
-    width: 60%;
-    background-color: #f0f0f0; /* Gris claro */
-}
-
-input, select, textarea {
-    background-color: #f0f0f0; /* Gris claro */
-}
-
-select {
-    padding: 8px;
-    border-radius: 10px;
-    font-size: 14px;
-    background: white;    
-}
-
-input, select {
+    display: block;
     background-color: #f0f0f0; /* Gris claro */
 }
 
 button {
-    background: #e0e0e0;
-    cursor: pointer;
-    border: 1px solid #000;
+    background: green;
+    color: white;
+    border: 1px solid darkgreen;
     font-size: 14px;
+    cursor: pointer;
 }
 
 button:hover {
-    background: #d0d0d0;
+    background: darkgreen;
 }
 
 .tasks {
@@ -70,9 +51,20 @@ button:hover {
 .task-container {
     margin-top: 10px;
     padding: 10px;
-    background: #f9f9f9;
     border-radius: 5px;
     min-height: 50px;
+}
+
+#pendiente {
+    background-color: red; /* Rojo */
+}
+
+#ejecucion {
+    background-color: #fff9c4; /* Amarillo claro */
+}
+
+#realizada {
+    background-color: #c8e6c9; /* Verde claro */
 }
 
 .task {
@@ -91,6 +83,7 @@ button:hover {
     border: 1px solid #000;
     padding: 5px;
     border-radius: 5px;
+    background-color: #f0f0f0; /* Gris claro */
 }
 
 .actions {
@@ -134,55 +127,26 @@ label {
 
 .task-inputs {
     display: flex;
-    align-items: flex-start; /* Alinear elementos al inicio */
-    gap: 20px; /* Espacio entre los grupos de inputs */
-    max-width: 800px; 
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 800px;
     margin: auto;
 }
 
 .task-inputs input {
-    flex: 1; /* Permite que los elementos crezcan proporcionalmente */
-    min-width: 150px; /* Evita que sean demasiado pequeños */
+    flex: 1;
+    min-width: 150px;
 }
 
 .task-actions {
     display: flex;
-    align-items: center; /* Alinear elementos verticalmente */
-    gap: 10px; /* Espacio entre el select y el botón */
-    max-width: 800px; /* Ajustar el ancho */
+    align-items: center;
+    gap: 10px;
+    max-width: 800px;
     margin: auto;
 }
 
 .task-actions select, .task-actions button {
-    flex: 1; /* Hacer que ambos ocupen el mismo espacio */
-    max-width: 200px; /* Evitar que sean demasiado grandes */
+    flex: 1;
+    max-width: 200px;
 }
-
-.input-group {
-    display: flex;
-    flex-direction: column; /* Colocar el label arriba del input */
-    flex: 1; /* Para que ambos grupos ocupen el mismo espacio */
-}
-
-.task-actions button {
-    background: green;
-    color: white;
-    border: 1px solid darkgreen;
-}
-
-.task-actions button:hover {
-    background: darkgreen;
-}
-
-#pendiente {
-    background-color: #ffcccc; /* Rojo claro */
-}
-
-#ejecucion {
-    background-color: #fff9c4; /* Amarillo claro */
-}
-
-#realizada {
-    background-color: #c8e6c9; /* Verde claro */
-}
-
