@@ -1,3 +1,10 @@
+
+window.onload = function () {
+    // Obtener la fecha de hoy en formato YYYY-MM-DD
+    let today = new Date().toISOString().split("T")[0];
+    document.getElementById("dueDate").setAttribute("min", today);
+};
+
 function addTask() {
     let taskText = document.getElementById("taskInput").value.trim();
     let dueDate = document.getElementById("dueDate").value;
