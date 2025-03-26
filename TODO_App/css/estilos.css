@@ -9,7 +9,7 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
-    background: #bbdefb; /* Azul claro */
+    background: #bbdefb;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,17 @@ input, select, button {
     border-radius: 5px;
     border: 1px solid #000;
     display: block;
-    background-color: #f0f0f0; /* Gris claro */
+    background-color: #f0f0f0;
+}
+
+#taskInput {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#dueDate {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 button {
@@ -55,17 +65,9 @@ button:hover {
     min-height: 50px;
 }
 
-#pendiente {
-    background-color: #ffcccc; /* Rojo claro */
-}
-
-#ejecucion {
-    background-color: #fff9c4; /* Amarillo claro */
-}
-
-#realizada {
-    background-color: #c8e6c9; /* Verde claro */
-}
+#pendiente { background-color: #ffcccc; }
+#ejecucion { background-color: #fff9c4; }
+#realizada { background-color: #c8e6c9; }
 
 .task {
     display: flex;
@@ -80,67 +82,7 @@ button:hover {
     font-size: 16px;
 }
 
-.task select {
-    border: 1px solid #000;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #f0f0f0; /* Gris claro */
-    order: 3;
-}
-
 .actions {
     display: flex;
     gap: 5px;
-}
-
-.actions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.actions button:hover {
-    opacity: 0.7;
-}
-
-.delete-btn {
-    color: red;
-}
-
-.complete-btn {
-    color: green;
-}
-
-.move-btn {
-    color: orange;
-}
-
-.task div p {
-    font-size: 12px;
-    color: gray;
-    margin: 5px 0 0 0;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.task-inputs {
-    display: flex;
-    flex-direction: row; /* Alinear en la misma línea */
-    align-items: center;
-    justify-content: center; /* Centrar los elementos */
-    gap: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: auto;
 }

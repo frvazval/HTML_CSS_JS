@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO_App</title>
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <div class="container">
@@ -15,13 +15,11 @@
                 <label for="taskInput">Nueva tarea:</label>
                 <input type="text" id="taskInput" placeholder="Nueva tarea">
             </div>
-            
             <div class="input-group">
                 <label for="dueDate">Fecha de vencimiento:</label>
                 <input type="date" id="dueDate">
             </div>
         </div>
-        
         <div class="task-actions">
             <select id="status">
                 <option value="pendiente">pendiente</option>
@@ -30,14 +28,11 @@
             </select>
             <button onclick="addTask()">Añadir tarea</button>
         </div>
-
         <div class="tasks">
             <h3>Pendientes</h3>
             <div id="pendiente" class="task-container"></div>
-
             <h3>En ejecución</h3>
             <div id="ejecucion" class="task-container"></div>
-
             <h3>Finalizadas</h3>
             <div id="realizada" class="task-container"></div>
         </div>
