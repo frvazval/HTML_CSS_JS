@@ -12,18 +12,22 @@ function addTask() {
     taskDiv.innerHTML = `
         <span>${taskText}</span>
         <select onchange="moveTask(this)">
-            <option value="pendiente" ${status === "pendiente" ? "selected" : ""}>pendiente</option>
-            <option value="ejecucion" ${status === "ejecucion" ? "selected" : ""}>ejecucion</option>
-            <option value="realizada" ${status === "realizada" ? "selected" : ""}>realizada</option>
+            <option value="pendiente" ${status === "pendiente" ? "selected" : ""}>Pendiente</option>
+            <option value="ejecucion" ${status === "ejecucion" ? "selected" : ""}>En ejecución</option>
+            <option value="realizada" ${status === "realizada" ? "selected" : ""}>Realizada</option>
         </select>
         <div class="actions">
-            <button class="move-btn" onclick="moveTaskToExecution(this)">🏃</button>
-            <button class="complete-btn" onclick="completeTask(this)">👍</button>
-            <button class="delete-btn" onclick="deleteTask(this)">🗑️</button>
+            <button title="Mover a En ejecución" onclick="moveTaskToExecution(this)">🏃</button>
+            <button title="Marcar como completada" onclick="completeTask(this)">👍</button>
+            <button title="Eliminar tarea" onclick="deleteTask(this)">🗑️</button>
         </div>
     `;
 
-    document.getElementById(status).appendChild(taskDiv);
+    let targetContainer = document.getElementById(status);
+    if (targetContainer) {
+        targetContainer.appendChild(taskDiv);
+    }
+
     document.getElementById("taskInput").value = "";
 }
 
