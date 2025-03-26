@@ -153,3 +153,16 @@ label {
     flex-direction: column; /* Colocar el label arriba del input */
     flex: 1; /* Para que ambos grupos ocupen el mismo espacio */
 }
+
+#pendiente {
+    background-color: #ffcccc; /* Rojo claro */
+}
+
+#ejecucion {
+    background-color: #fff9c4; /* Amarillo claro */
+}
+
+#realizada {
+    background-color: #c8e6c9; /* Verde claro */
+}
+
