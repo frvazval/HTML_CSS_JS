@@ -6,23 +6,37 @@ function addTask() {
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
     taskDiv.innerHTML = `<span>${taskText}</span>
-        <select onchange="moveTask(this, '${taskText}')">
-            <option value="pendiente">Pendiente</option>
-            <option value="ejecucion">En ejecución</option>
-            <option value="realizada">Finalizada</option>
+        <select onchange="moveTask(this)">
+            <option value="pendiente">pendiente</option>
+            <option value="ejecucion">ejecucion</option>
+            <option value="realizada">realizada</option>
         </select>
-        <button onclick="deleteTask(this)">🗑️</button>`;
+        <div class="actions">
+            <button onclick="moveTaskToExecution(this)">🏃</button>
+            <button onclick="completeTask(this)">👍</button>
+            <button onclick="deleteTask(this)">🗑️</button>
+        </div>`;
 
     document.getElementById(status).appendChild(taskDiv);
     document.getElementById("taskInput").value = "";
 }
 
-function moveTask(selectElement, taskText) {
+function moveTask(selectElement) {
     let newStatus = selectElement.value;
     let taskDiv = selectElement.parentElement;
     document.getElementById(newStatus).appendChild(taskDiv);
 }
 
+function moveTaskToExecution(button) {
+    let taskDiv = button.parentElement.parentElement;
+    document.getElementById("ejecucion").appendChild(taskDiv);
+}
+
+function completeTask(button) {
+    let taskDiv = button.parentElement.parentElement;
+    document.getElementById("realizadas").appendChild(taskDiv);
+}
+
 function deleteTask(button) {
-    button.parentElement.remove();
+    button.parentElement.parentElement.remove();
 }
