@@ -19,7 +19,9 @@ function actualizarInformacion() {
     const appid = "0cb0fdd74d71dd20b2b35ef7a5b0925c";
     const nombreCiudad = document.getElementById("nombreCiudad");
     const temperatura = document.getElementById("temperatura");
-    
+    const presion = document.getElementById("presion");
+    const humedad = document.getElementById("humedad");
+    const descripcion = document.getElementById("descripcion");
     
     let url = `https://api.openweathermap.org/data/2.5/weather?appid=${appid}&units=metric&lang=${idioma}&q=${ciudad}`;
 
@@ -28,9 +30,9 @@ function actualizarInformacion() {
     .then(datos => {
         nombreCiudad.textContent = `${datos.name}`;
         temperatura.textContent = `${datos['main']['temp']}ºC`;
-        // divDatos.innerHTML += `<p>Temperatura actual : ${datos['main']['temp']}ºC</p>`
-        // divDatos.innerHTML += `<p>Descripción : ${datos['weather'][0].description}</p>`
-        // divDatos.innerHTML += `<p><img id="imagen" src="https://www.imelcf.gob.pa/wp-content/plugins/location-weather/assets/images/icons/weather-icons/${datos['weather'][0]['icon']}.svg"></p>`
+        presion.textContent = `Presión: ${datos['main']['pressure']} hPa`;
+        humedad.textContent = `Humedad: ${datos['main']['humidity']}%`;
+        descripcion.textContent = `Descripción: ${datos['weather'][0]['description']}`;
     });
 }
 
