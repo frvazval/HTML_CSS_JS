@@ -1,4 +1,4 @@
-Desarrollar un app, pensada para personas mayores.
+Desarrollar un app, pensada para personas mayores, iconos grandes.
 de facil utilización.
 accesible a personas con visión reducida o ciegas.
 que notifique con antelación si va llover pronto.
