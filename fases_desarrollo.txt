@@ -1,8 +1,9 @@
 CICLO DE VIDA DE LAS APLICACIONES
 
 Requierimientos
-
+    
 Desarrollo
+    Accesibilidad (Esto afecta tanto a la UI como a la Codificación)
     UI (Experiencia de usuario, interface)
     Codificación
         Front
