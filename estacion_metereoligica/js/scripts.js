@@ -14,6 +14,7 @@ function actualizarInformacion() {
     console.log("Ciudad ingresada:", ciudad);
     const appid = "0cb0fdd74d71dd20b2b35ef7a5b0925c"
     const nombreCiudad = document.getElementById("nombreCiudad") 
+    const temperatura = document.getElementById("temperaruta")
     
     
     
