@@ -1,7 +1,25 @@
+
+// Actualiza la fecha y hora al cargar la página
+updateDateTime();
+
+// Opcional: Actualiza cada segundo
+setInterval(updateDateTime, 1000);
+
 window.onload = function () {
     let today = new Date().toISOString().split("T")[0];
     document.getElementById("dueDate").setAttribute("min", today);
 };
+
+function updateDateTime() {
+    const dateTimeElement = document.getElementById('currentDateTime');
+    const now = new Date();
+    const formattedDateTime = now.toLocaleString('es-ES', {
+        dateStyle: 'full',
+        timeStyle: 'short'
+    });
+    dateTimeElement.textContent = formattedDateTime;
+}
+
 
 function addTask() {
     let taskText = document.getElementById("taskInput").value.trim();
