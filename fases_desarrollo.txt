@@ -1,0 +1,16 @@
+CICLO DE VIDA DE LAS APLICACIONES
+
+Requierimientos
+
+Desarrollo
+    UI (Experiencia de usuario, interface)
+    Codificación
+        Front
+
+        back
+            Server
+            BD 
+
+Test
+
+
