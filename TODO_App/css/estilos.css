@@ -104,3 +104,7 @@ button:hover {
 .bold-text {
     font-weight: bold;
 }
+
+.bold-label {
+    font-weight: bold;
+}
