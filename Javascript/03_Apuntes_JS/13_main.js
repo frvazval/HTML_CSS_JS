@@ -1,5 +1,5 @@
 import text from './13_texto.js'
-console.log(text);
+console.log(text); // Muestra el contenido de text por la consola
 
 const btnTexto = document.getElementById('btnTexto')
 const divTexto = document.getElementById('divTexto')
@@ -18,4 +18,22 @@ btnTexto.addEventListener('click', () => {
     .finally(() => {
         console.log("Programa finalizado")
     })
+})
+
+const btnDatos = document.getElementById('btnDatos')
+const divDatos = document.getElementById('divDatos')
+
+btnDatos.addEventListener('click', () => {
+    fetch('13_datos.json')
+    .then(dato => {
+        //console.log(dato)
+        return dato.json()})
+
+    .then(res => {
+        console.table(res)
+       
+    }).catch(error => console.error("Error", error))
+
+    .finally(() => console.log("Finalizado"))
+    
 })

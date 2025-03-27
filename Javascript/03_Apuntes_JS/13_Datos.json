@@ -1,0 +1,19 @@
+[
+    {
+        "nombre" : "Clark",
+        "apellido" : "Kent",
+        "profesion" : "periodista"
+    },
+
+    {
+        "nombre" : "Peter",
+        "apellido" : "Parker",
+        "profesion" : "fotografo"
+    },
+
+    {
+        "nombre" : "Selina",
+        "apellido" : "Kyle",
+        "profesion" : "programadora"
+    }
+]
