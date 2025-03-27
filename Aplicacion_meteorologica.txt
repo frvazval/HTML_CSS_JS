@@ -1,0 +1,13 @@
+Desarrollar un app, pensada para personas mayores.
+de facil utilización.
+accesible a personas con visión reducida o ciegas.
+que notifique con antelación si va llover pronto.
+presupuesto 1000€
+colores inspirados en la naturaleza.
+que muestre un mapa para indicar el tiempo.
+previsión de una semana.
+plazo 3 meses.
+tener un versión de prueba en un mes.
+tendra publicidad de viajes, aventura, deportes y excursiones.
+que tenga un mantenimiento cada 6 meses para posibles actualizaciones.
+
