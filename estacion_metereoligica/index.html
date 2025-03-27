@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/estilos.css">  
     <script defer src="js/scripts.js"></script>      
 </head>
-<body>
+<body onload="actualizarInformacion()">
     <div class="container">
         <div class="top-bar">
             <select id="idioma" onchange="actualizarInformacion()">
@@ -17,12 +17,13 @@
                 <option value="fr">Français</option>
                 <option value="gl">Galego</option>
                 <option value="eu">Euskara</option>
+                <option value="pt">Português</option>
             </select>
-            <input type="text" id="ciudad" placeholder="Ingrese una ciudad" oninput="actualizarInformacion()">
+            <input type="text" id="ciudad" placeholder="Ingrese una ciudad" value="Barcelona" oninput="actualizarInformacion()">
         </div>
         <div class="weather-info">
             <div>
-                <h2 id="nombreCiudad">Ciudad</h2>
+                <h2 id="nombreCiudad"></h2>
                 <p id="temperatura"></p>
                 <p id="date-time">Fecha y Hora: --</p>
             </div>
