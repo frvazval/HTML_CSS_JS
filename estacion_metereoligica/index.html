@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="top-bar">
-            <select id="language">
+            <select id="idioma" onchange="actualizarInformacion()">
                 <option value="es">Español</option>
                 <option value="ca">Català</option>
                 <option value="en">English</option>
@@ -18,12 +18,12 @@
                 <option value="gl">Galego</option>
                 <option value="eu">Euskara</option>
             </select>
-            <input type="text" id="city" placeholder="Ingrese una ciudad">
+            <input type="text" id="ciudad" placeholder="Ingrese una ciudad" oninput="actualizarInformacion()">
         </div>
         <div class="weather-info">
             <div>
-                <h2 id="city-name">Ciudad</h2>
-                <p id="weather">Clima: --</p>
+                <h2 id="nombreCiudad">Ciudad</h2>
+                <p id="temperatura">Clima: --</p>
                 <p id="date-time">Fecha y Hora: --</p>
             </div>
             <div class="weather-icon" id="weather-icon">☀️</div>
