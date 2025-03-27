@@ -3,3 +3,4 @@ https://openweathermap.org
 
 Icones:
 https://www.imelcf.gob.pa/wp-content/plugins/location-weather/assets/images/icons/weather-icons/
+
