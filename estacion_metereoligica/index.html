@@ -10,21 +10,21 @@
 <body>
     <div class="container">
         <h1>Datos Meteorológicos</h1>
-        <select id="language">
+        <select id="idioma">
             <option value="es">Español</option>
             <option value="ca">Catalán</option>
             <option value="gl">Gallego</option>
             <option value="eu">Vasco</option>
         </select>
-        <input type="text" id="city" placeholder="Introduce una ciudad">
+        <input type="text" id="ciudad" placeholder="Introduce una ciudad" value="Barcelona">
         <button onclick="getWeather()">Buscar</button>
         <div id="weather-info">
-            <h2 id="city-name"></h2>
-            <p id="temperature"></p>
-            <p id="pressure"></p>
-            <p id="humidity"></p>
-            <p id="description"></p>
-            <div id="icon" class="weather-icon"></div>
+            <h2 id="nombreCiudad"></h2>
+            <p id="temperatura"></p>
+            <p id="presion"></p>
+            <p id="humedad"></p>
+            <p id="descripcion"></p>
+            <div id="icono" class="icono-clima"></div>
         </div>
     </div>    
 </body>
