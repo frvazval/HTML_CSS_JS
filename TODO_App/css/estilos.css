@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa; /* Fondo claro neutro */
     margin: 0;
     padding: 20px;
 }
@@ -9,15 +9,16 @@ body {
 .container {
     width: 80%;
     margin: auto;
-    background: #bbdefb;
+    background: #ffffff; /* Fondo blanco */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(24, 19, 19, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 h1 {
     font-size: 24px;
     font-weight: bold;
+    color: #343a40; /* Texto oscuro */
 }
 
 input, select, button {
@@ -26,9 +27,10 @@ input, select, button {
     margin: 5px auto;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 1px solid #ced4da; /* Borde gris claro */
     display: block;
-    background-color: #f0f0f0;
+    background-color: #e9ecef; /* Fondo gris claro */
+    color: #495057; /* Texto gris oscuro */
 }
 
 .task-inputs, .task-actions {
@@ -46,25 +48,25 @@ input, select, button {
 }
 
 #taskInput {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #dueDate {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 button {
-    background: green;
+    background: #007bff; /* Azul oscuro */
     color: white;
-    border: 1px solid darkgreen;
+    border: 1px solid #0056b3; /* Azul más oscuro */
     font-size: 14px;
     cursor: pointer;
 }
 
 button:hover {
-    background: darkgreen;
+    background: #0056b3; /* Azul más oscuro al pasar el cursor */
 }
 
 .tasks {
@@ -79,21 +81,22 @@ button:hover {
     min-height: 50px;
 }
 
-#pendiente { background-color: #ffcccc; }
-#ejecucion { background-color: #fff9c4; }
-#realizada { background-color: #c8e6c9; }
+#pendiente { background-color: #f8d7da; /* Rojo claro */ }
+#ejecucion { background-color: #fff3cd; /* Amarillo claro */ }
+#realizada { background-color: #d4edda; /* Verde claro */ }
 
 .task {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #000;
+    border: 1px solid #ced4da; /* Borde gris claro */
     padding: 5px;
     margin: 5px 0;
     border-radius: 5px;
-    background: white;
+    background: #ffffff; /* Fondo blanco */
     font-size: 16px;
+    color: #495057; /* Texto gris oscuro */
 }
 
 .actions {
@@ -103,8 +106,10 @@ button:hover {
 
 .bold-text {
     font-weight: bold;
+    color: #343a40; /* Texto oscuro */
 }
 
 .bold-label {
     font-weight: bold;
+    color: #343a40; /* Texto oscuro */
 }
