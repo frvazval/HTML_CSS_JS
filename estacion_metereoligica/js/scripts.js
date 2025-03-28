@@ -33,6 +33,14 @@ async function getWeather() {
     }
 }
 
+// Función que muestra la fecha y hora actual en pantalla
+function muestraFechayHora() {
+    const fechaHora = document.getElementById('fechaHora');
+    const now = new Date();
+    fechaHora.textContent = now.toLocaleString();
+    setTimeout(muestraFechayHora, 1000);
+}
+
 // Evento para buscar al presionar "Enter"
 document.getElementById("ciudad").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -40,9 +48,4 @@ document.getElementById("ciudad").addEventListener("keypress", function(event) {
     }
 });
 
-function showDateTime() {
-    const fechaHora = document.getElementById('fechaHora');
-    const now = new Date();
-    fechaHora.textContent = now.toLocaleString();
-    setTimeout(showDateTime, 1000);
-}
+
