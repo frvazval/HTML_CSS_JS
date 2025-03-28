@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="css/estilos.css">
     <script defer src="js/scripts.js"></script>    
 </head>
-<body onload="getWeather()">
+<body onload="getWeather(); showDateTime()">
     <div class="container">
         <h1>Datos Meteorológicos</h1>
+        <p id="fechaHora"></p>
         <select id="idioma" onchange="getWeather()">
             <option value="es">Español</option>
             <option value="ca">Catalán</option>
@@ -27,5 +28,13 @@
             <div id="icono" class="icono-clima"></div>
         </div>
     </div>    
+    <script>
+        function showDateTime() {
+            const fechaHora = document.getElementById('fechaHora');
+            const now = new Date();
+            fechaHora.textContent = now.toLocaleString();
+            setTimeout(showDateTime, 1000);
+        }
+    </script>
 </body>
 </html>
