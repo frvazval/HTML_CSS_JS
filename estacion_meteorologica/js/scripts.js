@@ -1,4 +1,4 @@
-async function getWeather() {
+async function obtenerClima() {
     const apiKey = '7d348ad63627628c24b590b77048a721'; // Reemplaza con tu clave de OpenWeatherMap
     const ciudad = document.getElementById("ciudad").value;
     const idioma = document.getElementById("idioma").value;
@@ -48,8 +48,7 @@ function displayForecast(data) {
         const forecastItem = document.createElement("div");
         forecastItem.className = "forecast-item";
 
-        const date = new Date(forecast.dt * 1000).toLocaleDateString();
-        // const icon = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
+        const date = new Date(forecast.dt * 1000).toLocaleDateString();       
         const icon = `img/${forecast.weather[0].icon}.svg`;
         const temp = `${forecast.main.temp}°C`;
         const description = forecast.weather[0].description;
@@ -76,7 +75,7 @@ function muestraFechayHora() {
 // Evento para buscar al presionar "Enter"
 document.getElementById("ciudad").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        getWeather();
+        obtenerClima();
     }
 });
 

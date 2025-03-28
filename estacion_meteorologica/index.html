@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/estilos.css">
     <script defer src="js/scripts.js"></script>    
 </head>
-<body onload="getWeather(); muestraFechayHora()">
+<body onload="obtenerClima(); muestraFechayHora()">
     <div class="container responsive-layout">
         <h1>Datos Meteorológicos</h1>
         <p id="fechaHora"></p>
         <div  class="form-group">
             <div>
                 <label for="idioma">Elige el idioma</label>
-                <select id="idioma" onchange="getWeather()">
+                <select id="idioma" onchange="obtenerClima()">
                     <option value="es">Español</option>
                     <option value="ca">Catalán</option>
                     <option value="gl">Gallego</option>
@@ -25,7 +25,7 @@
                 <label for="ciudad">Escribe una ciudad</label>
                 <input type="text" id="ciudad" placeholder="Introduce una ciudad" value="Barcelona">
             </div>
-            <button onclick="getWeather()">Buscar</button>
+            <button onclick="obtenerClima()">Buscar</button>
         </div>
         
         <div id="weather-info" class="weather-layout">
