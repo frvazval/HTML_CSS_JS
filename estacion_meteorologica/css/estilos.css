@@ -41,6 +41,21 @@ select, input {
     border: none;
 }
 
+button {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 1.2em; /* Increase font size */
+    background-color: #2196F3; /* Match the gradient color */
+    color: white; /* Ensure text is readable */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+button:hover {
+    background-color: #1E88E5; /* Slightly darker shade on hover */
+}
+
 .form-group {
     display: flex;
     justify-content: center; /* Center elements horizontally */
