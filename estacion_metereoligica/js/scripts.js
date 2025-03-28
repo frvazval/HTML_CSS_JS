@@ -39,3 +39,10 @@ document.getElementById("ciudad").addEventListener("keypress", function(event) {
         getWeather();
     }
 });
+
+function showDateTime() {
+    const fechaHora = document.getElementById('fechaHora');
+    const now = new Date();
+    fechaHora.textContent = now.toLocaleString();
+    setTimeout(showDateTime, 1000);
+}
