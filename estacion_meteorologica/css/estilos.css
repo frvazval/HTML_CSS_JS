@@ -41,6 +41,13 @@ select, input {
     border: none;
 }
 
+.form-group {
+    display: flex;
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    gap: 10px; /* Add spacing between elements */
+}
+
 .weather-layout {
     display: flex;
     justify-content: space-between; /* Position elements on opposite sides */
@@ -171,5 +178,56 @@ select, input {
 @media (min-width: 1024px) {
     .forecast-item {
         width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Use full width on smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 15px; /* Add spacing between stacked elements */
+    }
+
+    .weather-layout {
+        flex-direction: column; /* Stack info and icon vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .weather-layout .info {
+        text-align: center; /* Center text for smaller screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .weather-layout .icono-clima {
+        width: 150px; /* Reduce icon size */
+        height: 150px;
+    }
+
+    .forecast-layout {
+        flex-direction: column; /* Stack forecast items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .forecast-item {
+        width: 100%; /* Use full width for forecast items */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px; /* Adjust padding for tablets */
+    }
+
+    .weather-layout .info {
+        max-width: 400px; /* Adjust max width for tablets */
+    }
+
+    .weather-layout .icono-clima {
+        width: 200px; /* Adjust icon size for tablets */
+        height: 200px;
     }
 }
