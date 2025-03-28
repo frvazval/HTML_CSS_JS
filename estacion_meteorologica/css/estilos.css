@@ -6,7 +6,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh; /* Ensure full viewport height */
+    margin: 0; /* Remove default margin */
 }
 .container {
     background: rgba(0, 0, 0, 0.5);
@@ -16,6 +17,9 @@ body {
     max-width: 1200px; /* Allow more content horizontally */
     overflow: hidden; /* Prevent unnecessary scrollbars */
     height: auto; /* Ensure content fits without vertical scrolling */
+}
+.container.responsive-layout {
+    margin: auto; /* Center horizontally and vertically */
 }
 .icono-clima {    
     height: 150px;
