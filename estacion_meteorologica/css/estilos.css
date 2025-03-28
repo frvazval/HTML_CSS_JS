@@ -126,7 +126,7 @@ select, input {
 
 .forecast-layout {
     margin-top: 20px;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: space-between; /* Spread forecast items horizontally */
     gap: 20px;
