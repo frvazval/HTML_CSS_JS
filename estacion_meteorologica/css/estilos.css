@@ -42,7 +42,7 @@ body {
 select, input {
     padding: 10px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 30px; /* Make the elements elliptical */
     border: none;
 }
 
