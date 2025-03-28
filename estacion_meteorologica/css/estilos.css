@@ -24,6 +24,10 @@ body {
     margin: auto; /* Center horizontally and vertically */
 }
 
+.info {
+    width: 250px; /* Le fijo una anchura porque al cambiar de idioma, si el texto es más ancho se separa el icono solo */
+}
+
 #icono-clima {    
     height: 250px;
     width: 250px;
