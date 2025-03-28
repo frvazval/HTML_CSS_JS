@@ -9,6 +9,7 @@ body {
     height: 100vh; /* Ensure full viewport height */
     margin: 0; /* Remove default margin */
 }
+
 .container {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -18,13 +19,16 @@ body {
     overflow: hidden; /* Prevent unnecessary scrollbars */
     height: auto; /* Ensure content fits without vertical scrolling */
 }
+
 .container.responsive-layout {
     margin: auto; /* Center horizontally and vertically */
 }
+
 .icono-clima {    
     height: 150px;
     width: 150px;
 }
+
 .icono-prevision {
     height: 20px;
     width: 20px;
