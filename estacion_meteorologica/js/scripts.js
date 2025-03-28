@@ -26,7 +26,7 @@ async function getWeather() {
         document.getElementById("descripcion").textContent = descripcion;
 
         // Mostrar el icono del clima
-        document.getElementById("icono").innerHTML = `<img src="${icono}" alt="${descripcion}">`;
+        document.getElementById("icono").innerHTML = `<img id="icono-clima" src="${icono}" alt="${descripcion}">`;
 
         // Fetch weather forecast
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&lang=${idioma}&units=metric&appid=${apiKey}`;

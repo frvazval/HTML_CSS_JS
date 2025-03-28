@@ -24,9 +24,9 @@ body {
     margin: auto; /* Center horizontally and vertically */
 }
 
-.icono-clima {    
-    height: 300px;
-    width: 300px;
+#icono-clima {    
+    height: 250px;
+    width: 250px;
 }
 
 .icono-prevision {
