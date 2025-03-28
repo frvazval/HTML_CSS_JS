@@ -152,6 +152,10 @@ select, input {
     margin: 5px 0;
 }
 
+#fechaHora {
+    font-size: 1.2em; /* Increase font size */
+}
+
 /* Responsive rules */
 @media (min-width: 768px) {
     #forecast-container {
