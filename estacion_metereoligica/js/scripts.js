@@ -55,7 +55,7 @@ function displayForecast(data) {
 
         forecastItem.innerHTML = `
             <p>${date}</p>
-            <img src="${icon}" alt="${description}">
+            <img src="${icon}" alt="${description} class="icono-prevision">
             <p>${temp}</p>
             <p>${description}</p>
         `;
