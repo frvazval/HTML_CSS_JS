@@ -29,10 +29,46 @@ async function getWeather() {
 
         // Mostrar el icono del clima
         document.getElementById("icono").innerHTML = `<img src="${icono}" alt="${descripcion}">`;
+
+        // Fetch weather forecast
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&lang=${idioma}&units=metric&appid=${apiKey}`;
+
+        try {
+            const forecastResponse = await fetch(forecastUrl);
+            const forecastData = await forecastResponse.json();
+            displayForecast(forecastData);
+        } catch (error) {
+            console.error('Error fetching forecast:', error);
+        }
     
     } catch (error) {
         alert("Error: " + error.message);
     }
+}
+
+function displayForecast(data) {
+    const forecastContainer = document.getElementById('forecast-container');
+    forecastContainer.innerHTML = ''; // Clear previous forecast
+
+    const forecastList = data.list.filter((item, index) => index % 8 === 0); // Get daily forecasts (every 8th item)
+    forecastList.forEach(forecast => {
+        const forecastItem = document.createElement('div');
+        forecastItem.className = 'forecast-item';
+
+        const date = new Date(forecast.dt * 1000).toLocaleDateString();
+        const icon = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
+        const temp = `${forecast.main.temp}°C`;
+        const description = forecast.weather[0].description;
+
+        forecastItem.innerHTML = `
+            <p>${date}</p>
+            <img src="${icon}" alt="${description}">
+            <p>${temp}</p>
+            <p>${description}</p>
+        `;
+
+        forecastContainer.appendChild(forecastItem);
+    });
 }
 
 // Función que muestra la fecha y hora actual en pantalla

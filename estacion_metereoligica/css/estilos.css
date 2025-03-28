@@ -12,8 +12,9 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 90%; /* Increased width */
+    max-width: 1200px; /* Allow more content horizontally */
+    overflow: hidden; /* Prevent unnecessary scrollbars */
 }
 .icono-clima {    
     height: 150px;
@@ -29,7 +30,7 @@ select, input {
 .weather-layout {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between; /* Spread items horizontally */
     gap: 20px;
 }
 
@@ -60,8 +61,12 @@ select, input {
         padding: 20px;
     }
 
+    .container {
+        padding: 30px;
+    }
+
     .weather-layout {
-        flex-wrap: nowrap;
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens */
     }
 
     .weather-layout .info {
@@ -72,11 +77,19 @@ select, input {
         width: 150px;
         height: 150px;
     }
+
+    .forecast-layout {
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: 1024px) {
     .responsive-layout {
         padding: 30px;
+    }
+
+    .container {
+        padding: 40px;
     }
 
     .weather-layout {
@@ -90,5 +103,59 @@ select, input {
     .weather-layout .icono-clima {
         width: 200px;
         height: 200px;
+    }
+
+    .forecast-layout {
+        justify-content: space-between;
+    }
+}
+
+.forecast-layout {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread forecast items horizontally */
+    gap: 20px;
+}
+
+#forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread forecast items horizontally */
+    gap: 20px;
+}
+
+.forecast-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-item p {
+    margin: 5px 0;
+}
+
+/* Responsive rules */
+@media (min-width: 768px) {
+    #forecast-container {
+        justify-content: space-between;
+    }
+
+    .forecast-item {
+        width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .forecast-item {
+        width: 200px;
     }
 }
