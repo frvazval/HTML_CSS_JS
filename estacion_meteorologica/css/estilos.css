@@ -43,23 +43,21 @@ select, input {
 
 .weather-layout {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Spread items horizontally */
-    gap: 20px;
+    justify-content: space-between; /* Position elements on opposite sides */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add spacing between elements */
 }
 
 .weather-layout .info {
-    flex: 0 0 auto; /* Ajusta el tamaño al contenido */
-    text-align: left; /* Alinea el texto a la izquierda */
-    max-width: 300px;
-    text-align: center;
+    flex: 1; /* Allow the info section to take up available space */
+    text-align: left; /* Align text to the left */
+    font-size: 1.2em; /* Make text larger */
 }
 
 .weather-layout .icono-clima {
-    flex: 0 0 auto;
-    margin-left: 0; /* Elimina el margen izquierdo */
-    width: 100px;
-    height: 100px;
+    flex: 0 0 auto; /* Prevent resizing */
+    width: 250px; /* Increase width */
+    height: 250px; /* Increase height */
 }
 
 .responsive-layout {
@@ -125,8 +123,7 @@ select, input {
 }
 
 .forecast-layout {
-    margin-top: 20px;
-    /* display: flex; */
+    margin-top: 20px;   
     flex-wrap: wrap;
     justify-content: space-between; /* Spread forecast items horizontally */
     gap: 20px;
