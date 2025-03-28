@@ -30,7 +30,7 @@ select, input {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    gap: 20px; /* Espaciado entre los elementos */
+    gap: 70px; /* Espaciado de 70px entre los elementos */
 }
 
 .weather-layout .info {
