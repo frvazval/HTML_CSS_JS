@@ -15,6 +15,7 @@ body {
     width: 90%; /* Increased width */
     max-width: 1200px; /* Allow more content horizontally */
     overflow: hidden; /* Prevent unnecessary scrollbars */
+    height: auto; /* Ensure content fits without vertical scrolling */
 }
 .icono-clima {    
     height: 150px;
@@ -112,7 +113,6 @@ select, input {
 
 .forecast-layout {
     margin-top: 20px;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* Spread forecast items horizontally */
@@ -122,7 +122,7 @@ select, input {
 #forecast-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Spread forecast items horizontally */
+    justify-content: center;
     gap: 20px;
 }
 
