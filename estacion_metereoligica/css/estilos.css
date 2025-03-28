@@ -16,7 +16,9 @@ body {
     max-width: 600px;
 }
 .icono-clima {
-    font-size: 100px;
+    /* font-size: 100px; */
+    height: 150px;
+    width: 150px;
 }
 select, input {
     padding: 10px;

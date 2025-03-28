@@ -16,7 +16,9 @@ async function getWeather() {
         const presion = `Presión: ${data.main.pressure} hPa`;
         const humedad = `Humedad: ${data.main.humidity}%`;
         const descripcion = data.weather[0].description;
-        const icono = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        const icono = `img/${data.weather[0].icon}.svg`;
+
+        // const icono = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
         // Actualizar el DOM con los datos obtenidos
         document.getElementById("nombreCiudad").textContent = nombreCiudad;
