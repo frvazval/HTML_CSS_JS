@@ -8,6 +8,7 @@ body {
     align-items: center;
     height: 100vh; /* Ensure full viewport height */
     margin: 0; /* Remove default margin */
+    font-size: 1.1em; /* Increase base font size */
 }
 
 .container {
@@ -181,6 +182,17 @@ button:hover {
 
 #fechaHora {
     font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+}
+
+#nombreCiudad {
+    font-size: 2em; /* Make the city name larger */
+    font-weight: bold; /* Emphasize the city name */
+    margin-bottom: 10px; /* Add spacing below */
+}
+
+#temperatura, #presion, #humedad, #descripcion {
+    font-size: 1.2em; /* Increase font size for better readability */
+    margin: 5px 0; /* Add spacing between lines */
 }
 
 /* Para que sea responsive */
