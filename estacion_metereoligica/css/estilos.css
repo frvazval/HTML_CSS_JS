@@ -25,3 +25,20 @@ select, input {
     border-radius: 5px;
     border: none;
 }
+
+.weather-layout {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+.weather-layout .info {
+    flex: 0 0 auto; /* Ajusta el tamaño al contenido */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.weather-layout .icono-clima {
+    flex: 0 0 auto;
+    margin-left: 0; /* Elimina el margen izquierdo */
+}
