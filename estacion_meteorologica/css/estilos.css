@@ -47,7 +47,7 @@ button {
     background-color: #2196F3; /* Match the gradient color */
     color: white; /* Ensure text is readable */
     border: none; /* Remove border */
-    border-radius: 5px; /* Add rounded corners */
+    border-radius: 30px; /* Make the button more elliptical */
     cursor: pointer; /* Change cursor to pointer */
     transition: background-color 0.3s ease; /* Add hover effect */
 }
