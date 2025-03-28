@@ -28,17 +28,67 @@ select, input {
 
 .weather-layout {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    gap: 70px; /* Espaciado de 70px entre los elementos */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .weather-layout .info {
     flex: 0 0 auto; /* Ajusta el tamaño al contenido */
     text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 300px;
+    text-align: center;
 }
 
 .weather-layout .icono-clima {
     flex: 0 0 auto;
     margin-left: 0; /* Elimina el margen izquierdo */
+    width: 100px;
+    height: 100px;
+}
+
+.responsive-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Responsive rules */
+@media (min-width: 768px) {
+    .responsive-layout {
+        padding: 20px;
+    }
+
+    .weather-layout {
+        flex-wrap: nowrap;
+    }
+
+    .weather-layout .info {
+        max-width: 400px;
+    }
+
+    .weather-layout .icono-clima {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .responsive-layout {
+        padding: 30px;
+    }
+
+    .weather-layout {
+        justify-content: space-between;
+    }
+
+    .weather-layout .info {
+        max-width: 500px;
+    }
+
+    .weather-layout .icono-clima {
+        width: 200px;
+        height: 200px;
+    }
 }
