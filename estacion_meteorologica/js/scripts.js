@@ -49,7 +49,8 @@ function displayForecast(data) {
         forecastItem.className = "forecast-item";
 
         const date = new Date(forecast.dt * 1000).toLocaleDateString();
-        const icon = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
+        // const icon = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
+        const icon = `img/${forecast.weather[0].icon}.svg`;
         const temp = `${forecast.main.temp}°C`;
         const description = forecast.weather[0].description;
 
