@@ -45,7 +45,10 @@ function displayForecast(data) {
     forecastContainer.innerHTML = ""; // Clear previous forecast
 
     const forecastList = data.list.filter((item, index) => index % 8 === 0); // Get daily forecasts (every 8th item)
-    forecastList.forEach(forecast => {
+    // Solo quiero las 4 últimas previsiones, porque la primera ya aparece en la parte superior
+    const lastFourForecasts = forecastList.slice(-4); // Get the last 4 forecasts
+
+    lastFourForecasts.forEach(forecast => {
         const forecastItem = document.createElement("div");
         forecastItem.className = "forecast-item";
 
