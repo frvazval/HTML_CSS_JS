@@ -1,4 +1,5 @@
 async function obtenerClima() {
+    // Obtener la clave API desde el archivo apikey.txt
     const apiKey = await fetch('apikey.txt').then(response => response.text()).then(text => text.trim());
     const ciudad = document.getElementById("ciudad").value;
     const idioma = document.getElementById("idioma").value;
