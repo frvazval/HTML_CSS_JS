@@ -28,7 +28,7 @@ async function obtenerClima() {
         // Mostrar el icono del clima
         document.getElementById("icono").innerHTML = `<img id="icono-clima" src="${icono}" alt="${descripcion}">`;
 
-        // Obtener los datos de la previsión
+        // Fetch weather forecast
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&lang=${idioma}&units=metric&appid=${apiKey}`;
         const forecastResponse = await fetch(forecastUrl);
         const forecastData = await forecastResponse.json();
