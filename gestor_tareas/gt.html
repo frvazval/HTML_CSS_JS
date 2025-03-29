@@ -3,21 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas</title>
-    <link rel="stylesheet" href="css/gt.css">
-    <script defer src="js/gt.js"></script>
+    <title>My TO-DO APP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .task-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .task-form label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .task-form input, .task-form select, .task-form button {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        .task-form div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .task-columns {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .task-column {
+            margin-bottom: 20px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .task .priority {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .task .dates {
+            font-size: 12px;
+            color: gray;
+        }
+        .task .actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Gestor de Tareas</h1>
+        <h1>My TO-DO APP ☰</h1>
+        <p>Introducir tarea y definir estado</p>
         <div class="task-form">
-            <input type="text" id="taskName" placeholder="Nombre de la tarea">
-            <select id="taskPriority">
-                <option value="baja">Baja</option>
-                <option value="normal">Normal</option>
-                <option value="alta">Alta</option>
-            </select>
-            <button onclick="addTask()">Añadir Tarea</button>
+            <div>
+                <label for="taskName">Nombre de la tarea</label>
+                <input type="text" id="taskName">
+            </div>
+            <div>
+                <label for="taskStatus">Estado</label>
+                <select id="taskStatus">
+                    <option value="pending">Pendiente</option>
+                    <option value="in-progress">En ejecución</option>
+                    <option value="completed">Finalizada</option>
+                </select>
+            </div>
+            <div>
+                <label for="taskPriority">Prioridad</label>
+                <select id="taskPriority">
+                    <option value="low">Baja</option>
+                    <option value="normal">Normal</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+            <div>
+                <label for="taskDeadline">Fecha de plazo</label>
+                <input type="date" id="taskDeadline">
+            </div>
+            <button onclick="addTask()">Añadir tarea</button>
         </div>
         <div class="task-columns">
             <div class="task-column" id="pending">
@@ -25,14 +126,72 @@
                 <ul class="task-list"></ul>
             </div>
             <div class="task-column" id="in-progress">
-                <h2>En Ejecución</h2>
+                <h2>En ejecución</h2>
                 <ul class="task-list"></ul>
             </div>
             <div class="task-column" id="completed">
-                <h2>Terminadas</h2>
+                <h2>Finalizadas</h2>
                 <ul class="task-list"></ul>
             </div>
         </div>
-    </div>       
+    </div>
+    
+    <script>
+        document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
+        
+        function addTask() {
+            const name = document.getElementById('taskName').value;
+            const status = document.getElementById('taskStatus').value;
+            const priority = document.getElementById('taskPriority').value;
+            const deadline = document.getElementById('taskDeadline').value || 'Indefinida';
+            const today = new Date().toISOString().split('T')[0];
+            
+            if (!name) return;
+            
+            const task = document.createElement('li');
+            task.classList.add('task');
+            task.setAttribute('data-priority', priority);
+            task.innerHTML = `
+                <div>
+                    <span class="priority">${priority.toUpperCase()}</span>
+                    <span>${name}</span>
+                </div>
+                <div class="dates">
+                    <span>Creado: ${today}</span><br>
+                    <span>Plazo: ${deadline}</span>
+                </div>
+                <div class="actions">
+                    <button title="Cambiar estado" onclick="changeTaskStatus(this)">🔄</button>
+                    <button title="Eliminar tarea" onclick="deleteTask(this)">❌</button>
+                </div>
+            `;
+            
+            const list = document.getElementById(status).querySelector('.task-list');
+            list.appendChild(task);
+            sortTasks(list);
+        }
+        
+        function deleteTask(button) {
+            button.parentElement.parentElement.remove();
+        }
+        
+        function changeTaskStatus(button) {
+            const task = button.parentElement.parentElement;
+            const currentStatus = task.parentElement.parentElement.id;
+            const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
+            
+            document.getElementById(nextStatus).querySelector('.task-list').appendChild(task);
+        }
+        
+        function sortTasks(list) {
+            const tasks = Array.from(list.children);
+            tasks.sort((a, b) => {
+                const priorities = { 'high': 1, 'normal': 2, 'low': 3 };
+                return priorities[a.getAttribute('data-priority')] - priorities[b.getAttribute('data-priority')];
+            });
+            list.innerHTML = '';
+            tasks.forEach(task => list.appendChild(task));
+        }
+    </script>
 </body>
 </html>
