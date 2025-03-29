@@ -78,5 +78,3 @@ document.getElementById("ciudad").addEventListener("keypress", function(event) {
         obtenerClima();
     }
 });
-
-
