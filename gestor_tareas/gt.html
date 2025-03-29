@@ -161,13 +161,16 @@
         document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
         
         function addTask() {
-            const name = document.getElementById('taskName').value;
+            const name = document.getElementById('taskName').value.trim();
             const status = document.getElementById('taskStatus').value;
             const priority = document.getElementById('taskPriority').value;
             const deadline = document.getElementById('taskDeadline').value || 'Indefinida';
             const today = new Date().toISOString().split('T')[0];
             
-            if (!name) return;
+            if (!name) {
+                alert('Por favor, introduce un nombre para la tarea.'); // Mostrar mensaje si está vacío
+                return;
+            }
             
             const task = document.createElement('li');
             task.classList.add('task');
