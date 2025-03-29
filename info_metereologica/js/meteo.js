@@ -1,5 +1,5 @@
 async function obtenerClima() {
-    const apiKey = '7d348ad63627628c24b590b77048a721'; // Reemplaza con tu clave de OpenWeatherMap
+    const apiKey = await fetch('apikey.txt').then(response => response.text()).then(text => text.trim());
     const ciudad = document.getElementById("ciudad").value;
     const idioma = document.getElementById("idioma").value;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=${idioma}`;
