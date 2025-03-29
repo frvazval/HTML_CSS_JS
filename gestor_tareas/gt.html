@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My TO-DO APP</title>
-    <!-- <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script> -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -168,7 +166,7 @@
             
             const list = document.getElementById(status).querySelector('.task-list');
             list.appendChild(task);
-            sortTasks(list);
+            sortTasks(list);  // Llamamos a la función para ordenar las tareas por prioridad
         }
         
         function deleteTask(button) {
@@ -181,6 +179,7 @@
             const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
             
             document.getElementById(nextStatus).querySelector('.task-list').appendChild(task);
+            sortTasks(document.getElementById(nextStatus).querySelector('.task-list'));  // Ordenamos nuevamente después de cambiar el estado
         }
         
         function sortTasks(list) {
