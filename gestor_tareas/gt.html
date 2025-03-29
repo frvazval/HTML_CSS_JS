@@ -108,6 +108,15 @@
         .task .actions button:hover {
             color: #ff6347; /* Botones más claros al pasar el cursor */
         }
+        .task[data-status="pending"] {
+            background: #ffcccc; /* Fondo rojo claro para pendientes */
+        }
+        .task[data-status="in-progress"] {
+            background: #fff4cc; /* Fondo amarillo claro para en ejecución */
+        }
+        .task[data-status="completed"] {
+            background: #ccffcc; /* Fondo verde claro para finalizadas */
+        }
     </style>
 </head>
 <body>
@@ -175,6 +184,7 @@
             const task = document.createElement('li');
             task.classList.add('task');
             task.setAttribute('data-priority', priority);
+            task.setAttribute('data-status', status); // Añadimos el estado como atributo
             task.innerHTML = `
                 <div>
                     <span class="priority">${priority.toUpperCase()}</span>
@@ -204,6 +214,7 @@
             const currentStatus = task.parentElement.parentElement.id;
             const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
 
+            task.setAttribute('data-status', nextStatus); // Actualizamos el atributo de estado
             const nextList = document.getElementById(nextStatus).querySelector('.task-list');
             nextList.appendChild(task);
             sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
