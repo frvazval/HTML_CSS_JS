@@ -125,6 +125,9 @@
             border-bottom-left-radius: 20px; /* Redondeamos el lado izquierdo inferior */
         }
         #taskDeadline {
+            border-radius: 5px; /* Igual al de prioridad */
+        }
+        #taskDeadlineTime {
             border-top-right-radius: 20px; /* Redondeamos el lado derecho superior */
             border-bottom-right-radius: 20px; /* Redondeamos el lado derecho inferior */
         }
@@ -160,6 +163,10 @@
                 <label for="taskDeadline">Fecha de plazo</label>
                 <input type="date" id="taskDeadline">
             </div>
+            <div>
+                <label for="taskDeadlineTime">Hora de plazo</label>
+                <input type="time" id="taskDeadlineTime"> <!-- Campo para seleccionar la hora -->
+            </div>
             <button onclick="addTask()">Añadir tarea</button>
         </div>
         <div class="task-columns">
@@ -185,8 +192,11 @@
             const name = document.getElementById('taskName').value.trim();
             const status = document.getElementById('taskStatus').value;
             const priority = document.getElementById('taskPriority').value;
-            const deadline = document.getElementById('taskDeadline').value || 'Indefinida';
-            const today = new Date().toISOString().split('T')[0];
+            const deadlineDate = document.getElementById('taskDeadline').value || 'Indefinida';
+            const deadlineTime = document.getElementById('taskDeadlineTime').value || 'Indefinida';
+            const today = new Date();
+            const createdDate = today.toLocaleDateString('es-ES');
+            const createdTime = today.toLocaleTimeString('es-ES');
             
             if (!name) {
                 alert('Por favor, introduce un nombre para la tarea.'); // Mostrar mensaje si está vacío
@@ -203,8 +213,8 @@
                     <span>${name}</span>
                 </div>
                 <div class="dates">
-                    <span>Creado: ${today}</span><br>
-                    <span>Plazo: ${deadline}</span>
+                    <span>Creado: ${createdDate} ${createdTime}</span><br>
+                    <span>Plazo: ${deadlineDate} ${deadlineTime}</span>
                 </div>
                 <div class="actions">
                     <button title="Cambiar estado" onclick="changeTaskStatus(this)">🔄</button>
