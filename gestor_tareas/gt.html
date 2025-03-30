@@ -131,6 +131,17 @@
             border-top-right-radius: 20px; /* Redondeamos el lado derecho superior */
             border-bottom-right-radius: 20px; /* Redondeamos el lado derecho inferior */
         }
+        .expired {
+            animation: blink 1s infinite; /* Parpadeo */
+            color: red; /* Color rojo para el icono */
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -243,6 +254,7 @@
             const list = document.getElementById(status).querySelector('.task-list');
             list.appendChild(task);
             sortTasks(list); // Ordenar tareas por prioridad
+            checkDeadlines(); // Verificar plazos después de añadir la tarea
         }
 
         function deleteTask(button) {
@@ -296,6 +308,25 @@
         }
         setInterval(updateDateTime, 1000);
         updateDateTime();
+
+        function checkDeadlines() {
+            const now = new Date();
+            tasks.forEach(task => {
+                const deadline = new Date(`${task.deadlineDate}T${task.deadlineTime}`);
+                if (deadline < now && task.deadlineDate !== 'Indefinida') {
+                    const taskElement = document.querySelector(`.task[data-id="${task.id}"]`);
+                    if (taskElement && !taskElement.querySelector('.expired-message')) {
+                        const expiredMessage = document.createElement('div');
+                        expiredMessage.classList.add('expired-message');
+                        expiredMessage.innerHTML = `
+                            <span class="expired">⚠</span> <span>Plazo terminado</span>
+                        `;
+                        taskElement.appendChild(expiredMessage);
+                    }
+                }
+            });
+        }
+        setInterval(checkDeadlines, 60000); // Verificar plazos cada minuto
     </script>
 </body>
 </html>
