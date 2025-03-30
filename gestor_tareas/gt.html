@@ -206,8 +206,23 @@
                 return;
             }
 
+            // Crear objeto de tarea y agregarlo al array
+            const taskObj = {
+                id: Date.now(), // ID único basado en el timestamp
+                name,
+                status,
+                priority,
+                createdDate,
+                createdTime,
+                deadlineDate,
+                deadlineTime
+            };
+            tasks.push(taskObj);
+
+            // Crear elemento visual de la tarea
             const task = document.createElement('li');
             task.classList.add('task');
+            task.setAttribute('data-id', taskObj.id); // Asociar el ID al elemento
             task.setAttribute('data-priority', priority);
             task.setAttribute('data-status', status);
             task.innerHTML = `
@@ -231,17 +246,35 @@
         }
 
         function deleteTask(button) {
-            button.parentElement.parentElement.remove();
+            const taskElement = button.parentElement.parentElement;
+            const taskId = parseInt(taskElement.getAttribute('data-id'));
+
+            // Eliminar la tarea del array
+            const taskIndex = tasks.findIndex(task => task.id === taskId);
+            if (taskIndex !== -1) {
+                tasks.splice(taskIndex, 1);
+            }
+
+            // Eliminar el elemento visual
+            taskElement.remove();
         }
 
         function changeTaskStatus(button) {
-            const task = button.parentElement.parentElement;
-            const currentStatus = task.getAttribute('data-status');
+            const taskElement = button.parentElement.parentElement;
+            const taskId = parseInt(taskElement.getAttribute('data-id'));
+            const currentStatus = taskElement.getAttribute('data-status');
             const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
 
-            task.setAttribute('data-status', nextStatus);
+            // Actualizar el estado en el array
+            const task = tasks.find(task => task.id === taskId);
+            if (task) {
+                task.status = nextStatus;
+            }
+
+            // Actualizar el estado visualmente
+            taskElement.setAttribute('data-status', nextStatus);
             const nextList = document.getElementById(nextStatus).querySelector('.task-list');
-            nextList.appendChild(task);
+            nextList.appendChild(taskElement);
             sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
         }
 
