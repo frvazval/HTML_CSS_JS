@@ -188,6 +188,9 @@
     <script>
         document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
         
+        // Array para almacenar las tareas
+        const tasks = [];
+
         function addTask() {
             const name = document.getElementById('taskName').value.trim();
             const status = document.getElementById('taskStatus').value;
@@ -197,16 +200,16 @@
             const today = new Date();
             const createdDate = today.toLocaleDateString('es-ES');
             const createdTime = today.toLocaleTimeString('es-ES');
-            
+
             if (!name) {
-                alert('Por favor, introduce un nombre para la tarea.'); // Mostrar mensaje si está vacío
+                alert('Por favor, introduce un nombre para la tarea.');
                 return;
             }
-            
+
             const task = document.createElement('li');
             task.classList.add('task');
             task.setAttribute('data-priority', priority);
-            task.setAttribute('data-status', status); // Añadimos el estado como atributo
+            task.setAttribute('data-status', status);
             task.innerHTML = `
                 <div>
                     <span class="priority">${priority.toUpperCase()}</span>
@@ -221,33 +224,22 @@
                     <button title="Eliminar tarea" onclick="deleteTask(this)">❌</button>
                 </div>
             `;
-            
+
             const list = document.getElementById(status).querySelector('.task-list');
             list.appendChild(task);
-            sortTasks(list); // Ordenar tareas por prioridad
         }
-        
+
         function deleteTask(button) {
             button.parentElement.parentElement.remove();
         }
-        
+
         function changeTaskStatus(button) {
             const task = button.parentElement.parentElement;
-            const currentStatus = task.parentElement.parentElement.id;
+            const currentStatus = task.getAttribute('data-status');
             const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
 
-            task.setAttribute('data-status', nextStatus); // Actualizamos el atributo de estado
-            const nextList = document.getElementById(nextStatus).querySelector('.task-list');
-            nextList.appendChild(task);
-            sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
-        }
-        
-        function sortTasks(list) {
-            const tasks = Array.from(list.children);
-            const priorities = { alta: 1, normal: 2, baja: 3 }; // Mapeo de prioridades
-            tasks.sort((a, b) => priorities[a.getAttribute('data-priority')] - priorities[b.getAttribute('data-priority')]);
-            list.innerHTML = '';
-            tasks.forEach(task => list.appendChild(task));
+            task.setAttribute('data-status', nextStatus);
+            document.getElementById(nextStatus).querySelector('.task-list').appendChild(task);
         }
 
         function updateDateTime() {
@@ -258,8 +250,8 @@
             });
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
-        setInterval(updateDateTime, 1000); // Actualizar cada segundo
-        updateDateTime(); // Llamada inicial
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
     </script>
 </body>
 </html>
