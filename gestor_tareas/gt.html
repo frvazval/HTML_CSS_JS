@@ -227,6 +227,7 @@
 
             const list = document.getElementById(status).querySelector('.task-list');
             list.appendChild(task);
+            sortTasks(list); // Ordenar tareas por prioridad
         }
 
         function deleteTask(button) {
@@ -239,7 +240,17 @@
             const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
 
             task.setAttribute('data-status', nextStatus);
-            document.getElementById(nextStatus).querySelector('.task-list').appendChild(task);
+            const nextList = document.getElementById(nextStatus).querySelector('.task-list');
+            nextList.appendChild(task);
+            sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
+        }
+
+        function sortTasks(list) {
+            const tasks = Array.from(list.children);
+            const priorities = { alta: 1, normal: 2, baja: 3 }; // Mapeo de prioridades
+            tasks.sort((a, b) => priorities[a.getAttribute('data-priority')] - priorities[b.getAttribute('data-priority')]);
+            list.innerHTML = '';
+            tasks.forEach(task => list.appendChild(task));
         }
 
         function updateDateTime() {
