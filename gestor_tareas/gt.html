@@ -198,6 +198,8 @@
     
     <script>
         document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
+        document.getElementById('taskDeadline').value = new Date().toISOString().split('T')[0]; // Fecha actual por defecto
+        document.getElementById('taskDeadlineTime').value = new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); // Hora actual por defecto
         
         // Array para almacenar las tareas
         const tasks = [];
