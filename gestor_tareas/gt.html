@@ -200,6 +200,11 @@
         document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
         document.getElementById('taskDeadline').value = new Date().toISOString().split('T')[0]; // Fecha actual por defecto
         document.getElementById('taskDeadlineTime').value = new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); // Hora actual por defecto
+
+        // Establecer foco en el campo de texto al cargar la página
+        window.onload = () => {
+            document.getElementById('taskName').focus();
+        };
         
         // Array para almacenar las tareas
         const tasks = [];
