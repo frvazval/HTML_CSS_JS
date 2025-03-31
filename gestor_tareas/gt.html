@@ -4,7 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My TO-DO APP</title>
-    <link rel="stylesheet" href="css/gt.css">       
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Fondo azul claro */
+            color: #333; /* Texto oscuro */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ocupa toda la pantalla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 70%; /* Cambiamos el ancho al 70% de la pantalla */
+            max-width: none; /* Eliminamos el límite de ancho máximo */
+            padding: 50px; /* Mantener el padding aumentado */
+            margin: 0 auto;
+            background: #ffffff; /* Fondo blanco para el contenedor */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #007acc; /* Título en azul vibrante */
+        }
+        .task-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .task-form label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .task-form input, .task-form select, .task-form button {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #99d6ff; /* Borde azul claro */
+            background-color: #e6f7ff; /* Fondo azul claro */
+            color: #005b99; /* Texto azul oscuro */
+            display: block;
+        }
+        .task-form button {
+            background-color: #007acc; /* Botón azul vibrante */
+            color: #ffffff; /* Texto blanco */
+            cursor: pointer;
+            font-size: 16px; /* Incrementamos el tamaño de la fuente */
+            padding: 12px 16px; /* Aumentamos el padding */
+            border-radius: 50px; /* Forma elíptica */
+        }
+        .task-form button:hover {
+            background-color: #005b99; /* Botón azul más oscuro al pasar el cursor */
+        }
+        .task-form div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .task-columns {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .task-column {
+            margin-bottom: 20px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task {
+            background: #e6f7ff; /* Fondo azul claro para tareas */
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 1px solid #99d6ff; /* Borde azul claro */
+            border-radius: 5px;
+            color: #005b99; /* Texto azul oscuro */
+        }
+        .task .priority {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #ff8c00; /* Color naranja para prioridad */
+        }
+        .task .dates {
+            font-size: 12px;
+            color: #666; /* Texto gris */
+        }
+        .task .actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+            color: #ff4500; /* Botones de acción en rojo vibrante */
+        }
+        .task .actions button:hover {
+            color: #ff6347; /* Botones más claros al pasar el cursor */
+        }
+        .task[data-status="pending"] {
+            background: #ffcccc; /* Fondo rojo claro para pendientes */
+        }
+        .task[data-status="in-progress"] {
+            background: #fff4cc; /* Fondo amarillo claro para en ejecución */
+        }
+        .task[data-status="completed"] {
+            background: #ccffcc; /* Fondo verde claro para finalizadas */
+        }
+        #taskName {
+            border-top-left-radius: 20px; /* Redondeamos el lado izquierdo superior */
+            border-bottom-left-radius: 20px; /* Redondeamos el lado izquierdo inferior */
+        }
+        #taskDeadline {
+            border-radius: 5px; /* Igual al de prioridad */
+        }
+        #taskDeadlineTime {
+            border-top-right-radius: 20px; /* Redondeamos el lado derecho superior */
+            border-bottom-right-radius: 20px; /* Redondeamos el lado derecho inferior */
+        }
+        .expired {
+            animation: blink 1s infinite; /* Parpadeo */
+            color: red; /* Color rojo para el icono */
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -56,7 +194,146 @@
                 <ul class="task-list"></ul>
             </div>
         </div>
-    </div> 
-    <script src="js/gt.js"></script>      
+    </div>
+    
+    <script>
+        document.getElementById('taskDeadline').setAttribute('min', new Date().toISOString().split('T')[0]);
+        document.getElementById('taskDeadline').value = new Date().toISOString().split('T')[0]; // Fecha actual por defecto
+        document.getElementById('taskDeadlineTime').value = new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); // Hora actual por defecto
+
+        // Establecer foco en el campo de texto al cargar la página
+        window.onload = () => {
+            document.getElementById('taskName').focus();
+        };
+        
+        // Array para almacenar las tareas
+        const tasks = [];
+
+        function addTask() {
+            const name = document.getElementById('taskName').value.trim();
+            const status = document.getElementById('taskStatus').value;
+            const priority = document.getElementById('taskPriority').value;
+            const deadlineDate = document.getElementById('taskDeadline').value || 'Indefinida';
+            const deadlineTime = document.getElementById('taskDeadlineTime').value || 'Indefinida';
+            const today = new Date();
+            const createdDate = today.toLocaleDateString('es-ES');
+            const createdTime = today.toLocaleTimeString('es-ES');
+
+            if (!name) {
+                alert('Por favor, introduce un nombre para la tarea.');
+                return;
+            }
+
+            // Crear objeto de tarea y agregarlo al array
+            const taskObj = {
+                id: Date.now(), // ID único basado en el timestamp
+                name,
+                status,
+                priority,
+                createdDate,
+                createdTime,
+                deadlineDate,
+                deadlineTime
+            };
+            tasks.push(taskObj);
+
+            // Crear elemento visual de la tarea
+            const task = document.createElement('li');
+            task.classList.add('task');
+            task.setAttribute('data-id', taskObj.id); // Asociar el ID al elemento
+            task.setAttribute('data-priority', priority);
+            task.setAttribute('data-status', status);
+            task.innerHTML = `
+                <div>
+                    <span class="priority">${priority.toUpperCase()}</span>
+                    <span>${name}</span>
+                </div>
+                <div class="dates">
+                    <span>Creado: ${createdDate} ${createdTime}</span><br>
+                    <span>Plazo: ${deadlineDate} ${deadlineTime}</span>
+                </div>
+                <div class="actions">
+                    <button title="Cambiar estado" onclick="changeTaskStatus(this)">🔄</button>
+                    <button title="Eliminar tarea" onclick="deleteTask(this)">❌</button>
+                </div>
+            `;
+
+            const list = document.getElementById(status).querySelector('.task-list');
+            list.appendChild(task);
+            sortTasks(list); // Ordenar tareas por prioridad
+            checkDeadlines(); // Verificar plazos después de añadir la tarea
+        }
+
+        function deleteTask(button) {
+            const taskElement = button.parentElement.parentElement;
+            const taskId = parseInt(taskElement.getAttribute('data-id'));
+
+            // Eliminar la tarea del array
+            const taskIndex = tasks.findIndex(task => task.id === taskId);
+            if (taskIndex !== -1) {
+                tasks.splice(taskIndex, 1);
+            }
+
+            // Eliminar el elemento visual
+            taskElement.remove();
+        }
+
+        function changeTaskStatus(button) {
+            const taskElement = button.parentElement.parentElement;
+            const taskId = parseInt(taskElement.getAttribute('data-id'));
+            const currentStatus = taskElement.getAttribute('data-status');
+            const nextStatus = currentStatus === 'pending' ? 'in-progress' : currentStatus === 'in-progress' ? 'completed' : 'pending';
+
+            // Actualizar el estado en el array
+            const task = tasks.find(task => task.id === taskId);
+            if (task) {
+                task.status = nextStatus;
+            }
+
+            // Actualizar el estado visualmente
+            taskElement.setAttribute('data-status', nextStatus);
+            const nextList = document.getElementById(nextStatus).querySelector('.task-list');
+            nextList.appendChild(taskElement);
+            sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
+        }
+
+        function sortTasks(list) {
+            const tasks = Array.from(list.children);
+            const priorities = { alta: 1, normal: 2, baja: 3 }; // Mapeo de prioridades
+            tasks.sort((a, b) => priorities[a.getAttribute('data-priority')] - priorities[b.getAttribute('data-priority')]);
+            list.innerHTML = '';
+            tasks.forEach(task => list.appendChild(task));
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString('es-ES', {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            });
+            document.getElementById('currentDateTime').textContent = formattedDateTime;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        function checkDeadlines() {
+            const now = new Date();
+            tasks.forEach(task => {
+                const deadline = new Date(`${task.deadlineDate}T${task.deadlineTime}`);
+                if (deadline < now && task.deadlineDate !== 'Indefinida') {
+                    const taskElement = document.querySelector(`.task[data-id="${task.id}"]`);
+                    if (taskElement && !taskElement.querySelector('.expired-message')) {
+                        const expiredMessage = document.createElement('div');
+                        expiredMessage.classList.add('expired-message');
+                        expiredMessage.innerHTML = `
+                            <span class="expired">⚠</span> <span>Plazo terminado</span>
+                        `;
+                        taskElement.appendChild(expiredMessage);
+                    }
+                }
+            });
+        }
+        setInterval(checkDeadlines, 60000); // Verificar plazos cada minuto
+    </script>
 </body>
 </html>
