@@ -204,10 +204,50 @@
         // Establecer foco en el campo de texto al cargar la página
         window.onload = () => {
             document.getElementById('taskName').focus();
+            loadTasksFromLocalStorage(); // Cargar tareas desde localStorage
         };
         
         // Array para almacenar las tareas
         const tasks = [];
+
+        // Guardar tareas en localStorage
+        function saveTasksToLocalStorage() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        // Cargar tareas desde localStorage
+        function loadTasksFromLocalStorage() {
+            const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            savedTasks.forEach(task => {
+                tasks.push(task);
+
+                // Crear elemento visual de la tarea
+                const taskElement = document.createElement('li');
+                taskElement.classList.add('task');
+                taskElement.setAttribute('data-id', task.id);
+                taskElement.setAttribute('data-priority', task.priority);
+                taskElement.setAttribute('data-status', task.status);
+                taskElement.innerHTML = `
+                    <div>
+                        <span class="priority">${task.priority.toUpperCase()}</span>
+                        <span>${task.name}</span>
+                    </div>
+                    <div class="dates">
+                        <span>Creado: ${task.createdDate} ${task.createdTime}</span><br>
+                        <span>Plazo: ${task.deadlineDate} ${task.deadlineTime}</span>
+                    </div>
+                    <div class="actions">
+                        <button title="Cambiar estado" onclick="changeTaskStatus(this)">🔄</button>
+                        <button title="Eliminar tarea" onclick="deleteTask(this)">❌</button>
+                    </div>
+                `;
+
+                const list = document.getElementById(task.status).querySelector('.task-list');
+                list.appendChild(taskElement);
+                sortTasks(list); // Ordenar tareas por prioridad
+            });
+            checkDeadlines(); // Verificar plazos después de cargar las tareas
+        }
 
         function addTask() {
             const name = document.getElementById('taskName').value.trim();
@@ -262,6 +302,7 @@
             list.appendChild(task);
             sortTasks(list); // Ordenar tareas por prioridad
             checkDeadlines(); // Verificar plazos después de añadir la tarea
+            saveTasksToLocalStorage(); // Guardar tareas después de añadir
         }
 
         function deleteTask(button) {
@@ -276,6 +317,7 @@
 
             // Eliminar el elemento visual
             taskElement.remove();
+            saveTasksToLocalStorage(); // Guardar tareas después de eliminar
         }
 
         function changeTaskStatus(button) {
@@ -295,6 +337,7 @@
             const nextList = document.getElementById(nextStatus).querySelector('.task-list');
             nextList.appendChild(taskElement);
             sortTasks(nextList); // Ordenar tareas por prioridad después de cambiar el estado
+            saveTasksToLocalStorage(); // Guardar tareas después de cambiar estado
         }
 
         function sortTasks(list) {
