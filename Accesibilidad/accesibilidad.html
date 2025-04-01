@@ -6,11 +6,12 @@
     <title>Pruebas de accesibilidad</title>
 </head>
 <body>
-    <h1>Soy un titulo 1</h1>
     <!-- Despues de todos los demas empezaria por el primer 0 -->
+    <h1 tabindex="0">Soy un titulo 1</h1>    
     <p tabindex="0">Soy el primer parrafo</p>
     <p tabindex="0">Soy el segundo parrafo</p>
     <!-- Este parrafo cogera el foco primero, despues el 2, el 3, etc... -->
+    <!-- Si se le pone -1 no recibira el foco con el tabulador -->
     <p tabindex="1">Soy el tercer parrafo</p> 
     <a href="#">Soy un enlace</a>
     <form action="#">
