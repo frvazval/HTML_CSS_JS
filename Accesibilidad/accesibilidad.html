@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruebas de accesibilidad</title>
     <link rel="shortcut icon" href="flor.svg" type="image/x-icon">
+    <style>
+        :focus, :active {
+            color: red;
+        }
+    </style>
 </head>
 <body>  
     <!-- <div role="navigation">
@@ -53,7 +58,8 @@
                      "<span style='color: red'>Hay que poner un nombre correcto</span>"
                 document
                     .getElementById('nombre')
-                    .setAttribute('aria-describedby', "errorNombre")  
+                    .setAttribute('aria-describedby', "errorNombre")
+                inputNombre.focus()  
             }
        
           
