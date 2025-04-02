@@ -7,12 +7,19 @@
     <link rel="shortcut icon" href="flor.svg" type="image/x-icon">
 </head>
 <body>  
-    <div role="navigation">
+    <!-- <div role="navigation">
         <ul>
             <li></li>
             <li></li>
         </ul>
-    </div>  
+    </div>   -->
+    <!-- Es mejor utilizar esto -->
+    <!-- <nav>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>   -->
     <!-- Despues de todos los demas empezaria por el primer 0 -->
     <h1 tabindex="0">Soy un titulo 1</h1>    
     <p tabindex="0">Soy el primer parrafo</p>
@@ -21,10 +28,44 @@
     <!-- Si se le pone -1 no recibira el foco con el tabulador -->
     <p tabindex="1">Soy el tercer parrafo</p> 
     <a href="#">Soy un enlace</a>
-    <form action="#">
+    <form name="miForm">
         <label for="nombre">Nombre</label> 
-        <input type="text" name="nombre" id="nombre">
+        <input
+        type="text" 
+        name="nombre" 
+        id="nombre"
+        required
+        aria-required="true">
+        <p id="errorNombre"></p>
         <button type="submit">Enviar</button>
     </form>
+    <script>
+        const miForm = document.forms['miForm']
+        const errorNombre = document.getElementById('errorNombre')
+
+        const inputNombre = document.getElementById('nombre')
+
+        inputNombre.addEventListener('change', () => {
+            nombre = inputNombre.value.trim()
+
+            if (nombre.length == 0) {
+                errorNombre.innerHTML =
+                     "<span style='color: red'>Hay que poner un nombre correcto</span>"
+                document
+                    .getElementById('nombre')
+                    .setAttribute('aria-describedby', "errorNombre")  
+            }
+       
+          
+        })
+
+        miForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            // const nombre = miForm['nombre'].value.trim()
+            
+        })
+
+
+    </script>
 </body>
 </html>
