@@ -1,0 +1,273 @@
+<!-- El ejercicio consiste en hacer una página accesible, como se ve en el vídeo.
+El modelo te debe servir como referencia. -->
+<!-- Fíjate en las etiquetas que debes cambiar y en las cosas que faltan -->
+<!-- No te olvides de comentar generosamente lo que hagas  -->
+
+<!DOCTYPE html>
+<!-- atributo del idioma -->
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <div class="fondo-color h">               
+             <a href="#antonio-gaudi" id="skip-link">
+                    saltar al contenido principal</a
+                >
+                
+            <div class="width-content">
+                <p id="inicio" class="p1">Casa Batlló</p>
+                <p class="p2">
+                    Una obra maestra de la arquitectura modernista
+                </p>
+
+                <div class="width-content">
+                    <ul>
+                        <li><a href="#antonio-gaudi">ANTONIO GAUDÍ</a></li>
+                        <li><a href="#el-edificio">EL EDIFICIO</a></li>
+                        <li><a href="#galeria">GALERÍA</a></li>
+                        <li><a href="#el-modernismo">EL MODERNISMO</a></li>
+                        <li><a href="#su-opinion">SU OPINIÓN</a></li>
+                    </ul>
+                </div>
+
+                <!-- Las imagenes llevaran su texto alternativo correspondiente -->
+                <!-- Pero debes ponerlo tú -->
+
+                <picture >
+                    <source
+                        media="(max-width: 500px)"
+                        srcset="img/346983-Casa-Batllo-500.avif"
+                    />
+                    <source
+                        media="(max-width: 800px)"
+                        srcset="img/346983-Casa-Batllo-800.avif"
+                    />
+                    <img
+                        class="imagendiv"
+                        src="img/346983-Casa-Batllo-1400.avif"
+                        alt="Acceso a Casa Batlló."
+                    />
+                </picture>
+            </div>
+        </div>
+
+        <div class="width-content m">
+            <section id="antonio-gaudi">
+                <p class="p2">Antoni Gaudí</p>
+                <div>
+                    <img
+                        src="img/Antoni_Gaudi_1878.avif"                        
+                    />
+                    <div>
+                        <p >
+                            Gaudí fue un arquitecto con un sentido innato de la
+                            geometría y el volumen, así como una gran capacidad
+                            imaginativa que le permitía proyectar mentalmente la
+                            mayoría de sus obras antes de pasarlas a planos. De
+                            hecho, pocas veces realizaba planos detallados de
+                            sus obras; prefería recrearlos sobre maquetas
+                            tridimensionales, moldeando todos los detalles según
+                            los iba ideando mentalmente. En otras ocasiones, iba
+                            improvisando sobre la marcha, dando instrucciones a
+                            sus colaboradores sobre lo que debían hacer. Dotado
+                            de una fuerte intuición y capacidad creativa, Gaudí
+                            concebía sus edificios de una forma global,
+                            atendiendo tanto a las soluciones estructurales como
+                            a las funcionales y decorativas. Estudiaba hasta el
+                            más mínimo detalle de sus creaciones, integrando en
+                            la arquitectura toda una serie de trabajos
+                            artesanales que dominaba él mismo a la perfección:
+                            cerámica, vidriería, forja de hierro, carpintería,
+                            etc. Asimismo, introdujo nuevas técnicas en el
+                            tratamiento de los materiales, como su famoso
+                            trencadís hecho con piezas de cerámica de desecho.
+                        </p>
+                       
+                    </div>
+                </div>
+            </section>
+
+            <section id="el-edificio">
+                <p class="p2">El edificio</p>
+                <div>
+                    <div>
+                        <p >
+                            La Casa Batlló es un reflejo de la plenitud
+                            artística de Gaudí: pertenece a su etapa naturalista
+                            (primera década del siglo XX), periodo en que el
+                            arquitecto perfecciona su estilo personal,
+                            inspirándose en las formas orgánicas de la
+                            naturaleza, para lo que puso en práctica toda una
+                            serie de nuevas soluciones estructurales originadas
+                            en los profundos análisis efectuados por Gaudí de la
+                            geometría reglada. A ello añade el artista catalán
+                            una gran libertad creativa y una imaginativa
+                            creación ornamental: partiendo de cierto barroquismo
+                            sus obras adquieren gran riqueza estructural, de
+                            formas y volúmenes desprovistos de rigidez
+                            racionalista o de cualquier premisa clásica.
+                        </p>
+
+                        <p >
+                            Sin embargo, como es habitual en las obras de Gaudí,
+                            el diseño y la innegable artisticidad del conjunto
+                            no privan de que el edificio esté concebido bajo el
+                            prisma de la funcionalidad, a la que el arquitecto
+                            subordina todos los demás elementos. En ese sentido,
+                            cabe resaltar la importancia otorgada tanto a la
+                            iluminación como a la ventilación, dos ejes básicos
+                            para una vida sana y confortable en un edificio de
+                            viviendas. Para ello dispuso un gran patio central
+                            en el centro del edificio, al que daban las
+                            habitaciones de servicios, mientras que los salones
+                            y los dormitorios daban a la fachada. Este patio
+                            también articulaba el movimiento dentro del
+                            edificio, a través de escaleras y un ascensor.
+                        </p>
+
+                       
+                    </div>
+                    <img
+                        src="img/fachada-590x760.avif"
+                       
+                    />
+                </div>
+            </section>
+
+            <section id="galeria">
+                <p class="p2">Galería de imágenes</p>
+                <div class="galeria-fotos">
+                    <img
+                        src="img/salon.avif"
+                        
+                    />
+
+                    <img
+                        src="img/detall.avif"
+                        
+                    />
+
+                    <img
+                        src="img/pati2.avif"
+                        
+                    />
+
+                    <img
+                        src="img/terrat.avif"
+                        
+                    />
+                    <div class="volver-inicio">
+                        <a href="#inicio">Volver al inicio &#8593;</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="el-modernismo">
+                <p class="p2">El modernismo</p>
+                <div>
+                    <img
+                        src="img/casa_mila.avif"
+                       
+                    />
+                    <div>
+                        <p >
+                            El modernismo rechaza el estilo poco atractivo de la
+                            arquitectura industrial de la primera mitad del
+                            siglo XIX, y desarrolla nuevos conceptos
+                            arquitectónicos basados en la naturaleza, que
+                            consisten en los materiales de construcción que se
+                            emplean, en las formas de los edificios y en las
+                            figuras de sus fachadas. Los arquitectos y sus
+                            escultores colocan en el exterior de los edificios
+                            pájaros, mariposas, hojas y flores a modo de
+                            elementos decorativos, ya sea como figuras adosadas
+                            o como adorno de la piedra o cerámica. También se
+                            colocan figuras de tamaño mayor, animales fabulosos
+                            o personas, y en las cornisas elementos de cerámica
+                            de color. Las ventanas y los balcones disponen de
+                            rejas de hierro forjado, que son labradas
+                            artísticamente y contienen motivos inspirados en la
+                            naturaleza. Los arquitectos aprovecharon los
+                            materiales nuevos y reconvirtieron el uso de los ya
+                            conocidos. Algunos comunes en el modernismo fueron
+                            el hierro (muy presente en diversas obras, dejando
+                            la herrería al descubierto), la cerámica, el vidrio,
+                            los cristales, la madera, el yeso, la piedra, los
+                            ladrillos y la pintura entre otros, también se
+                            reintegró la escultura a la arquitectura como una de
+                            sus principales cualidades.
+                        </p>
+                       
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="fondo-color">
+            <div class="width-content">
+                <div id="su-opinion">
+                    <form>
+                        <fieldset>
+                            <legend >
+                                Por favor denos su opinión
+                            </legend>
+                            <p class="p-fieldset" >
+                                Es necesario rellenar todos los campos
+                            </p>
+                           
+                           Su nombre:*<input
+                                    type="text"
+                                    required
+                                    
+                            />
+                           Su opinión:*<input
+                                    type="text"
+                                    required
+                                    
+                            />
+
+                            <div>
+                                <button class="boton" >
+                                    Enviar opinión
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="redes-sociales">
+                    <p >Nuestras redes sociales</p>
+                    <div>
+                        <!-- Utilizaremos los aria label para que se indique la informacion del enlace -->
+                        <a href="https://facebook.com" target="_blank"
+                            ><img
+                                class="redes"
+                                src="img/c_facebook.png"
+                              
+                        /></a>
+                        <a href="https://instagram.com" target="_blank"
+                            ><img
+                                class="redes"
+                                src="img/c_instagram.png"
+                               
+                        /></a>
+                        <a href="https://youtube.com" target="_blank"
+                            ><img
+                                class="redes"
+                                src="img/c_youtube.png"
+                               
+                        /></a>
+                    </div>
+                    <p >
+                        &#169;Pon aquí tu nombre
+                    </p>
+                    
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
