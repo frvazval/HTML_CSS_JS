@@ -6,8 +6,12 @@
     <title>Pruebas de accesibilidad</title>
     <link rel="shortcut icon" href="flor.svg" type="image/x-icon">
     <style>
+        #coliseo {
+            display: none;
+        }
+
         :focus, :active {
-            color: red;
+            outline: 3px solid red;            
         }
     </style>
 </head>
@@ -44,6 +48,13 @@
         <p id="errorNombre"></p>
         <button type="submit">Enviar</button>
     </form>
+    <br>
+    <img  tabindex="0"
+     src="Colosseo_2020.webp"
+     alt="Exterior del Coliseo de Roma"
+     aria-labelledby="coliseo">
+     <!-- Asi leera el contenico del parrafo con el id="coliseo" -->
+    <p id="coliseo">El Coliseo o Anfiteatro Flavio (en latín Colosseum, en italiano Colosseo)[1]​ es un anfiteatro de la época del Imperio romano, construido en el siglo I. Está ubicado en el este del Foro Romano y fue el más grande de los que se construyeron en el Imperio romano. Conocido originalmente como Anfiteatro Flavio (Amphitheatrum Flavium) pasó a ser llamado Coliseo (Colosseum) porque a su lado había una gran estatua, el Coloso de Nerón,[2]​ un monumento dedicado al emperador Nerón que posteriormente sufrió transformaciones y llegó a desaparecer.[3]​</p>
     <script>
         const miForm = document.forms['miForm']
         const errorNombre = document.getElementById('errorNombre')
@@ -58,10 +69,10 @@
                      "<span style='color: red'>Hay que poner un nombre correcto</span>"
                 document
                     .getElementById('nombre')
+                    // Lee el contenido del parrafo con id="errorNombre"
                     .setAttribute('aria-describedby', "errorNombre")
                 inputNombre.focus()  
-            }
-       
+            }      
           
         })       
 
