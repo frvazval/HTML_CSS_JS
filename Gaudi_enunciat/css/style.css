@@ -6,23 +6,22 @@
     padding: 0;
     box-sizing: border-box;
     /* no cambio de tipografia porque esta tipografia ya me parece clara y accesible */
-    font-family: var(--text-normal);
+    font-family: var(--text-normal); /* Aplica la nueva fuente */
     font-size: 1.1rem;
     color: var(--text-color);
-    font-family: "ballet";
+    font-family: "Verdana", sans-serif;
 }
 
 :root {
-    --primary-color: #888;
-    --secondary-color: #8d093e5a;
-    --text-color: #555;
-    --hover-color: #ffa02e;
-    /* cambio de el fondo del color para que sea mas accesible color de video*/
-    /* --backgroung-color: #b7d2d4; */
-    --backgroung-color:#111;
+    --primary-color: #444; /* Mejora el contraste */
+    --secondary-color: #8d093e; /* Elimina la transparencia para mejor visibilidad */
+    --text-color: #333; /* Aumenta el contraste del texto */
+    --hover-color: #ff8c00; /* Color más accesible para hover */
+    --backgroung-color: #f4e3a1; /* Fondo más claro y accesible */
     --width-content: 1200px;
-    --text-normal: "Mako", sans-serif;
-    --text-title: "Belanosima", cursive;
+    --text-normal: "Arial", sans-serif; /* Fuente más legible para texto normal */
+    --text-title: "Verdana", sans-serif; /* Nueva fuente para los títulos */
+    --text-paragraph: "Times New Roman", serif; /* Nueva fuente para los párrafos */
 }
 
 .width-content {
@@ -62,19 +61,20 @@
     position: static;
     width: auto;
     height: auto;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: #000; /* Fondo negro para mayor contraste */
+    color: #fff; /* Texto blanco para contraste */
+    padding: 10px; /* Mejora la usabilidad */
+    border-radius: 5px; /* Mejora la apariencia */
 }
 
-
 .m {
-    background-color: darkolivegreen;
+    background-color: white
 }
 /* Títulos y textos */
 .p1,
 .p2,
 .p3 {
-    /* font-family: var(--text-title); */
+    font-family: var(--text-title); /* Aplica la nueva fuente a los títulos */
     font-weight: 400;
     font-style: normal;
 }
@@ -98,6 +98,7 @@
 }
 
 p {
+    font-family: var(--text-paragraph); /* Aplica la nueva fuente a los párrafos */
     padding-bottom: 15px;
 }
 
@@ -216,12 +217,14 @@ button {
     background-color: var(--backgroung-color);
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
+    font-size: 1rem; /* Asegura un tamaño de texto accesible */
 }
 
 button:hover {
     background-color: var(--secondary-color);
     border: 1px solid var(--secondary-color);
     color: var(--primary-color);
+    outline: 2px solid #000; /* Añade un contorno visible para el enfoque */
 }
 
 /* Area para las redes sociales */
@@ -241,9 +244,20 @@ button:hover {
 
 .redes-sociales img {
     width: 4vw;
+    alt: ""; /* Asegura que las imágenes tengan texto alternativo */
 }
 
 .redes-sociales img:hover {
     scale: 1.15;
+    transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+a {
+    outline: none; /* Elimina el contorno predeterminado */
+}
+
+a:focus {
+    outline: 2px solid #000; /* Añade un contorno visible para el enfoque */
+    outline-offset: 2px; /* Mejora la visibilidad del contorno */
 }
 
