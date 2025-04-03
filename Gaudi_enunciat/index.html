@@ -25,11 +25,13 @@ El modelo te debe servir como referencia. -->
              <a href="#antonio-gaudi" id="skip-link" tabindex="-1">
                     saltar al contenido principal</a
                 >
-                
+
+            <!-- Le pongo el tabindex="0" a todos los elementos que quiero que reciban el foco -->    
             <div class="width-content">
                 <!-- convierto el parrafo con id="inicio" en un h1 y le pongo tabindex="0" para que reciba el foco -->
                 <h1 id="inicio" class="p1" tabindex="0">Casa Batlló</h1>
                 <!-- Todos los parrafos que estan asociados a class="p2", los convierto en h2 -->
+
                 <!-- Le pongo el tabindex="0" a todos los elementos que quiero que reciban el foco -->
                 <h2 class="p2" tabindex="0">
                     Una obra maestra de la arquitectura modernista
@@ -47,7 +49,7 @@ El modelo te debe servir como referencia. -->
 
                 <!-- Las imagenes llevaran su texto alternativo correspondiente -->
                 <!-- Pero debes ponerlo tú -->
-
+                
                 <picture >
                     <source
                         media="(max-width: 500px)"
@@ -252,7 +254,7 @@ El modelo te debe servir como referencia. -->
                                     required
                                     aria-required="true"                                    
                             />
-                            
+
                             <div>
                                 <button class="boton" >
                                     Enviar opinión
@@ -264,7 +266,7 @@ El modelo te debe servir como referencia. -->
                 <div class="redes-sociales">
                     <h2 >Nuestras redes sociales</h2>
                     <div>
-                        <!-- Utilizaremos los aria label para que se indique la informacion del enlace -->
+                        <!-- Les pongo a los enlaces texto alternativo con alt, para que lea para que sirven -->
                         <a href="https://facebook.com" target="_blank"
                             ><img
                                 class="redes"
