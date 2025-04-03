@@ -244,8 +244,9 @@ button:hover {
 }
 
 .redes-sociales img {
-    width: 4vw;
-    alt: ""; /* Asegura que las imágenes tengan texto alternativo */
+    width: 4vw;    
+    /* La siguiente linea la comento, porque ya les he puesto texto alternativo */
+    /* alt: ""; Asegura que las imágenes tengan texto alternativo */
 }
 
 .redes-sociales img:hover {
