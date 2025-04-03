@@ -20,6 +20,7 @@
     --hover-color: #ff8c00; /* Color más accesible para hover */
     --backgroung-color: #f4e3a1; /* Fondo más claro y accesible */
     --width-content: 1200px;
+    /* Fuentes más legibles */
     --text-normal: "Arial", sans-serif; /* Fuente más legible para texto normal */
     --text-title: "Verdana", sans-serif; /* Nueva fuente para los títulos */
     --text-paragraph: "Times New Roman", serif; /* Nueva fuente para los párrafos */
