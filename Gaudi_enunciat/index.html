@@ -11,7 +11,9 @@ El modelo te debe servir como referencia. -->
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Le añado alguna etiqueta meta para subir la valoración del SEO -->
         <meta name="description" content="Casa Batllo, Una obra maestra de la arquitectura modernista">
+        <meta name="keywords" content="Gaudi, Modernismo, Casa Batlló"/>
         <title>Casa Batllo</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -234,15 +236,19 @@ El modelo te debe servir como referencia. -->
                             <p class="p-fieldset" >
                                 Es necesario rellenar todos los campos
                             </p>
-                           
-                           Su nombre:*<input
+                            <!-- Les pongo labels a los input y los asocio a ellos -->
+                            <label for="nombre">Su nombre:*</label>
+                            <input
                                     type="text"
+                                    name="nombre"
                                     required
                                     aria-required="true"
                                     
                             />
-                           Su opinión:*<input
+                            <label for="opinion">Su opinión:*</label>
+                            <input
                                     type="text"
+                                    name="opinion"
                                     required
                                     aria-required="true"
                                     
