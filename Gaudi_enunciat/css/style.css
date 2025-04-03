@@ -1,11 +1,12 @@
 /* Seccion para insertar la fuente a utilizar */
-@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
+/* Lo comento porque no estoy utilizando esta fuente */
+/* @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap'); */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* no cambio de tipografia porque esta tipografia ya me parece clara y accesible */
+    
     font-family: var(--text-normal); /* Aplica la nueva fuente */
     font-size: 1.1rem;
     color: var(--text-color);
