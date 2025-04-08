@@ -91,9 +91,11 @@ header {
 }
 
 #respuesta {
-    display: block;
+    display: flex;
     padding: 1rem 2rem 1rem;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 #divImagen {
@@ -105,4 +107,20 @@ header {
     }
 }
 
+table {
+    border: 2px solid black;
+    border-radius: 10px;
+    border-collapse: collapse;
 
+    th {
+        padding: .5rem;
+        border: 1px solid black;       
+    }
+
+    td {
+        padding: .5rem;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+}
