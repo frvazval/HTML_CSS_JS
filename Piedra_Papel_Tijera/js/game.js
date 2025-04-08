@@ -22,13 +22,19 @@ formJuego.addEventListener('submit', (e) => {
     let JugadaPC = Math.floor(Math.random() * (numMaximo - numMinimo + 1)) + numMinimo; // Generar un número aleatorio entre 1 y 3
     
     let mensaje = ""
+    let audioVictoria = document.getElementById('victoria')
+    let audioEmpate = document.getElementById('empate')
+    let audioDerrota = document.getElementById('derrota')
+
     if (jugadaHumano == JugadaPC) {
         mensaje = "¡ Empate !"
+        audioEmpate.play()
     } else if ((jugadaHumano == 1 && JugadaPC == 3) || (jugadaHumano == 2 && JugadaPC == 1) || (jugadaHumano == 3 && JugadaPC == 2)) {
         mensaje = "¡ Has ganado !"
-
+        audioVictoria.play()
     } else {
         mensaje = "¡ Has perdido !"
+        audioDerrota.play()
     }
 
     respuesta.innerHTML = `<p>${mensaje}</p>`
