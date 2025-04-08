@@ -2,6 +2,11 @@
 let buttonNombre = document.querySelector('header button');
 let pNombre = document.querySelector('header p')
 let respuesta = document.getElementById('respuesta')
+let divImagen = document.getElementById('divImagen')
+
+let iconos = ['👊', '✋', '✌️']
+
+let nombreUsuario = ""
 
 buttonNombre.addEventListener('click', () => {
     let nombreUsuario = prompt("¿Cuál es tu nombre?")
@@ -26,18 +31,24 @@ formJuego.addEventListener('submit', (e) => {
     let audioEmpate = document.getElementById('empate')
     let audioDerrota = document.getElementById('derrota')
 
+    alert(`Tu jugada es: ${iconos[jugadaHumano - 1]}
+         y mi jugada es: ${iconos[JugadaPC - 1]}`)
+
     if (jugadaHumano == JugadaPC) {
-        mensaje = "¡ Empate !"
+        mensaje = '¡ Has empatado !'
         audioEmpate.play()
+        divImagen.innerHTML = '<img src="img/empate.jpg" alt="Empate">'
     } else if ((jugadaHumano == 1 && JugadaPC == 3) || (jugadaHumano == 2 && JugadaPC == 1) || (jugadaHumano == 3 && JugadaPC == 2)) {
-        mensaje = "¡ Has ganado !"
+        mensaje = '¡ Has ganado !'
         audioVictoria.play()
+        divImagen.innerHTML = '<img src="img/victoria.jpg" alt="Victoria">' 
     } else {
-        mensaje = "¡ Has perdido !"
+        mensaje = '¡ Has perdido !'
         audioDerrota.play()
+        divImagen.innerHTML = '<img src="img/derrota.jpg" alt="Derrota">'   
     }
 
-    respuesta.innerHTML = `<p>${mensaje}</p>`
+    respuesta.innerHTML = `<p>${mensaje} ${nombreUsuario}</p>`
 
 })
 
