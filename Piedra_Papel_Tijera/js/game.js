@@ -9,7 +9,7 @@ let iconos = ['👊', '✋', '✌️']
 let nombreUsuario = ""
 
 buttonNombre.addEventListener('click', () => {
-    let nombreUsuario = prompt("¿Cuál es tu nombre?")
+    nombreUsuario = prompt("¿Cuál es tu nombre?")
     buttonNombre.style.display = "none";
     pNombre.textContent = `¡ Mucha suerte ${nombreUsuario} !`
 })
