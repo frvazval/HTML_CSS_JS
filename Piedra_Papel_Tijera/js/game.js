@@ -12,10 +12,16 @@ let formJuego = document.forms['formJuego'];
 
 formJuego.addEventListener('submit', (e) => {
     e.preventDefault(); // Evitar el envío del formulario
-    let jugada = formJuego['jugada'].value; // Obtener la jugada del usuario
-    alert(jugada)
+    let jugadaHumano = formJuego['jugada'].value; // Obtener la jugada del usuario
+    
+    // Jugada del PC
+    let numMinimo = 1
+    let numMaximo = 3
+    let JugadaPC = Math.floor(Math.random() * (numMaximo - numMinimo + 1)) + numMinimo; // Generar un número aleatorio entre 1 y 3
+
+    if (jugadaHumano == JugadaPC) {
+
+    }
 })
 
-let numMinimo = 1
-let numMaximo = 3
-let JugadaPC = Math.floor(Math.random() * (numMaximo - numMinimo + 1)) + numMinimo; // Generar un número aleatorio entre 1 y 3
+
