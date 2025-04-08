@@ -6,6 +6,10 @@ let divImagen = document.getElementById('divImagen')
 
 let iconos = ['👊', '✋', '✌️']
 
+let victoriasH = 0
+let empates = 0
+let derrotasH = 0
+
 let nombreUsuario = ""
 
 buttonNombre.addEventListener('click', () => {
@@ -31,24 +35,43 @@ formJuego.addEventListener('submit', (e) => {
     let audioEmpate = document.getElementById('empate')
     let audioDerrota = document.getElementById('derrota')
 
-    alert(`Tu jugada es: ${iconos[jugadaHumano - 1]}
-         y mi jugada es: ${iconos[JugadaPC - 1]}`)
+    
+
+
+    // alert(`Tu jugada es: ${iconos[jugadaHumano - 1]}
+    //      y mi jugada es: ${iconos[JugadaPC - 1]}`)
 
     if (jugadaHumano == JugadaPC) {
+        empates++;
         mensaje = '¡ Has empatado !'
         audioEmpate.play()
         divImagen.innerHTML = '<img src="img/empate.jpg" alt="Empate">'
     } else if ((jugadaHumano == 1 && JugadaPC == 3) || (jugadaHumano == 2 && JugadaPC == 1) || (jugadaHumano == 3 && JugadaPC == 2)) {
+        victoriasH++;
         mensaje = '¡ Has ganado !'
         audioVictoria.play()
         divImagen.innerHTML = '<img src="img/victoria.jpg" alt="Victoria">' 
     } else {
+        derrotasH++;
         mensaje = '¡ Has perdido !'
         audioDerrota.play()
         divImagen.innerHTML = '<img src="img/derrota.jpg" alt="Derrota">'   
     }
 
-    respuesta.innerHTML = `<p>${mensaje} ${nombreUsuario}</p>`
+    let tabla = `<table>
+        <tr>
+            <th>Victorias</th>
+            <th>Empates</th>
+            <th>Derrotas</th>
+        </tr>
+        <tr>
+            <td>${victoriasH}</td>
+            <td>${empates}</td>
+            <td>${derrotasH}</td>
+        </tr>
+    </table>`
+
+    respuesta.innerHTML = `<p>${mensaje} ${nombreUsuario}</p>${tabla}`
 
 })
 
